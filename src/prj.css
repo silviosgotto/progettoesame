@@ -1,4 +1,7 @@
-#canvas{
-  border: solid black;
-  
+#kick{
+  border: solid black; 
+}
+
+#snare{
+  border: solid rgb(194, 126, 0);
 }
