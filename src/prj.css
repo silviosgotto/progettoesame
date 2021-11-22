@@ -1,7 +1,49 @@
-#kick{
-  border: solid black; 
-}
-
-#snare{
-  border: solid rgb(194, 126, 0);
-}
+#rhythm{
+    background-color: black;
+    display: inline-flex;
+  }
+  
+  #melody{
+    background-color: black;
+    display: inline-flex;
+  }
+  
+  
+  #rect{
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/images/square.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+  
+  #tri{
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/images/tri.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+  #pent{
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/images/pent.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+  
+  #melodic{
+    margin: 5px;
+    width: 500px;
+    height: 500px;
+    background-image: url('/images/grid.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
