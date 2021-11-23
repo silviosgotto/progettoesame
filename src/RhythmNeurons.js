@@ -269,17 +269,53 @@ module.exports = class RhythmNeurons{
 
     for(let i = 0; i<arr.length; i++){
         arr[i] = (arr[i]-min)/(max-min);
-        if (arr[i] >= 0 && arr[i] < 0.25){
-        arr[i] = 1;
+        if (arr[i] >= 0 && arr[i] < 1/16){
+            arr[i] = 1;
         }
-        else if( arr[i] >= 0.25 && arr[i]<0.50){
-        arr[i] = 2;
+        else if( arr[i] >= 1/16 && arr[i] < 2/16){
+            arr[i] = 2;
         }
-        else if(arr[i] >= 0.50 && arr[i] < 0.75){
-        arr[i] = 3;
+        else if(arr[i] >= 2/16 && arr[i] < 3/16){
+            arr[i] = 3;
+        }
+        else if(arr[i] >= 3/16 && arr[i] < 4/16){
+            arr[i] = 4;
+        }
+        else if(arr[i] >= 4/16 && arr[i] < 5/16){
+            arr[i] = 5;
+        }
+        else if(arr[i] >= 5/16 && arr[i] < 6/16){
+            arr[i] = 6;
+        }   
+        else if(arr[i] >= 6/16 && arr[i] < 7/16){
+            arr[i] = 7;
+        }
+        else if(arr[i] >= 7/16 && arr[i] < 8/16){
+            arr[i] = 8;
+        }
+        else if(arr[i] >= 8/16 && arr[i] < 9/16){
+            arr[i] = 9;
+        }
+        else if(arr[i] >= 9/16 && arr[i] < 10/16){
+            arr[i] = 10;
+        }
+        else if(arr[i] >= 10/16 && arr[i] < 11/16){
+            arr[i] = 11;
+        }
+        else if(arr[i] >= 11/16 && arr[i] < 12/16){
+            arr[i] = 12;
+        }
+        else if(arr[i] >= 12/16 && arr[i] < 13/16){
+            arr[i] = 13;
+        }
+        else if(arr[i] >= 13/16 && arr[i] < 14/16){
+            arr[i] = 14;
+        }
+        else if(arr[i] >= 14/16 && arr[i] < 15/16){
+            arr[i] = 15;
         }
         else{
-        arr[i] = 4;
+            arr[i] = 16;
         }
     }
     return arr;
@@ -303,5 +339,4 @@ module.exports = class RhythmNeurons{
         this.learning();
         this.drawNeurons();
     }
-
 }

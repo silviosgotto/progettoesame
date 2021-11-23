@@ -36,6 +36,7 @@ nMel.initNeurons();
 function start(Neurons, id){
     if(Neurons.getEps() <= 0.15){
         console.log(Neurons.getEps());
+        console.log(nMel.calcPosPad())
         cancelAnimationFrame(id);
     }
     else{
