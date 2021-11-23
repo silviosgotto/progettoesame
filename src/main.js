@@ -26,7 +26,7 @@ nPent.initNeurons();
 //prova neuroni melodici
 
 const Mel = SVG().addTo('#melodic').size(l, l);
-const nMel = new MelodicNeurons(16, l, Mel, "esa");
+const nMel = new MelodicNeurons(16, l, Mel, "petmin");
 
 nMel.initNeurons();
 
