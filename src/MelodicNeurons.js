@@ -154,17 +154,17 @@ module.exports = class MelodicNeurons{
 
     calcPosPad() {
         var PosPad = []
-        var b = 0
+        var b = true
         var n = 1
         for(var i = 0; i < this.posNeu.length; i++){
-            b = 0
+            b = true
             n = 1
             for(var j = 1; j <= 5; j++){
                 for(var k = 1; k <= 5; k++){
-                    if(b == 0){
+                    if(b){
                         if(this.posNeu[i][0] <= k*this.l/5 && this.posNeu[i][1] <= j*this.l/5){
                             PosPad[i] = n
-                            b = 1
+                            b = false
                         }
                         n++
                     }

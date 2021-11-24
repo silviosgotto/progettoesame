@@ -266,59 +266,67 @@ module.exports = class RhythmNeurons{
     normalizeArray(arr){
     let min = Math.min(...arr);
     let max = Math.max(...arr);
-
-    for(let i = 0; i<arr.length; i++){
-        arr[i] = (arr[i]-min)/(max-min);
-        if (arr[i] >= 0 && arr[i] < 1/16){
-            arr[i] = 1;
+    let distnorm = [];
+    let x = arr.length;
+    arr[x] = 0
+        for(let i = 0; i < arr.length; i++){
+            distnorm[i] = (arr[i]-min)/(max-min)
+            if(i == 0) {    
+                arr[i] = 0
+            }
+            else{
+                if (distnorm[i-1] >= 0 && distnorm[i-1] < 1/16){
+                    arr[i] = arr[i-1] + 1/4;
+                }
+                else if(distnorm[i-1] >= 1/16 && distnorm[i-1] < 2/16){
+                    arr[i] = arr[i-1] + 2/4;
+                }
+                else if(distnorm[i-1] >= 2/16 && distnorm[i-1] < 3/16){
+                    arr[i] = arr[i-1] + 3/4;
+                }
+                else if(distnorm[i-1] >= 3/16 && distnorm[i-1] < 4/16){
+                    arr[i] = arr[i-1] + 4/4;
+                }
+                else if(distnorm[i-1] >= 4/16 && distnorm[i-1] < 5/16){
+                    arr[i] = arr[i-1] + 5/4;
+                }
+                else if(distnorm[i-1] >= 5/16 && distnorm[i-1] < 6/16){
+                    arr[i] = arr[i-1] + 6/4;
+                }   
+                else if(distnorm[i-1] >= 6/16 && distnorm[i-1] < 7/16){
+                    arr[i] = arr[i-1] + 7/4;
+                }
+                else if(distnorm[i-1] >= 7/16 && distnorm[i-1] < 8/16){
+                    arr[i] = arr[i-1] + 8/4;
+                }
+                else if(distnorm[i-1] >= 8/16 && distnorm[i-1] < 9/16){
+                    arr[i] = arr[i-1] + 9/4;
+                }
+                else if(distnorm[i-1] >= 9/16 && distnorm[i-1] < 10/16){
+                    arr[i] = arr[i-1] + 10/4;
+                }
+                else if(distnorm[i-1] >= 10/16 && distnorm[i-1] < 11/16){
+                    arr[i] = arr[i-1] + 11/4;
+                }
+                else if(distnorm[i-1] >= 11/16 && distnorm[i-1] < 12/16){
+                    arr[i] = arr[i-1] + 12/4;
+                }
+                else if(distnorm[i-1] >= 12/16 && distnorm[i-1] < 13/16){
+                    arr[i] = arr[i-1] + 13/4;
+                }
+                else if(distnorm[i-1] >= 13/16 && distnorm[i-1] < 14/16){
+                    arr[i] = arr[i-1] + 14/4;
+                }
+                else if(distnorm[i-1] >= 14/16 && distnorm[i-1] < 15/16){
+                    arr[i] = arr[i-1] + 15/4;
+                }
+                else{
+                    arr[i] = arr[i-1] + 16/4;
+                }
+            }  
         }
-        else if( arr[i] >= 1/16 && arr[i] < 2/16){
-            arr[i] = 2;
-        }
-        else if(arr[i] >= 2/16 && arr[i] < 3/16){
-            arr[i] = 3;
-        }
-        else if(arr[i] >= 3/16 && arr[i] < 4/16){
-            arr[i] = 4;
-        }
-        else if(arr[i] >= 4/16 && arr[i] < 5/16){
-            arr[i] = 5;
-        }
-        else if(arr[i] >= 5/16 && arr[i] < 6/16){
-            arr[i] = 6;
-        }   
-        else if(arr[i] >= 6/16 && arr[i] < 7/16){
-            arr[i] = 7;
-        }
-        else if(arr[i] >= 7/16 && arr[i] < 8/16){
-            arr[i] = 8;
-        }
-        else if(arr[i] >= 8/16 && arr[i] < 9/16){
-            arr[i] = 9;
-        }
-        else if(arr[i] >= 9/16 && arr[i] < 10/16){
-            arr[i] = 10;
-        }
-        else if(arr[i] >= 10/16 && arr[i] < 11/16){
-            arr[i] = 11;
-        }
-        else if(arr[i] >= 11/16 && arr[i] < 12/16){
-            arr[i] = 12;
-        }
-        else if(arr[i] >= 12/16 && arr[i] < 13/16){
-            arr[i] = 13;
-        }
-        else if(arr[i] >= 13/16 && arr[i] < 14/16){
-            arr[i] = 14;
-        }
-        else if(arr[i] >= 14/16 && arr[i] < 15/16){
-            arr[i] = 15;
-        }
-        else{
-            arr[i] = 16;
-        }
-    }
-    return arr;
+        console.log("distnorm" + distnorm)
+        return arr;
     }
 
     calcDistNormNeu(){
@@ -330,7 +338,7 @@ module.exports = class RhythmNeurons{
         let y1 = this.posNeu[i-1][1];
         dist[i-1] = Math.hypot(x2 - x1, y2 - y1);
     }
-    this.normalizeArray(dist);
+    //this.normalizeArray(dist);
     return dist;
     }
 

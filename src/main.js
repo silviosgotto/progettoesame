@@ -9,7 +9,7 @@ const w = parseFloat(document.getElementById("rect").clientWidth);
 const l = parseFloat(document.getElementById("melodic").clientWidth);
 
 //prova neuroni ritmo
-const n = 32;
+const n = 16;
 const Rect = SVG().addTo('#rect').size(w, h);
 const nRect = new RhythmNeurons(n, w, h, Rect, "rect");
 
@@ -37,6 +37,8 @@ function start(Neurons, id){
     if(Neurons.getEps() <= 0.15){
         console.log(Neurons.getEps());
         console.log(nMel.calcPosPad())
+        var a = nRect.calcDistNormNeu()
+        console.log(nRect.normalizeArray(a))
         cancelAnimationFrame(id);
     }
     else{
