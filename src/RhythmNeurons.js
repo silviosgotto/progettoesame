@@ -325,12 +325,13 @@ module.exports = class RhythmNeurons{
                 }
             }  
         }
-        console.log("distnorm" + distnorm)
+        //console.log("distnorm" + distnorm)
         return arr;
     }
 
     calcDistNormNeu(){
     var dist = [];
+    var times =[];
     for(var i = 1; i<this.posNeu.length; i++){
         let x2 = this.posNeu[i][0];
         let y2 = this.posNeu[i][1];
@@ -338,8 +339,8 @@ module.exports = class RhythmNeurons{
         let y1 = this.posNeu[i-1][1];
         dist[i-1] = Math.hypot(x2 - x1, y2 - y1);
     }
-    //this.normalizeArray(dist);
-    return dist;
+    times = this.normalizeArray(dist);
+    return times;
     }
 
     render(){
