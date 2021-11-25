@@ -6,7 +6,11 @@ import * as Tone from 'tone';
 import { Context, TransportTime } from 'tone';
 
 const PlayButt = document.getElementById('rhythm-button');
-PlayButt.disabled = "disabled";
+PlayButt.disabled = "";
+
+
+
+
 
 //prova
 const soundctx = new Context();
@@ -16,11 +20,20 @@ var bpm = Tone.Transport.bpm.value = 120;
 kickurl = document.getElementById("kickSample").src;
 snareurl = document.getElementById("snareSample").src;
 hihaturl = document.getElementById("hihatSample").src;
+E808url = document.getElementById("808Sample").src;
+clickurl = document.getElementById("clickSample").src;
 
 console.log(kickurl);
 console.log(snareurl);
 console.log(hihaturl);
 
+//click
+const clickGain = new Tone.Gain(0).toDestination();
+const PlayClick = document.getElementById('click-button');
+PlayClick.disabled = "";
+arrclick = [0, 1];
+const click = new RhythmSound(arrclick, bpm, clickurl);
+click.createPart();
 
 
 
@@ -57,12 +70,13 @@ function start(Neurons, id){
     if(Neurons.getEps() <= 0.15){
         cancelAnimationFrame(id);
         PlayButt.disabled = "";
-        const RhythmPart1 = new RhythmSound(nRect.calcDistNormNeu(), bpm, kickurl);
+        PlayClick.disabled = "";
+        const RhythmPart1 = new RhythmSound(nRect.calcDistNormNeu(), bpm, E808url);
         const RhythmPart2 = new RhythmSound(nTri.calcDistNormNeu(), bpm, snareurl);
         const RhythmPart3 = new RhythmSound(nPent.calcDistNormNeu(), bpm, hihaturl);
-        RhythmPart1.createPart();
+        /* RhythmPart1.createPart();
         RhythmPart2.createPart();
-        RhythmPart3.createPart();
+        RhythmPart3.createPart(); */
     }
     else{
         Neurons.render();
@@ -81,10 +95,22 @@ var id3 = window.requestAnimationFrame(start.bind(window, nPent, id3));
 
 var id4 = window.requestAnimationFrame(start.bind(window, nMel, id4)); 
 
-function biri(){
+function play(){
     Tone.start();
     var currTime = Tone.now();
     Tone.Transport.start(currTime);
 }
+
+function setClickGain(){
+    if(clickGain.gain.getValueAtTime(Tone.now()) == 0){
+        clickGain.gain.setValueAtTime(1, Tone.now());
+    }
+    else{
+        clickGain.gain.setValueAtTime(0, Tone.now());
+    }
+    console.log(clickGain.gain.getValueAtTime(Tone.now()))
+}
 //bottone
-PlayButt.onclick = () => biri();
+PlayButt.onclick = () => play();
+
+PlayClick.onclick = () => setClickGain();
