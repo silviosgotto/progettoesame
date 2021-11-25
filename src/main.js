@@ -32,8 +32,8 @@ const clickGain = new Tone.Gain(0).toDestination();
 const PlayClick = document.getElementById('click-button');
 PlayClick.disabled = "";
 arrclick = [0, 1];
-const click = new RhythmSound(arrclick, bpm, clickurl);
-click.createPart();
+const click = new RhythmSound(arrclick, bpm, clickurl, 1);
+//click.createPart();
 
 
 
@@ -42,7 +42,7 @@ const w = parseFloat(document.getElementById("rect").clientWidth);
 const l = parseFloat(document.getElementById("melodic").clientWidth);
 
 //prova neuroni ritmo
-const n = 16;
+const n = 10;
 const Rect = SVG().addTo('#rect').size(w, h);
 const nRect = new RhythmNeurons(n, w, h, Rect, "rect");
 
@@ -71,12 +71,12 @@ function start(Neurons, id){
         cancelAnimationFrame(id);
         PlayButt.disabled = "";
         PlayClick.disabled = "";
-        const RhythmPart1 = new RhythmSound(nRect.calcDistNormNeu(), bpm, E808url);
-        const RhythmPart2 = new RhythmSound(nTri.calcDistNormNeu(), bpm, snareurl);
-        const RhythmPart3 = new RhythmSound(nPent.calcDistNormNeu(), bpm, hihaturl);
-        /* RhythmPart1.createPart();
+        const RhythmPart1 = new RhythmSound(nRect.calcDistNormNeu(), bpm, kickurl, 4);
+        const RhythmPart2 = new RhythmSound(nTri.calcDistNormNeu(), bpm, snareurl, 3);
+        const RhythmPart3 = new RhythmSound(nPent.calcDistNormNeu(), bpm, hihaturl, 5);
+        RhythmPart1.createPart();
         RhythmPart2.createPart();
-        RhythmPart3.createPart(); */
+        RhythmPart3.createPart(); 
     }
     else{
         Neurons.render();
