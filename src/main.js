@@ -29,7 +29,7 @@ const w = parseFloat(document.getElementById("rect").clientWidth);
 const l = parseFloat(document.getElementById("melodic").clientWidth);
 
 //prova neuroni ritmo
-const n = 6;
+const n = 16;
 const Rect = SVG().addTo('#rect').size(w, h);
 const nRect = new RhythmNeurons(n, w, h, Rect, "rect");
 
@@ -82,6 +82,7 @@ var id3 = window.requestAnimationFrame(start.bind(window, nPent, id3));
 var id4 = window.requestAnimationFrame(start.bind(window, nMel, id4)); 
 
 function biri(){
+    Tone.start();
     var currTime = Tone.now();
     Tone.Transport.start(currTime);
 }
