@@ -275,53 +275,29 @@ module.exports = class RhythmNeurons{
                 arr[i] = 0
             }
             else{
-                if (distnorm[i-1] >= 0 && distnorm[i-1] < 1/16){
+                if (distnorm[i-1] >= 0 && distnorm[i-1] < 1/8){
                     arr[i] = arr[i-1] + 1/4;
                 }
-                else if(distnorm[i-1] >= 1/16 && distnorm[i-1] < 2/16){
+                else if(distnorm[i-1] >= 1/8 && distnorm[i-1] < 2/8){
                     arr[i] = arr[i-1] + 2/4;
                 }
-                else if(distnorm[i-1] >= 2/16 && distnorm[i-1] < 3/16){
+                else if(distnorm[i-1] >= 2/8 && distnorm[i-1] < 3/8){
                     arr[i] = arr[i-1] + 3/4;
                 }
-                else if(distnorm[i-1] >= 3/16 && distnorm[i-1] < 4/16){
+                else if(distnorm[i-1] >= 3/8 && distnorm[i-1] < 4/8){
                     arr[i] = arr[i-1] + 4/4;
                 }
-                else if(distnorm[i-1] >= 4/16 && distnorm[i-1] < 5/16){
+                else if(distnorm[i-1] >= 4/8 && distnorm[i-1] < 5/8){
                     arr[i] = arr[i-1] + 5/4;
                 }
-                else if(distnorm[i-1] >= 5/16 && distnorm[i-1] < 6/16){
+                else if(distnorm[i-1] >= 5/8 && distnorm[i-1] < 6/8){
                     arr[i] = arr[i-1] + 6/4;
                 }   
-                else if(distnorm[i-1] >= 6/16 && distnorm[i-1] < 7/16){
+                else if(distnorm[i-1] >= 6/8 && distnorm[i-1] < 7/8){
                     arr[i] = arr[i-1] + 7/4;
                 }
-                else if(distnorm[i-1] >= 7/16 && distnorm[i-1] < 8/16){
+                else {
                     arr[i] = arr[i-1] + 8/4;
-                }
-                else if(distnorm[i-1] >= 8/16 && distnorm[i-1] < 9/16){
-                    arr[i] = arr[i-1] + 9/4;
-                }
-                else if(distnorm[i-1] >= 9/16 && distnorm[i-1] < 10/16){
-                    arr[i] = arr[i-1] + 10/4;
-                }
-                else if(distnorm[i-1] >= 10/16 && distnorm[i-1] < 11/16){
-                    arr[i] = arr[i-1] + 11/4;
-                }
-                else if(distnorm[i-1] >= 11/16 && distnorm[i-1] < 12/16){
-                    arr[i] = arr[i-1] + 12/4;
-                }
-                else if(distnorm[i-1] >= 12/16 && distnorm[i-1] < 13/16){
-                    arr[i] = arr[i-1] + 13/4;
-                }
-                else if(distnorm[i-1] >= 13/16 && distnorm[i-1] < 14/16){
-                    arr[i] = arr[i-1] + 14/4;
-                }
-                else if(distnorm[i-1] >= 14/16 && distnorm[i-1] < 15/16){
-                    arr[i] = arr[i-1] + 15/4;
-                }
-                else{
-                    arr[i] = arr[i-1] + 16/4;
                 }
             }  
         }
