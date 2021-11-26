@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <title>Music Neurons</title>
@@ -16,8 +17,8 @@
         <audio id="clickSample" src="../sounds/click.wav" type="audio/wav"></audio>
 
         <div id="column1">
-            <button id = "rhythm-button">play rhythm</button>
-            <button id = "click-button">play click</button>
+            <button id = "rhythm-button" class = "btn btn-outline-danger">play rhythm</button>
+            <button id = "click-button" class = "btn btn-outline-danger">play click</button>
         </div>
         <div id="column2">
             <div id = "rhythm">
@@ -50,25 +51,35 @@
                 <div class="padAndControls">
                     <div id= "init" class="">
                         <div style="margin-top: 10px;">
-                            <input type="checkbox" name="checkbox1" id="cbPad1">
-                            <label for="checkbox1" class="init-text-color">Activate Network</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Activate neural network</label>
+                              </div>
                         </div>
+                        
                         <div style="margin-bottom: 10px;">
                             <label for="numNeurons3" class="init-text-color">Num. Notes </label>
-                            <input class="numNeuInput" type="number" id="NeuronsPad3" name="numNeurons3" min="4" max="32" step="1" style="width: 50px;" required>
+                            <input class="numNeuInput" type="number" id="NeuronsPad3" name="numNeurons3" min="4" max="32" step="1" style="width: 50px; border-color: lawngreen;" required>
                             <span class="validity"></span>
                         </div>
                         <div style="margin-top: 10px;">
-                            <label for="shapePad3" class="init-text-color">Metric</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option style="color:red" selected>Metric</option>
+                                <option value="rect" >4/4 - Square</option>
+                                <option value="tri">3/4 - Triangle</option>
+                                <option value="pent">5/4 - Pentagonree</option>
+                              </select>
+                              
+                            <!-- <label for="shapePad3" class="init-text-color">Metric</label>
                             <select name="shapePad3" id="shapeP3">
                             <option value="rect">4/4 - Square</option>
                             <option value="tri">3/4 - Triangle</option>
                             <option value="pent">5/4 - Pentagon</option>
-                            </select>
+                            </select> -->
                         </div>
                         <div style="margin-top: 10px;">
-                            <label for="soundPad3" class="init-text-color">Sound</label>
-                            <select name="soundPad3" id="soundP3">
+                            <select class="form-select" id="soundP3" aria-label="Default select example">
+                            <option selected>Sound</option>    
                             <option value="kick.wav">Kick</option>
                             <option value="808E.wav">808</option>
                             </select>
@@ -92,7 +103,7 @@
                 </div>
 
                 <div style="display:grid;">
-                    <button id = "neurons-button">start neurons</button>
+                    <button id = "neurons-button" class = "btn btn-outline-danger" >start neurons</button>
                     
                 </div>
                 

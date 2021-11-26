@@ -4,7 +4,7 @@ body{
 }
 
 #column1{
-  border-right: solid 10px white;
+  border-right: solid 10px rgba(255, 255, 255, 0.267);
   position: relative;
   width: 20%;
 }
@@ -61,7 +61,7 @@ body{
 .padAndControls{
   position: relative;
   margin: 5px;
-  border: solid 2px lawngreen;
+  border: solid 3px rgba(126, 252, 0, 0.219);
   width: 248px;
   height: 256px;
 }
@@ -125,6 +125,15 @@ body{
   margin-top: 2px;
 }
 
+#click-button{
+  text-align: center;
+  padding-top: 0px;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+
+
 #neurons-button{
   text-align: center;
   padding-top: 0px;
@@ -155,7 +164,22 @@ body{
   background-color: lawngreen;
   border-color: lawngreen;
 }
-
+.form-check-label{
+  color:lawngreen
+}
+.form-check-input{
+  background-color: black;
+  border-color: lawngreen;
+}
+.form-check-input:checked{
+  background-color: lawngreen;
+  border-color: lawngreen;
+}
+.numNeuInput{
+  background-color: black;
+  border-color: black;
+  color:lawngreen;
+}
 .numNeuInput:invalid+span:after {
   content: '4-32';
   padding-left: 5px;
@@ -166,6 +190,11 @@ body{
   content: '✓';
   padding-left: 5px;
   color: lawngreen;
+}
+.form-select{
+  background-color: black;
+  color: lawngreen;
+  border-color: lawngreen;
 }
 
 #melodic{
