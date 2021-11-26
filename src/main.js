@@ -13,19 +13,13 @@ PlayButt.disabled = "";
 
 
 //prova
-const soundctx = new Context();
-var arrprova = [0, 1, 2, 3];
-var bpm = Tone.Transport.bpm.value = 120;
+var bpm = Tone.Transport.bpm.value = 60;
 
 kickurl = document.getElementById("kickSample").src;
 snareurl = document.getElementById("snareSample").src;
 hihaturl = document.getElementById("hihatSample").src;
 E808url = document.getElementById("808Sample").src;
 clickurl = document.getElementById("clickSample").src;
-
-console.log(kickurl);
-console.log(snareurl);
-console.log(hihaturl);
 
 //click
 const clickGain = new Tone.Gain(0).toDestination();
@@ -37,31 +31,44 @@ const click = new RhythmSound(arrclick, bpm, clickurl, 1);
 
 
 
-const h = parseFloat(document.getElementById("rect").clientHeight);
-const w = parseFloat(document.getElementById("rect").clientWidth);
-const l = parseFloat(document.getElementById("melodic").clientWidth);
+const h = parseFloat(document.getElementById("rhythm-pad1").clientHeight);
+const w = parseFloat(document.getElementById("rhythm-pad1").clientWidth);
+const l = parseFloat(document.getElementById("rhythm-pad3").clientWidth);
 
 //prova neuroni ritmo
-const n = 10;
-const Rect = SVG().addTo('#rect').size(w, h);
-const nRect = new RhythmNeurons(n, w, h, Rect, "rect");
+const n1 = 8;
+const n2 = 8;
+const n3 = 8;
 
-const Tri = SVG().addTo('#tri').size(w, h);
-const nTri = new RhythmNeurons(n, w, h, Tri, "tri");
+const rPad1 = SVG().addTo('#rhythm-pad1').size(w, h);
+const nrPad1 = new RhythmNeurons(n1, w, h, rPad1, "rect");
 
-const Pent = SVG().addTo("#pent").size(w, h);
-const nPent = new RhythmNeurons(n, w, h, Pent, "pent");
+const rPad2 = SVG().addTo('#rhythm-pad2').size(w, h);
+const nrPad2 = new RhythmNeurons(n2, w, h, rPad2, "rect");
 
-nRect.initNeurons();
-nTri.initNeurons();
-nPent.initNeurons();
+const rPad3 = SVG().addTo("#rhythm-pad3").size(w, h);
+const nrPad3 = new RhythmNeurons(n3, w, h, rPad3, "rect");
+
+
+function initNeuronsPad(Neurons){
+    Neurons.initNeurons();
+}
+
+nrPad1.initNeurons();
+nrPad2.initNeurons();
+nrPad3.initNeurons();
+
+//rhythm
+var id1 = window.requestAnimationFrame(start.bind(window, nrPad1, id1));
+var id2 = window.requestAnimationFrame(start.bind(window, nrPad2, id2));
+var id3 = window.requestAnimationFrame(start.bind(window, nrPad3, id3));
 
 //prova neuroni melodici
 
-const Mel = SVG().addTo('#melodic').size(l, l);
+/* const Mel = SVG().addTo('#melodic').size(l, l);
 const nMel = new MelodicNeurons(16, l, Mel, "petmin");
 
-nMel.initNeurons();
+nMel.initNeurons(); */
 
 
 
@@ -71,9 +78,9 @@ function start(Neurons, id){
         cancelAnimationFrame(id);
         PlayButt.disabled = "";
         PlayClick.disabled = "";
-        const RhythmPart1 = new RhythmSound(nRect.calcDistNormNeu(), bpm, kickurl, 4);
-        const RhythmPart2 = new RhythmSound(nTri.calcDistNormNeu(), bpm, snareurl, 3);
-        const RhythmPart3 = new RhythmSound(nPent.calcDistNormNeu(), bpm, hihaturl, 5);
+        const RhythmPart1 = new RhythmSound(nrPad1.calcDistNormNeu(), bpm, kickurl, 4);
+        const RhythmPart2 = new RhythmSound(nrPad2.calcDistNormNeu(), bpm, snareurl, 4);
+        const RhythmPart3 = new RhythmSound(nrPad3.calcDistNormNeu(), bpm, hihaturl, 4);
         RhythmPart1.createPart();
         RhythmPart2.createPart();
         RhythmPart3.createPart(); 
@@ -86,14 +93,11 @@ function start(Neurons, id){
 }
 
  
-//rhythm
-var id1 = window.requestAnimationFrame(start.bind(window, nRect, id1));
-var id2 = window.requestAnimationFrame(start.bind(window, nTri, id2));
-var id3 = window.requestAnimationFrame(start.bind(window, nPent, id3));
 
-//melody
 
-var id4 = window.requestAnimationFrame(start.bind(window, nMel, id4)); 
+/* //melody
+
+var id4 = window.requestAnimationFrame(start.bind(window, nMel, id4));  */
 
 function play(){
     Tone.start();

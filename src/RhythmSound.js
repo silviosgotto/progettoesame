@@ -30,6 +30,7 @@ module.exports = class RhythmSound{
         this.part.loopStart=0;
         this.part.loopEnd = this.rightLoop();
         this.part.loop = true;
+        console.log(this.arrDur);
         console.log(this.rightLoop())
     }
 }

@@ -1,49 +1,179 @@
+body{
+  display: flex;
+  background-color: black;
+}
+
+#column1{
+  border-right: solid 10px white;
+  position: relative;
+  width: 20%;
+}
+
+#column2{
+  position: relative;
+  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 #rhythm{
-    background-color: black;
-    display: inline-flex;
-  }
+  position: relative;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  z-index: 0;
   
-  #melody{
-    background-color: black;
-    display: inline-flex;
-  }
-  
-  
-  #rect{
-    margin: 5px;
-    width: 200px;
-    height: 200px;
+}
+
+.rect{
     background-image: url('/images/square.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-  }
-  
-  #tri{
-    margin: 5px;
-    width: 200px;
-    height: 200px;
+}
+
+.tri{
     background-image: url('/images/tri.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-  }
-  #pent{
-    margin: 5px;
-    width: 200px;
-    height: 200px;
+}
+
+.pent{
     background-image: url('/images/pent.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-  }
-  
-  #melodic{
-    margin: 5px;
-    width: 500px;
-    height: 500px;
-    background-image: url('/images/grid.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-  }
+}
+
+.rhythm-pad{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  margin: 5px;
+}
+
+
+
+.padAndControls{
+  position: relative;
+  margin: 5px;
+  border: solid 2px lawngreen;
+  width: 248px;
+  height: 256px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  height: 195px;
+  width: 10px;
+  background: lawngreen;
+  border: 1px solid lawngreen;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+/* for chrome/safari */
+.slider::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  background: lawngreen;
+  cursor: pointer;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+
+/* for firefox */
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: lawngreen;
+  cursor: pointer;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+
+.audio-controls{
+  position: relative;
+  margin: 0px 0px 2px 7px;
+}
+
+.vol-button{
+  text-align: center;
+  width: 30px;
+  height: 2em;
+  padding: 0;
+  cursor: pointer;
+}
+
+#vol-bar{
+  display:flex;
+  margin: 2px 2px 0px 2px;
+} 
+
+
+#rhythm-button{
+  text-align: center;
+  padding-top: 0px;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+#neurons-button{
+  text-align: center;
+  padding-top: 0px;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+
+.disabledNeurons{
+  display: none;
+}
+
+#init{
+  margin:10px;
+}
+
+.init-text-color{
+  color: lawngreen;
+}
+
+.btn-outline-danger{
+  color:lawngreen;
+  background-color: black;
+  border-color: lawngreen;
+}
+
+.btn-outline-danger:hover{
+  color:black;
+  background-color: lawngreen;
+  border-color: lawngreen;
+}
+
+.numNeuInput:invalid+span:after {
+  content: '4-32';
+  padding-left: 5px;
+  color: lawngreen;
+}
+
+.numNeuInput:valid+span:after {
+  content: '✓';
+  padding-left: 5px;
+  color: lawngreen;
+}
+
+#melodic{
+  margin: 5px;
+  width: 500px;
+  height: 500px;
+  background-image: url('/images/grid.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
