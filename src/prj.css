@@ -164,17 +164,34 @@ body{
   background-color: lawngreen;
   border-color: lawngreen;
 }
-.form-check-label{
-  color:lawngreen
-}
-.form-check-input{
-  background-color: black;
+
+
+.form-check-input:focus {
   border-color: lawngreen;
+  outline: 0;
+  box-shadow: none;
 }
+
+.form-check-input[type="checkbox"] {
+  border-radius: 50%;
+  border-color: rgb(0, 0, 0, .5);
+  background-color: red;
+  cursor: pointer;
+}
+
 .form-check-input:checked{
   background-color: lawngreen;
-  border-color: lawngreen;
+  box-shadow: 0 0 1rem .15rem lawngreen;
 }
+
+.form-check-input:checked[type="checkbox"]{
+  background-image: none;
+}
+
+
+
+
+
 .numNeuInput{
   background-color: black;
   border-color: black;

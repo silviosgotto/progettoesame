@@ -51,37 +51,30 @@
                 <div class="padAndControls">
                     <div id= "init" class="">
                         <div style="margin-top: 10px;">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Activate neural network</label>
-                              </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault" style="color:lawngreen">Activate neural network</label>
+                            </div>
                         </div>
                         
                         <div style="margin-bottom: 10px;">
-                            <label for="numNeurons3" class="init-text-color">Num. Notes </label>
+                            <label for="numNeurons3" class="init-text-color">Notes Number </label>
                             <input class="numNeuInput" type="number" id="NeuronsPad3" name="numNeurons3" min="4" max="32" step="1" style="width: 50px; border-color: lawngreen;" required>
                             <span class="validity"></span>
                         </div>
                         <div style="margin-top: 10px;">
                             <select class="form-select" aria-label="Default select example">
-                                <option style="color:red" selected>Metric</option>
+                                <option hidden selected>Metric</option>
                                 <option value="rect" >4/4 - Square</option>
                                 <option value="tri">3/4 - Triangle</option>
-                                <option value="pent">5/4 - Pentagonree</option>
-                              </select>
-                              
-                            <!-- <label for="shapePad3" class="init-text-color">Metric</label>
-                            <select name="shapePad3" id="shapeP3">
-                            <option value="rect">4/4 - Square</option>
-                            <option value="tri">3/4 - Triangle</option>
-                            <option value="pent">5/4 - Pentagon</option>
-                            </select> -->
+                                <option value="pent">5/4 - Pentagone</option>
+                            </select>
                         </div>
                         <div style="margin-top: 10px;">
                             <select class="form-select" id="soundP3" aria-label="Default select example">
-                            <option selected>Sound</option>    
-                            <option value="kick.wav">Kick</option>
-                            <option value="808E.wav">808</option>
+                                <option hidden selected>Sound</option>    
+                                <option value="kick.wav">Kick</option>
+                                <option value="808E.wav">808</option>
                             </select>
                         </div>
                         <div style="margin-top: 10px; position:relative; bottom:100%;">
