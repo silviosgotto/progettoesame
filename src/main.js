@@ -1,6 +1,7 @@
 import MelodicNeurons from './MelodicNeurons.js';
 import RhythmNeurons from './RhythmNeurons';
 import RhythmSound from './RhythmSound';
+import MelodicSound from './MelodicSound';
 import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js';
 import * as Tone from 'tone';
 import { Context, TransportTime } from 'tone';
@@ -65,12 +66,12 @@ var id3 = window.requestAnimationFrame(start.bind(window, nrPad3, id3));
 
 //prova neuroni melodici
 
-/* const Mel = SVG().addTo('#melodic').size(l, l);
-const nMel = new MelodicNeurons(16, l, Mel, "petmin");
+const Mel = SVG().addTo('#melodic').size(500, 500);
+const nMel = new MelodicNeurons(16, 500, Mel, "petmin");
 
-nMel.initNeurons(); */
+nMel.initNeurons(); 
 
-
+var id4 = window.requestAnimationFrame(start.bind(window, nMel, id4));
 
 //start
 function start(Neurons, id){
@@ -81,9 +82,11 @@ function start(Neurons, id){
         const RhythmPart1 = new RhythmSound(nrPad1.calcDistNormNeu(), bpm, kickurl, 4);
         const RhythmPart2 = new RhythmSound(nrPad2.calcDistNormNeu(), bpm, snareurl, 4);
         const RhythmPart3 = new RhythmSound(nrPad3.calcDistNormNeu(), bpm, hihaturl, 4);
+        const MelodicPart = new MelodicSound(nMel.calcDistNormNeu(), nMel.calcPosPad(), bpm, 4, 440);
         RhythmPart1.createPart();
         RhythmPart2.createPart();
-        RhythmPart3.createPart(); 
+        RhythmPart3.createPart();
+        MelodicPart.createPart(); 
     }
     else{
         Neurons.render();
@@ -95,9 +98,9 @@ function start(Neurons, id){
  
 
 
-/* //melody
+ //melody
 
-var id4 = window.requestAnimationFrame(start.bind(window, nMel, id4));  */
+  
 
 function play(){
     Tone.start();
