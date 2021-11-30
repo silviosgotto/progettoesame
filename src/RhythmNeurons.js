@@ -142,6 +142,7 @@ module.exports = class RhythmNeurons{
     initNeurons(){
         this.initPosNeu();
         this.drawNeurons();
+        console.log(this.posNeu);
     }
 
     //DOTS

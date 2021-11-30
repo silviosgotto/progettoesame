@@ -2,24 +2,23 @@ import * as Tone from 'tone'
 
 module.exports = class MelodicSound {
     constructor(arrDur, arrPos, bpm, metrica, baseNote){
-        this.arrDur = arrDur
-        this.arrPos = arrPos
-        this.bpm = bpm
-        this.metrica = metrica
-        this.baseNote = baseNote
+        this.arrDur = arrDur;
+        this.arrPos = arrPos;
+        this.bpm = bpm;
+        this.metrica = metrica;
+        this.baseNote = baseNote;
         this.synth = new Tone.Synth().toDestination()
         this.part = new Tone.Part(((time, value) => {
             this.synth.triggerAttackRelease(value.note, "8n", time);
-            this.synth.start(time);
           }), []).start(0);
     }
 
     rightLoop(){
-        var loopEnd = Math.ceil(this.arrDur.at(-1))
+        var loopEnd = Math.ceil(this.arrDur.at(-1));
         if (loopEnd % this.metrica != 0) {
-            loopEnd = loopEnd + (this.metrica - (loopEnd % this.metrica))
+            loopEnd = loopEnd + (this.metrica - (loopEnd % this.metrica));
         }
-        return loopEnd
+        return loopEnd;
     }
 
     createPart(){
@@ -32,6 +31,6 @@ module.exports = class MelodicSound {
         this.part.loopEnd = this.rightLoop();
         this.part.loop = true;
         console.log(this.arrDur);
-        console.log(this.rightLoop())
+        console.log(this.rightLoop());
     }
 }

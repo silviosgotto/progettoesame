@@ -11,10 +11,13 @@ body{
 
 #column2{
   position: relative;
+  display: grid;
+  justify-content: center;
+  align-content: center;
   width: 100%;
   margin-left: 2%;
   margin-right: 2%;
-  display: grid;
+  
 }
 
 #rhythm{
@@ -23,9 +26,14 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
   display: inline-flex;
-  align-items: center;
   z-index: 0;
-  
+}
+
+#melody{
+  position: relative;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .rect{
@@ -49,15 +57,6 @@ body{
     background-position: bottom;
 }
 
-.rhythm-pad{
-  position: relative;
-  width: 200px;
-  height: 200px;
-  z-index: 1;
-  margin: 5px;
-}
-
-
 
 .padAndControls{
   position: relative;
@@ -65,6 +64,26 @@ body{
   border: solid 3px rgba(126, 252, 0, 0.219);
   width: 248px;
   height: 256px;
+}
+
+#init1{
+  margin: 5px;
+}
+
+#init2{
+  margin: 5px;
+}
+
+#init3{
+  margin: 5px;
+}
+
+.rhythm-pad{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  margin: 5px;
 }
 
 .slider {
@@ -146,9 +165,9 @@ body{
   display: none;
 }
 
-#init{
+/* #init{
   margin:10px;
-}
+} */
 
 .init-text-color{
   color: lawngreen;
@@ -215,7 +234,10 @@ body{
   border-color: lawngreen;
 }
 
-#melodic{
+
+
+
+#melodic-pad{
   margin: 5px;
   width: 500px;
   height: 500px;

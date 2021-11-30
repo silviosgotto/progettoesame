@@ -112,38 +112,59 @@ module.exports = class MelodicNeurons{
     }
     
     normalizeArray(arr){
-    let min = Math.min(...arr);
-    let max = Math.max(...arr);
-
-    for(let i = 0; i<arr.length; i++){
-        arr[i] = (arr[i]-min)/(max-min);
-        if (arr[i] >= 0 && arr[i] < 0.25){
-        arr[i] = 1;
-        }
-        else if( arr[i] >= 0.25 && arr[i]<0.50){
-        arr[i] = 2;
-        }
-        else if(arr[i] >= 0.50 && arr[i] < 0.75){
-        arr[i] = 3;
-        }
-        else{
-        arr[i] = 4;
-        }
-    }
-    return arr;
+        let min = Math.min(...arr);
+        let max = Math.max(...arr);
+        let distnorm = [];
+        let x = arr.length;
+        arr[x] = 0
+            for(let i = 0; i < arr.length; i++){
+                distnorm[i] = (arr[i]-min)/(max-min)
+                if(i == 0) {    
+                    arr[i] = 0
+                }
+                else{
+                    if (distnorm[i-1] >= 0 && distnorm[i-1] < 1/8){
+                        arr[i] = arr[i-1] + 1/4;
+                    }
+                    else if(distnorm[i-1] >= 1/8 && distnorm[i-1] < 2/8){
+                        arr[i] = arr[i-1] + 2/4;
+                    }
+                    else if(distnorm[i-1] >= 2/8 && distnorm[i-1] < 3/8){
+                        arr[i] = arr[i-1] + 3/4;
+                    }
+                    else if(distnorm[i-1] >= 3/8 && distnorm[i-1] < 4/8){
+                        arr[i] = arr[i-1] + 4/4;
+                    }
+                    else if(distnorm[i-1] >= 4/8 && distnorm[i-1] < 5/8){
+                        arr[i] = arr[i-1] + 5/4;
+                    }
+                    else if(distnorm[i-1] >= 5/8 && distnorm[i-1] < 6/8){
+                        arr[i] = arr[i-1] + 6/4;
+                    }   
+                    else if(distnorm[i-1] >= 6/8 && distnorm[i-1] < 7/8){
+                        arr[i] = arr[i-1] + 7/4;
+                    }
+                    else {
+                        arr[i] = arr[i-1] + 8/4;
+                    }
+                }  
+            }
+            //console.log("distnorm" + distnorm)
+            return arr;
     }
 
     calcDistNormNeu(){
-    var dist = [];
-    for(var i = 1; i<this.posNeu.length; i++){
-        let x2 = this.posNeu[i][0];
-        let y2 = this.posNeu[i][1];
-        let x1 = this.posNeu[i-1][0];
-        let y1 = this.posNeu[i-1][1];
-        dist[i-1] = Math.hypot(x2 - x1, y2 - y1);
-    }
-    this.normalizeArray(dist);
-    return dist;
+        var dist = [];
+        var times =[];
+        for(var i = 1; i<this.posNeu.length; i++){
+            let x2 = this.posNeu[i][0];
+            let y2 = this.posNeu[i][1];
+            let x1 = this.posNeu[i-1][0];
+            let y1 = this.posNeu[i-1][1];
+            dist[i-1] = Math.hypot(x2 - x1, y2 - y1);
+        }
+        times = this.normalizeArray(dist);
+        return times;
     }
 
     render(){
