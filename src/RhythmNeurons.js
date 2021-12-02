@@ -157,7 +157,7 @@ module.exports = class RhythmNeurons{
                 var l = this.width/(1+2*Math.cos(alpha));
                 part = new Tone.Part((()=> {
                     Tone.Draw.schedule(()=>{
-                        if(i == 4){
+                        if(i == 6){
                             i = 1;
                         }
                         if(i== 1){
@@ -168,7 +168,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width, this.height-l*Math.sin(alpha));
+                              }).move(this.width-2, this.height-l*Math.sin(alpha));
                         }
                         else if (i == 2){
                             circClick.animate({
@@ -178,7 +178,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width-l*Math.cos(alpha), this.height);
+                              }).move((this.width-l*Math.cos(alpha))-2, this.height-4);
                         }
                         else if (i == 3){
                             circClick.animate({
@@ -188,7 +188,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width-l*(Math.cos(alpha)+1), this.height);
+                              }).move((this.width-l*(Math.cos(alpha)+1))-2, this.height-4);
                         }
                         else if (i == 4){
                             circClick.animate({
@@ -208,7 +208,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width/2, this.height-l*(Math.sin(alpha)+Math.cos(beta)));
+                              }).move(this.width/2-2, this.height-l*(Math.sin(alpha)+Math.cos(beta)));
                         }
                         i++;
                     })
