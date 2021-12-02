@@ -1,5 +1,7 @@
+import * as Tone from 'tone'
+
 module.exports = class RhythmNeurons{
-    constructor(n, width, height, ctx, shape){
+    constructor(n, width, height, ctx, shape, bpm){
         this.n = n;
         this.width = width;
         this.height = height;
@@ -9,6 +11,8 @@ module.exports = class RhythmNeurons{
         this.sigma = 20;
         this.eps = 0.2;
         this.count = 0;
+        this.bpm = bpm;
+        //this.part = this.visualClick();
     }
 
     //GETTER//
@@ -38,6 +42,185 @@ module.exports = class RhythmNeurons{
 
     getEps(){
         return this.eps;
+    }
+
+    visualClick(fig){
+        var part;
+        if(this.n != 0){
+            if(this.shape == "rect"){
+                var i = 1;
+                var circClick = fig;
+                part = new Tone.Part((()=> {
+                    Tone.Draw.schedule(()=>{
+                        if(i == 5){
+                            i = 1;
+                        }
+                        if(i== 1){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width-4, 0);
+                        }
+                        else if (i == 2){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width-4, this.height-4);
+                        }
+                        else if (i == 3){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(0, this.height-4);
+                        }
+                        else if(i == 4){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(0, 0);
+                        }
+                        i++;
+                    })
+                }), [{time: 0},{time: 60/this.bpm},{time: 60/this.bpm*2},{time: 60/this.bpm*3}]).start(0);
+                part.loopStart = 0;
+                part.loopEnd = 4*(60/this.bpm);
+                part.loop = true;
+                return part;
+            }
+            else if(this.shape == "tri"){
+                var i = 1;
+                var circClick = fig;
+                part = new Tone.Part((()=> {
+                    Tone.Draw.schedule(()=>{
+                        if(i == 4){
+                            i = 1;
+                        }
+                        if(i== 1){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width-4, this.height-4);
+                        }
+                        else if (i == 2){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(0, this.height-4);
+                        }
+                        else if (i == 3){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width/2-2, 0);
+                        }
+                        i++;
+                    })
+                }), [{time: 0},{time: 60/this.bpm},{time: 60/this.bpm*2}]).start(0);
+                part.loopStart = 0;
+                part.loopEnd = 3*(60/this.bpm);
+                part.loop = true;
+                return part;
+            }
+            else{
+                var i = 1;
+                var circClick = fig;
+                var alpha = 72/180*Math.PI;
+                var beta = 54/180*Math.PI;
+                var l = this.width/(1+2*Math.cos(alpha));
+                part = new Tone.Part((()=> {
+                    Tone.Draw.schedule(()=>{
+                        if(i == 4){
+                            i = 1;
+                        }
+                        if(i== 1){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width, this.height-l*Math.sin(alpha));
+                        }
+                        else if (i == 2){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width-l*Math.cos(alpha), this.height);
+                        }
+                        else if (i == 3){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width-l*(Math.cos(alpha)+1), this.height);
+                        }
+                        else if (i == 4){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(0, this.height-l*Math.sin(alpha));
+                        }
+                        else if (i == 5){
+                            circClick.animate({
+                                duration: 60/this.bpm*1000,
+                                delay: 0,
+                                when: 'now',
+                                swing: true,
+                                times: 0,
+                                wait: 0
+                              }).move(this.width/2, this.height-l*(Math.sin(alpha)+Math.cos(beta)));
+                        }
+                        i++;
+                    })
+                }), [{time: 0},{time: 60/this.bpm},{time: 60/this.bpm*2},{time: 60/this.bpm*3},{time: 60/this.bpm*4}]).start(0);
+                part.loopStart = 0;
+                part.loopEnd = 5*(60/this.bpm);
+                part.loop = true;
+                return part;
+            }
+        }
+        
+
     }
 
     //INIT RHYTHM NEURONS
@@ -130,19 +313,20 @@ module.exports = class RhythmNeurons{
     }
 
     drawNeurons(){
+        for(var j = 1; j < this.posNeu.length; j++){
+            this.ctx.line(this.posNeu[j][0], this.posNeu[j][1], this.posNeu[j-1][0], this.posNeu[j-1][1]).css({stroke: "hsl("+this.count/4+", 100%, 50%)", width:"4px"});
+        }
         for(var i = 1; i < this.posNeu.length; i++){
-            if(i == this.posNeu.length -1 ){
-                this.ctx.circle(10).attr({cx: this.posNeu[i][0], cy: this.posNeu[i][1]}).css({fill: "hsl("+this.count/4+", 100%, 50%)"});
-            }
           this.ctx.circle(10).attr({cx: this.posNeu[i-1][0], cy: this.posNeu[i-1][1]}).css({fill: "hsl("+this.count/4+", 100%, 50%)"});
-          this.ctx.line(this.posNeu[i][0], this.posNeu[i][1], this.posNeu[i-1][0], this.posNeu[i-1][1]).css({stroke: "hsl("+this.count/4+", 100%, 50%)", width:"4px"});
+          if(i == this.posNeu.length -1 ){
+            this.ctx.circle(10).attr({cx: this.posNeu[i][0], cy: this.posNeu[i][1]}).css({fill: "hsl("+this.count/4+", 100%, 50%)"});
+            }
         }
     }
 
     initNeurons(){
         this.initPosNeu();
         this.drawNeurons();
-        console.log(this.posNeu);
     }
 
     //DOTS

@@ -40,7 +40,7 @@ body{
     background-image: url('/images/square.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: bottom;
+    background-position: center;
 }
 
 .tri{
