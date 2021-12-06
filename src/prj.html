@@ -7,32 +7,50 @@
         <link rel = "stylesheet" href = "prj.css">
         <script type="module" src = "main.js"></script>
     </head>
-    
-    
+
+
     <body>
+        <!-- sample caricati per la parte ritmica -->
         <audio id="kickSample" src="../sounds/kick-lofi.wav" type="audio/wav"></audio>
         <audio id="snareSample" src="../sounds/snare-lofi.wav" type="audio/wav"></audio>
         <audio id="hihatSample" src="../sounds/hihat-lofi.wav" type="audio/wav"></audio>
         <audio id="808Sample" src="../sounds/808E.wav" type="audio/wav"></audio>
         <audio id="clickSample" src="../sounds/click.wav" type="audio/wav"></audio>
 
+        <!-- colonna dei comandi di avvio -->
+
         <div id="column1">
-            <button id = "rhythm-button" class = "btn btn-outline-danger">play rhythm</button>
-            <button id = "click-button" class = "btn btn-outline-danger">play click</button>
-            <div style="margin-top: 5px;">
-                <button id = "neurons-button" class = "btn btn-outline-danger" ><span></span>start learning neurons</button>
+            <button id = "rhythm-button"  class = "neon btn btn-outline-danger">play rhythm</button>
+            <button id = "click-button"  class = "neon btn btn-outline-danger">play click</button>
+            <div style="margin-top: 20px;">
+               <button id = "neurons-button" class = "neon btn btn-outline-danger" ><span></span>start learning neurons</button>
             </div>
         </div>
-        <div id="column2">
-            <div id = "rhythm">
 
+
+        <!-- colonna dei pad  -->
+
+        <div id="column2">
+
+            <!-- Pad ritmici -->
+
+            <div id = "rhythm">
+                
                 <div class="padAndControls">
+
+
+
+                    <!-- pad 1 numero neuroni-->
+
                     <div id= "init1" class="">
                         <div style="margin-bottom: 10px;">
-                            <label for="numNeurons1" class="init-text-color">Notes Number </label>
-                            <input class="numNeuInput" type="number" id="NeuronsPad1" name="numNeurons1" min="4" max="32" step="1" style="width: 50px; border-color: lawngreen;" required>
+                            <label for="numNeurons1" class="init-text-color"> Notes Number </label>
+                            <input class=" numNeuInput" type="number" id="NeuronsPad1" name="numNeurons1" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
                             <span class="validity"></span>
                         </div>
+
+                        <!-- pad 1 forma/metrica-->
+
                         <div style="margin-top: 10px;">
                             <select id="selectShape1" class="form-select" aria-label="Default select example">
                                 <option hidden selected>Metric</option>
@@ -41,22 +59,27 @@
                                 <option value="pent">5/4 - Pentagone</option>
                             </select>
                         </div>
+
+                        <!-- pad 1 suono -->
                         <div style="margin-top: 10px;">
                             <select class="form-select" id="soundP1" aria-label="Default select example">
-                                <option hidden selected>Sound</option>    
+                                <option hidden selected>Sound</option>
                                 <option value="kick">Kick</option>
                                 <option value="808">808E</option>
                                 <option value="snare">Snare</option>
                                 <option value="hihat">Hi-Hat</option>
                             </select>
                         </div>
+
                         <div style="margin-top: 10px; position:relative; bottom:100%;">
-                            <button id="initNeuronsPad1" class="btn btn-outline-danger">Init Neurons</button>
+                            <button id="initNeuronsPad1" class="neon btn btn-outline-danger">Init Neurons</button>
                         </div>
                         <div id="errorMessage1" style="color: red;">
 
                         </div>
                     </div>
+
+                    <!-- pad 1 post inizializzazione -->
 
                     <div id="afterInit1" class="disabledNeurons">
                         <div id="vol-bar">
@@ -64,20 +87,28 @@
                             <input name = "volPad1" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
                         </div>
                         <div class="audio-controls">
-                            <button id = "mute1" class = "vol-button btn btn-warning">M</button>
-                            <button id = "solo1" class = "vol-button btn btn-success">S</button>
+                            <button id = "mute1" class = "neon vol-button btn btn-warning">M</button>
+                            <button id = "solo1" class = "neon vol-button btn btn-success">S</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="padAndControls">
 
+
+
+
+                    <!-- pad 2 numero neuroni-->
+
                     <div id= "init2" class="">
                         <div style="margin-bottom: 10px;">
                             <label for="numNeurons2" class="init-text-color">Notes Number </label>
-                            <input class="numNeuInput" type="number" id="NeuronsPad2" name="numNeurons2" min="4" max="32" step="1" style="width: 50px; border-color: lawngreen;" required>
+                            <input class="numNeuInput" type="number" id="NeuronsPad2" name="numNeurons2" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
                             <span class="validity"></span>
                         </div>
+
+                         <!-- pad 2 forma/metrica-->
+
                         <div style="margin-top: 10px;">
                             <select id = "selectShape2" class="form-select" aria-label="Default select example">
                                 <option hidden selected>Metric</option>
@@ -86,22 +117,28 @@
                                 <option value="pent">5/4 - Pentagone</option>
                             </select>
                         </div>
+
+                        <!-- pad 2 suono -->
+
                         <div style="margin-top: 10px;">
                             <select class="form-select" id="soundP2" aria-label="Default select example">
-                                <option hidden selected>Sound</option>    
+                                <option hidden selected>Sound</option>
                                 <option value="kick">Kick</option>
                                 <option value="808">808E</option>
                                 <option value="snare">Snare</option>
                                 <option value="hihat">Hi-Hat</option>
                             </select>
                         </div>
+
                         <div style="margin-top: 10px; position:relative; bottom:100%;">
-                            <button id="initNeuronsPad2" class="btn btn-outline-danger">Init Neurons</button>
+                            <button id="initNeuronsPad2" class=" neon btn btn-outline-danger">Init Neurons</button>
                         </div>
                         <div id="errorMessage2" style="color: red;">
 
                         </div>
                     </div>
+
+                    <!-- pad 2 post inizializzazione -->
 
                     <div id="afterInit2" class="disabledNeurons">
                         <div id="vol-bar">
@@ -109,20 +146,27 @@
                             <input name = "volPad2" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
                         </div>
                         <div class="audio-controls">
-                            <button id = "mute2" class = "vol-button btn btn-warning">M</button>
-                            <button id = "solo2" class = "vol-button btn btn-success">S</button>
+                            <button id = "mute2" class = "neon vol-button btn btn-warning">M</button>
+                            <button id = "solo2" class = "neon vol-button btn btn-success">S</button>
                         </div>
                     </div>
                 </div>
 
+
+                
                 <div class="padAndControls">
                     <div id= "init3" class="">
-                        
+
+                        <!-- pad 3 numero neuroni -->
+
                         <div style="margin-bottom: 10px;">
                             <label for="numNeurons3" class="init-text-color">Notes Number </label>
-                            <input class="numNeuInput" type="number" id="NeuronsPad3" name="numNeurons3" min="4" max="32" step="1" style="width: 50px; border-color: lawngreen;" required>
+                            <input class="numNeuInput" type="number" id="NeuronsPad3" name="numNeurons3" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
                             <span class="validity"></span>
                         </div>
+
+                        <!-- pad 3 forma/metrica -->
+
                         <div style="margin-top: 10px;">
                             <select id = "selectShape3" class="form-select" aria-label="Default select example">
                                 <option hidden selected>Metric</option>
@@ -131,9 +175,12 @@
                                 <option value="pent">5/4 - Pentagone</option>
                             </select>
                         </div>
+
+                        <!-- pad 3 suono -->
+
                         <div style="margin-top: 10px;">
                             <select class="form-select" id="soundP3" aria-label="Default select example">
-                                <option hidden selected>Sound</option>    
+                                <option hidden selected>Sound</option>
                                 <option value="kick">Kick</option>
                                 <option value="808">808E</option>
                                 <option value="snare">Snare</option>
@@ -141,12 +188,15 @@
                             </select>
                         </div>
                         <div style="margin-top: 10px; position:relative; bottom:100%;">
-                            <button id="initNeuronsPad3" class="btn btn-outline-danger">Init Neurons</button>
+                            <button id="initNeuronsPad3" class="neon btn btn-outline-danger">Init Neurons</button>
                         </div>
                         <div id="errorMessage3" style="color: red;">
 
                         </div>
                     </div>
+
+
+                    <!-- pad 3 post inizializzazione -->
 
                     <div id="afterInit3" class="disabledNeurons">
                         <div id="vol-bar">
@@ -154,28 +204,27 @@
                             <input name = "volPad3" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
                         </div>
                         <div class="audio-controls">
-                            <button id = "mute3" class = "vol-button btn btn-warning">M</button>
-                            <button id = "solo3" class = "vol-button btn btn-success">S</button>
+                            <button id = "mute3" class = "neon vol-button btn btn-warning">M</button>
+                            <button id = "solo3" class = "neon vol-button btn btn-success">S</button>
                         </div>
                     </div>
-                    
+
                 </div>
-               
+
             </div>
+
+
+            <!-- Pad melodico -->
 
             <div id="melody">
                 <div id = "melodic-pad"></div>
             </div>
 
-            
+
 
         </div>
-        
 
-        
-        
-        
-        
+
     </body>
 
 </html>

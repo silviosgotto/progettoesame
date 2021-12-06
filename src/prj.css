@@ -1,13 +1,54 @@
-body{
-  display: flex;
-  background-color: black;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+body{
+  display: flex;
+  background: linear-gradient(217deg, #23044e, rgba(20, 4, 65, 0.459) 20%, black, #13052e ),
+              linear-gradient(270deg, #23044e, rgba(20, 4, 65, 0.459) 35%, black, #13052e),
+              linear-gradient(300deg, #23044e, rgba(20, 4, 65, 0.459) 60%, black, #13052e )
+  ;
+              
+}
+
+
+/* url immagini */
+
+.rect{
+  background-image: url('/images/square.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.tri{
+  background-image: url('/images/tri.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+
+.pent{
+  background-image: url('/images/pent.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+
+
+
+/* colonnna comandi di avvio  */
 #column1{
-  border-right: solid 10px rgba(255, 255, 255, 0.267);
+  display: block;
+  border-right: solid 10px rgba(255, 255, 255, 0.288);
   position: relative;
   width: 20%;
 }
+
+/* colonna dei pad */
 
 #column2{
   position: relative;
@@ -20,6 +61,21 @@ body{
   
 }
 
+/* pad ritmici */
+
+
+#init1{
+  margin: 10px;
+}
+
+#init2{
+  margin: 10px;
+}
+
+#init3{
+  margin: 10px;
+}
+
 #rhythm{
   position: relative;
   top:50%;
@@ -29,57 +85,61 @@ body{
   z-index: 0;
 }
 
-#melody{
-  position: relative;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.rect{
-    background-image: url('/images/square.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.tri{
-    background-image: url('/images/tri.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-}
-
-.pent{
-    background-image: url('/images/pent.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-}
-
 
 .padAndControls{
   position: relative;
   margin: 5px;
-  border: solid 3px rgba(126, 252, 0, 0.219);
+  border: solid 3px #ff1d7067;
   width: 248px;
   height: 256px;
 }
 
-#init1{
-  margin: 5px;
+
+.disabledNeurons{
+  display: none;
 }
 
-#init2{
-  margin: 5px;
+
+/* selezione numero neuroni */
+
+.init-text-color{
+  color: #ff1d70;
+}
+.numNeuInput{
+  background-color: transparent;
+  border-color: transparent;
+  color:#ff1d70;
 }
 
-#init3{
-  margin: 5px;
+.numNeuInput:invalid+span:after {
+  content: '4-32';
+  padding-left: 5px;
+  color: #ff1d70;
 }
+
+.numNeuInput:valid+span:after {
+  content: '✓';
+  padding-left: 5px;
+  color: #ff1d70;
+}
+
+
+
+
+ /* selezione forme/metrica */
+
+.form-select{
+  background-color: #1f012d;
+  color: #ff1d70;
+  border-color: #ff1d70;
+}
+
+
+/* post inizializzazione pad ritmici */
 
 .rhythm-pad{
   position: relative;
+  color:#ff1d70;
   width: 200px;
   height: 200px;
   z-index: 1;
@@ -90,8 +150,9 @@ body{
   -webkit-appearance: none;
   height: 195px;
   width: 10px;
-  background: lawngreen;
-  border: 1px solid lawngreen;
+  background: #f99f3f;
+  border: 6px solid;
+  border-color: transparent;
   border-radius: 8px;
   margin-right: 10px;
   margin-left: 10px;
@@ -103,9 +164,9 @@ body{
 .slider::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
-  background: lawngreen;
+  background: #f99f3f;
   cursor: pointer;
-  border: 3px solid black;
+  border: 1px solid #f99f3f;
   border-radius: 50%;
 }
 
@@ -113,11 +174,13 @@ body{
 .slider::-moz-range-thumb {
   width: 18px;
   height: 18px;
-  background: lawngreen;
+  background: #f99f3f;
   cursor: pointer;
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 50%;
 }
+
+/* bottoni mute e solo  */
 
 .audio-controls{
   position: relative;
@@ -135,120 +198,18 @@ body{
 #vol-bar{
   display:flex;
   margin: 2px 2px 0px 2px;
+  
 } 
 
 
-#rhythm-button{
-  text-align: center;
-  padding-top: 0px;
-  margin-left: 10px;
-  margin-top: 2px;
+/* pad melodico */
+
+#melody{
+  position: relative;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-#click-button{
-  text-align: center;
-  padding-top: 0px;
-  margin-left: 10px;
-  margin-top: 2px;
-}
-
-
-
-#neurons-button{
-  text-align: center;
-  padding-top: 0px;
-  margin-left: 10px;
-  margin-bottom: 2px;
-  text-transform: uppercase;
-  transition: 1s;
-  
-}
-
-#neurons-button:hover{
-  box-shadow: 0 0 5px lawngreen,
-                0 0 25px lawngreen,
-                0 0 50px lawngreen,
-                0 0 200px lawngreen;
-
--webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
-}
-
-
-
-.disabledNeurons{
-  display: none;
-}
-
-/* #init{
-  margin:10px;
-} */
-
-.init-text-color{
-  color: lawngreen;
-}
-
-.btn-outline-danger{
-  color:lawngreen;
-  background-color: black;
-  border-color: lawngreen;
-}
-
-.btn-outline-danger:hover{
-  color:black;
-  background-color: lawngreen;
-  border-color: lawngreen;
-}
-
-
-.form-check-input:focus {
-  border-color: lawngreen;
-  outline: 0;
-  box-shadow: none;
-}
-
-.form-check-input[type="checkbox"] {
-  border-radius: 50%;
-  border-color: rgb(0, 0, 0, .5);
-  background-color: red;
-  cursor: pointer;
-}
-
-.form-check-input:checked{
-  background-color: lawngreen;
-  box-shadow: 0 0 1rem .15rem lawngreen;
-}
-
-.form-check-input:checked[type="checkbox"]{
-  background-image: none;
-}
-
-
-
-
-
-.numNeuInput{
-  background-color: black;
-  border-color: black;
-  color:lawngreen;
-}
-.numNeuInput:invalid+span:after {
-  content: '4-32';
-  padding-left: 5px;
-  color: lawngreen;
-}
-
-.numNeuInput:valid+span:after {
-  content: '✓';
-  padding-left: 5px;
-  color: lawngreen;
-}
-.form-select{
-  background-color: black;
-  color: lawngreen;
-  border-color: lawngreen;
-}
-
-
 
 
 #melodic-pad{
@@ -260,3 +221,50 @@ body{
   background-size: contain;
   background-position: bottom;
 }
+
+/* effetto neon  */
+
+.neon{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color:#ff1d70;
+  background-color: transparent;
+  border-color: #ff1d70;
+  transition: 0.6s;
+
+}
+
+.neon:hover{
+  background: #ff1d70;
+  border-color: #ff1d70;
+  color: black;
+  box-shadow: 0px 0px 10px  #fd3d84f6, 0px 0px 7px  #fd5190, 0px 0px 20px  #ff71a5 ;             
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
