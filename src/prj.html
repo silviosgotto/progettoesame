@@ -25,6 +25,45 @@
             <div style="margin-top: 20px;">
                <button id = "neurons-button" class = "neon btn btn-outline-danger" ><span></span>start learning neurons</button>
             </div>
+
+            <div style="margin-top: 10px;">
+                <select id = "selectKeyMel" class="form-select" aria-label="Default select example">
+                    <option hidden selected>Key</option>
+                    <option value="C" >C</option>
+                    <option value="C#" >C#</option>
+                    <option value="D" >D</option>
+                    <option value="D#" >D#</option>
+                    <option value="E" >E</option>
+                    <option value="F" >F</option>
+                    <option value="F#" >F#</option>
+                    <option value="G" >G</option>
+                    <option value="G#" >G#</option>
+                    <option value="A" >A</option>
+                    <option value="A#" >A#</option>
+                    <option value="B" >B</option>
+                </select>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <select id = "selectScaleMel" class="form-select" aria-label="Default select example">
+                    <option hidden selected>Scale</option>
+                    <option value="ionic" >Ionic</option>
+                    <option value="doric" >Doric</option>
+                    <option value="frigian" >Phrygian</option>
+                    <option value="lydian" >Lydian</option>
+                    <option value="mixolydian" >Mixolydian</option>
+                    <option value="eolian" >Eolian</option>
+                    <option value="locrian" >Locrian</option>
+                    <option value="petmag" >Major Pentatonic</option>
+                    <option value="petmin" >Minor Pentatonic</option>
+                    <option value="blues" >Blues</option>
+                    <option value="esa" >Whole Tone Scale</option>
+                    <option value="dim" >Diminished</option>
+                    <option value="semid" >Half-Diminished</option>
+                    <option value="arm" >Harmonic Minor</option>
+                </select>
+            </div>
+
         </div>
 
 
@@ -83,7 +122,11 @@
 
                     <div id="afterInit1" class="disabledNeurons">
                         <div id="vol-bar">
-                            <div id = "rhythm-pad1" class="rect rhythm-pad"></div>
+                            <div id = "rhythm-pad1" class="rect rhythm-pad">
+                                <svg id= "clickPad1" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
+                                    <circle id="circleClick" r ="5" fill="white"></circle>
+                                </svg>
+                            </div>
                             <input name = "volPad1" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
                         </div>
                         <div class="audio-controls">
@@ -142,7 +185,11 @@
 
                     <div id="afterInit2" class="disabledNeurons">
                         <div id="vol-bar">
-                            <div id = "rhythm-pad2" class="rect rhythm-pad"></div>
+                            <div id = "rhythm-pad2" class="rect rhythm-pad">
+                                <svg id= "clickPad2" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
+                                    <circle id="circleClick" r ="5" fill="white"></circle>
+                                </svg>
+                            </div>
                             <input name = "volPad2" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
                         </div>
                         <div class="audio-controls">
@@ -200,7 +247,11 @@
 
                     <div id="afterInit3" class="disabledNeurons">
                         <div id="vol-bar">
-                            <div id = "rhythm-pad3" class="rhythm-pad"></div>
+                            <div id = "rhythm-pad3" class="rhythm-pad">
+                                <svg id= "clickPad3" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
+                                    <circle id="circleClick" r ="5" fill="white"></circle>
+                                </svg>
+                            </div>
                             <input name = "volPad3" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
                         </div>
                         <div class="audio-controls">
@@ -217,13 +268,81 @@
             <!-- Pad melodico -->
 
             <div id="melody">
-                <div id = "melodic-pad"></div>
+                <div class = "padAndControlsMel">
+        
+                    <div id="initMelandSound" style="display: flex;">
+
+                        <div id = afterInit-mel class = "disabledNeurons">
+                            <div id="vol-bar-mel" >
+                                <div id = "melodic-pad">
+    
+                                </div>
+                                <input name = "volPadMel" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
+                            </div>
+                            <div id="audio-controls-mel">
+                                <button id = "mute-mel" class = "neon vol-button btn btn-warning">M</button>
+                                <button id = "solo-mel" class = "neon vol-button btn btn-success">S</button>
+                            </div>
+                        </div>
+
+                        <div id="init-mel" class="">
+                            <div style="margin-bottom: 10px;">
+                                <label for="numNeuronsMel" class="init-text-color">Notes Number </label>
+                                <input class="numNeuInput" type="number" id="NeuronsPadMel" name="numNeuronsMel" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
+                                <span class="validity"></span>
+                            </div>
+
+                            <div style="margin-top: 10px;">
+                                <select id = "selectMetricMel" class="form-select" aria-label="Default select example">
+                                    <option hidden selected>Metric</option>
+                                    <option value="4" >4/4</option>
+                                    <option value="3">3/4</option>
+                                    <option value="5">5/4</option>
+                                </select>
+                            </div>
+
+
+                            <div style="margin-top: 10px;">
+                                <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
+                                    <option hidden selected>Wave Type</option>
+                                    <option value="sine" >Sine</option>
+                                    <option value="square" >Square</option>
+                                    <option value="sawtooth" >Saw</option>
+                                    <option value="triangle" >Triangle</option>
+                                </select>
+                            </div>
+
+                            
+                            <button id="initMelodicPad" class="neon btn btn-outline-danger">Init Neurons</button>
+                            <div id = "errorMessagem" style="color: red;"></div>
+                            
+                        </div>
+
+                        <div id="initSound">
+                            <div class="init-text-color" style="height: 27.2px; margin-bottom: 5px;">Envelope (ADSR)</div>
+                            <input name = "atkslider" type="range" class="sliderhor" min="0" max="1" value="0.5" step="0.05" >
+                            <span for="atkslider" class="init-text-color" style="margin-bottom: 5px;">A</span>
+                            <input name = "decayslider" type="range" class="sliderhor" min="0" max="1" value="0.5" step="0.05" >
+                            <span for="decayslider" class="init-text-color" style="margin-bottom: 5px;">D</span>
+                            <input name = "susslider" type="range" class="sliderhor" min="0" max="1" value="0.5" step="0.05" >
+                            <span for="susslider" class="init-text-color" style="margin-bottom: 5px;">S</span>
+                            <input name = "relslider" type="range" class="sliderhor" min="0" max="1" value="0.5" step="0.05" >
+                            <span for="relslider" class="init-text-color" style="margin-bottom: 5px;">R</span>
+                            <div style="margin-top: 10px; height: 27.2px; color:#ff1d70">Effects Properties</div>
+                            <button type="button" class="btn btn-primary neon" style="font-size: small; letter-spacing: 0px; margin: 5px 5px 5px 0px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Rev
+                            </button>
+                            <button type="button" class="btn btn-primary neon" style="font-size: small; letter-spacing: 0px; margin: 5px 5px 5px 0px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Delay
+                            </button>
+                            <button type="button" class="btn btn-primary neon" style="font-size: small; letter-spacing: 0px; margin: 5px 5px 5px 0px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Dist
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-
         </div>
-
 
     </body>
 

@@ -1,7 +1,8 @@
 import * as Tone from 'tone'
 
 module.exports = class RhythmNeurons{
-    constructor(n, width, height, ctx, shape, bpm){
+    constructor(pad, n, width, height, ctx, shape, bpm){
+        this.pad = pad;
         this.n = n;
         this.width = width;
         this.height = height;
@@ -16,6 +17,10 @@ module.exports = class RhythmNeurons{
     }
 
     //GETTER//
+    getPad(){
+        return this.pad;
+    }
+    
     getN(){
         return this.n;
     }
@@ -63,7 +68,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width-4, 0);
+                              }).move(this.width-2, 0+2);
                         }
                         else if (i == 2){
                             circClick.animate({
@@ -73,7 +78,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width-4, this.height-4);
+                              }).move(this.width-2, this.height-2); 
                         }
                         else if (i == 3){
                             circClick.animate({
@@ -83,7 +88,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(0, this.height-4);
+                              }).move(0, this.height-2);
                         }
                         else if(i == 4){
                             circClick.animate({
@@ -93,7 +98,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(0, 0);
+                              }).move(0+2, 0+2);
                         }
                         i++;
                     })
@@ -119,7 +124,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width-4, this.height-4);
+                              }).move(this.width-2, this.height-2);
                         }
                         else if (i == 2){
                             circClick.animate({
@@ -129,7 +134,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(0, this.height-4);
+                              }).move(0+2, this.height-2);
                         }
                         else if (i == 3){
                             circClick.animate({
@@ -139,7 +144,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width/2-2, 0);
+                              }).move(this.width/2, 0+4);
                         }
                         i++;
                     })
@@ -178,7 +183,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move((this.width-l*Math.cos(alpha))-2, this.height-4);
+                              }).move((this.width-l*Math.cos(alpha))-2, this.height-2);
                         }
                         else if (i == 3){
                             circClick.animate({
@@ -188,7 +193,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move((this.width-l*(Math.cos(alpha)+1))-2, this.height-4);
+                              }).move((this.width-l*(Math.cos(alpha)+1)), this.height-2);
                         }
                         else if (i == 4){
                             circClick.animate({
@@ -198,7 +203,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(0, this.height-l*Math.sin(alpha));
+                              }).move(0+2, this.height-l*Math.sin(alpha));
                         }
                         else if (i == 5){
                             circClick.animate({
@@ -208,7 +213,7 @@ module.exports = class RhythmNeurons{
                                 swing: true,
                                 times: 0,
                                 wait: 0
-                              }).move(this.width/2-2, this.height-l*(Math.sin(alpha)+Math.cos(beta)));
+                              }).move(this.width/2, 2+this.height-l*(Math.sin(alpha)+Math.cos(beta)));
                         }
                         i++;
                     })
