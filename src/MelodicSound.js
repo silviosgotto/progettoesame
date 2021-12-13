@@ -1,17 +1,38 @@
 import * as Tone from 'tone'
 
 module.exports = class MelodicSound {
-    constructor(arrDur, arrPos, bpm, metrica, baseNote){
+    constructor(arrDur, arrPos, bpm, metrica, baseNote, ctx, atk){
         this.arrDur = arrDur;
         this.arrPos = arrPos;
         this.bpm = bpm;
         this.metrica = metrica;
         this.baseNote = baseNote;
+        this.ctx = ctx;
+        this.count = 0;
+        this.atk=atk;
         this.synth = new Tone.Synth().toDestination()
         this.part = new Tone.Part(((time, value) => {
+            this.synth.envelope.attack = this.atk;
             this.synth.triggerAttackRelease(value.note, "8n", time);
+            Tone.Draw.schedule(()=> {
+                if(this.count == 0){
+                    this.ctx.get(this.arrDur.length-1+this.count).css({fill: "white"});
+                    this.ctx.get((this.arrDur.length-1)*2).css({fill: "red"});
+                }
+                else{
+                    this.ctx.get(this.arrDur.length-1+this.count).css({fill: "white"});
+                    this.ctx.get(this.arrDur.length-1+this.count-1).css({fill: "red"});
+                }
+                
+                this.count++;
+                if(this.count == this.arrDur.length){
+                    this.count = 0;
+                }
+            });
           }), []).start(0);
+        
     }
+ 
 
     rightLoop(){
         /* var loopEnd = Math.ceil(this.arrDur.at(-1));

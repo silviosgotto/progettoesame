@@ -56,12 +56,21 @@ module.exports = class MelodicNeurons{
     }
 
     drawNeurons(){
-        for(var i = 1; i < this.posNeu.length; i++){
+        /* for(var i = 1; i < this.posNeu.length; i++){
             if(i == this.posNeu.length -1 ){
                 this.ctx.circle(10).attr({cx: this.posNeu[i][0], cy: this.posNeu[i][1]}).css({fill: "hsl("+this.count/4+", 100%, 50%)"});
             }
           this.ctx.circle(10).attr({cx: this.posNeu[i-1][0], cy: this.posNeu[i-1][1]}).css({fill: "hsl("+this.count/4+", 100%, 50%)"});
           this.ctx.line(this.posNeu[i][0], this.posNeu[i][1], this.posNeu[i-1][0], this.posNeu[i-1][1]).css({stroke: "hsl("+this.count/4+", 100%, 50%)", width:"4px"});
+        } */
+        for(var j = 1; j < this.posNeu.length; j++){
+            this.ctx.line(this.posNeu[j][0], this.posNeu[j][1], this.posNeu[j-1][0], this.posNeu[j-1][1]).css({stroke: "hsl("+this.count/4+", 100%, 50%)", width:"4px"});
+        }
+        for(var i = 1; i < this.posNeu.length; i++){
+          this.ctx.circle(10).attr({cx: this.posNeu[i-1][0], cy: this.posNeu[i-1][1]}).css({fill: "hsl("+this.count/4+", 100%, 50%)"});
+          if(i == this.posNeu.length -1 ){
+            this.ctx.circle(10).attr({cx: this.posNeu[i][0], cy: this.posNeu[i][1]}).css({fill: "hsl("+this.count/4+", 100%, 50%)"});
+            }
         }
     }
 

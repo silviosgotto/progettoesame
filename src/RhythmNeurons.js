@@ -65,7 +65,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(this.width-2, 0+2);
@@ -75,7 +75,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(this.width-2, this.height-2); 
@@ -85,7 +85,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(0, this.height-2);
@@ -95,7 +95,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(0+2, 0+2);
@@ -121,7 +121,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(this.width-2, this.height-2);
@@ -131,7 +131,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(0+2, this.height-2);
@@ -141,7 +141,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(this.width/2, 0+4);
@@ -170,7 +170,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(this.width-2, this.height-l*Math.sin(alpha));
@@ -180,7 +180,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move((this.width-l*Math.cos(alpha))-2, this.height-2);
@@ -190,7 +190,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move((this.width-l*(Math.cos(alpha)+1)), this.height-2);
@@ -200,7 +200,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(0+2, this.height-l*Math.sin(alpha));
@@ -210,7 +210,7 @@ module.exports = class RhythmNeurons{
                                 duration: 60/this.bpm*1000,
                                 delay: 0,
                                 when: 'now',
-                                swing: true,
+                                swing: false,
                                 times: 0,
                                 wait: 0
                               }).move(this.width/2, 2+this.height-l*(Math.sin(alpha)+Math.cos(beta)));

@@ -334,6 +334,26 @@ input[type=number] {
 
 
 
+.blob{
+  position:relative;
+  height: 100px;
+  width: 100px;
+  background: transparent;
+  transform: translate(50%,50%);
+}
+
+.btn-primary:focus{
+  color: black;
+background-color: #ff1d70;
+border-color: rgb(255, 29, 112);
+box-shadow: 0px 0px 10px  #fd3d84f6, 0px 0px 7px  #fd5190, 0px 0px 20px  #ff71a5 ;
+}
+
+
+.btn:focus{
+  box-shadow: none ;
+}
+
 
 
 

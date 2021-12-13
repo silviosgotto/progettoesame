@@ -42,8 +42,19 @@ PlayButt.disabled = true;
 
 
 //ToneJs
-Tone.Transport.bpm.value = 60;
-var bpm = Tone.Transport.bpm.value;
+Tone.Transport.bpm.value = 200;
+var bpm = Tone.Transport.bpm.value
+var bpmValue=document.getElementById("bpmValue")
+bpmValue.onchange=function(){
+    Tone.Transport.bpm.value=bpmValue.value;
+    bpm = bpmValue.value;
+}
+
+var atk = 0.5
+var atkValue = document.getElementsByName("atkslider")
+atkValue.onchange=function(){
+    atk = atkValue.value;
+}
 
 clickurl = document.getElementById("clickSample").src;
 
@@ -178,11 +189,12 @@ initmPadButt.onclick = function(){
 var arrPart = [];
 
 //rhythm
+var MelodicPart;
 function startLearning(){
     var RhythmPart1;
     var RhythmPart2;
     var RhythmPart3;
-    var MelodicPart;
+    
     if(nrPad1.getN() != 0){
         var id1 = window.requestAnimationFrame(startRhythm.bind(window, RhythmPart1, nrPad1, soundRhythm1, metricRhythm1, id1));
     }
@@ -224,7 +236,7 @@ function startMelodic(Part, Neurons, bn, metric, id){
         cancelAnimationFrame(id);
         PlayButt.disabled = "";
         PlayClick.disabled = "";
-        Part = new MelodicSound(Neurons.calcDistNormNeu(), Neurons.calcPosPad(), bpm, metric, bn);
+        Part = new MelodicSound(Neurons.calcDistNormNeu(), Neurons.calcPosPad(), bpm, metric, bn, Neurons.getCtx(), atk);
         Part.createPart();
     }
     else{
@@ -275,6 +287,14 @@ function startRhythm(Part, Neurons, sound, metric, id){
 const learningButton = document.getElementById("neurons-button");
 learningButton.onclick = () => startLearning();
 
+
+// var synthAtk = MelodicPart.getSynthAtk(); 
+// var atk = document.getElementsByName("atkslider");
+
+// atk.onchange= function(){
+//     synthAtk = parseFloat(atk.value);
+// }
+
  //play butt
 function play(){
     Tone.start();
@@ -295,3 +315,5 @@ function setClickGain(){
 PlayButt.onclick = () => play();
 
 /* PlayClick.onclick = () => setClickGain(); */
+
+
