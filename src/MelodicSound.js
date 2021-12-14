@@ -1,7 +1,7 @@
 import * as Tone from 'tone'
 
 module.exports = class MelodicSound {
-    constructor(arrDur, arrPos, bpm, metrica, baseNote, ctx, atk){
+    constructor(arrDur, arrPos, bpm, metrica, baseNote, ctx, synth){
         this.arrDur = arrDur;
         this.arrPos = arrPos;
         this.bpm = bpm;
@@ -9,10 +9,12 @@ module.exports = class MelodicSound {
         this.baseNote = baseNote;
         this.ctx = ctx;
         this.count = 0;
-        this.atk=atk;
-        this.synth = new Tone.Synth().toDestination()
+        this.synth = synth
+        this.part;        
+    }
+
+    initPart(){
         this.part = new Tone.Part(((time, value) => {
-            this.synth.envelope.attack = this.atk;
             this.synth.triggerAttackRelease(value.note, "8n", time);
             Tone.Draw.schedule(()=> {
                 if(this.count == 0){
@@ -30,9 +32,7 @@ module.exports = class MelodicSound {
                 }
             });
           }), []).start(0);
-        
     }
- 
 
     rightLoop(){
         /* var loopEnd = Math.ceil(this.arrDur.at(-1));
