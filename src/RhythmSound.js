@@ -57,7 +57,7 @@ module.exports = class RhythmSound{
             this.part.add({time: this.arrDur[j]});
         }
         this.part.loop = true;
-        console.log(this.arrDur);
+        //console.log(this.arrDur);
     }
 }
 

@@ -4,7 +4,9 @@ import RhythmSound from './RhythmSound';
 import MelodicSound from './MelodicSound';
 import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js';
 import * as Tone from 'tone';
-import { Context, TransportTime } from 'tone';
+import { Context, dbToGain, TransportTime } from 'tone';
+import * as bootstrap from 'bootstrap';
+
 
 const SoundDictionary = {
     "kick": document.getElementById("kickSample").src,
@@ -42,12 +44,15 @@ PlayButt.disabled = true;
 
 
 //ToneJs
-Tone.Transport.bpm.value = 60;
+Tone.Transport.bpm.value = 120;
 var bpm = Tone.Transport.bpm.value
 var bpmValue = document.getElementById("bpmValue")
-bpmValue.onchange = function(){
+bpmValue.value = Tone.Transport.bpm.value;
+document.getElementById("bpmValuespan").innerText = bpmValue.value;
+bpmValue.oninput = function(){
     Tone.Transport.bpm.value = bpmValue.value;
     bpm = bpmValue.value;
+    document.getElementById("bpmValuespan").innerText = bpmValue.value;
 }
 
 clickurl = document.getElementById("clickSample").src;
@@ -81,6 +86,11 @@ var modeMelodic;
 var BaseNote;
 
 
+var wd = 1;
+var dt = "8n";
+var fd = 0;
+
+var delay = new Tone.FeedbackDelay({delayTime:dt, wet:wd, feedback: fd}).toDestination();
 
 var synth = new Tone.Synth({
     envelope: {
@@ -89,7 +99,7 @@ var synth = new Tone.Synth({
         sustain: 0.5,
         release: 0.5
     }
-}).toDestination();
+}).toDestination().toDestination();
 
 var atkValue = document.getElementById("atkslider")
 atkValue.onchange = () => {
@@ -129,7 +139,7 @@ initrPad1Butt.onclick = function(){
         document.getElementById("rhythm-pad1").classList.add(shape1);
         //document.getElementById("clickPad1").children[0].classList.add("click"+shape1);
         metricRhythm1 = MetricDictionary[shape1];
-        nrPad1 = new RhythmNeurons("1", n1, w1, h1, rPad1, shape1, bpm);
+        nrPad1 = new RhythmNeurons("1", n1, w1, h1, rPad1, shape1, Tone.Transport.bpm.value);
         document.getElementById('init1').classList.add('disabledNeurons');
         document.getElementById('afterInit1').classList.remove('disabledNeurons');
         nrPad1.initNeurons();
@@ -152,8 +162,8 @@ initrPad2Butt.onclick = function(){
         document.getElementById("rhythm-pad2").classList.add(shape2);
         //document.getElementById("clickPad2").children[0].classList.add("click"+shape2);
         metricRhythm2 = MetricDictionary[shape2];
-        console.log(metricRhythm2);
-        nrPad2 = new RhythmNeurons("2", n2, w2, h2, rPad2, shape2, bpm);
+        //console.log(metricRhythm2);
+        nrPad2 = new RhythmNeurons("2", n2, w2, h2, rPad2, shape2, Tone.Transport.bpm.value);
         document.getElementById('init2').classList.add('disabledNeurons');
         document.getElementById('afterInit2').classList.remove('disabledNeurons');
         nrPad2.initNeurons();
@@ -177,8 +187,8 @@ initrPad3Butt.onclick = function(){
         document.getElementById("rhythm-pad3").classList.add(shape3);
         //document.getElementById("clickPad3").children[0].classList.add("click"+shape3);
         metricRhythm3 = MetricDictionary[shape3];
-        console.log(metricRhythm3);
-        nrPad3 = new RhythmNeurons("3", n3, w3, h3, rPad3, shape3, bpm);
+        //console.log(metricRhythm3);
+        nrPad3 = new RhythmNeurons("3", n3, w3, h3, rPad3, shape3, Tone.Transport.bpm.value);
         document.getElementById('init3').classList.add('disabledNeurons');
         document.getElementById('afterInit3').classList.remove('disabledNeurons');
         nrPad3.initNeurons();
@@ -189,7 +199,7 @@ initmPadButt = document.getElementById("initMelodicPad");
 initmPadButt.onclick = function(){
     const nm = document.getElementById("NeuronsPadMel").value;
     const lm = 200;
-    metricMelodic = document.getElementById("selectMetricMel").value;
+    metricMelodic = parseFloat(document.getElementById("selectMetricMel").value);
     const wavem = document.getElementById("selectWaveMel").value;
     modeMelodic = document.getElementById("selectScaleMel").value;
     BaseNote = FreqencyDictionary[document.getElementById("selectKeyMel").value];
@@ -244,6 +254,9 @@ function startLearning(){
     if(nmPad.getN()!= 0){
         var id4 = window.requestAnimationFrame(startMelodic.bind(window, MelodicPart, nmPad, BaseNote, metricMelodic, id4));
     }
+    else{
+        console.log("MelodicPad not initialized")
+    }
     
 }
 
@@ -262,7 +275,7 @@ function startMelodic(Part, Neurons, bn, metric, id){
         cancelAnimationFrame(id);
         PlayButt.disabled = "";
         PlayClick.disabled = "";
-        Part = new MelodicSound(Neurons.calcDistNormNeu(), Neurons.calcPosPad(), bpm, metric, bn, Neurons.getCtx(), synth);
+        Part = new MelodicSound(Neurons.calcDistNormNeu(), Neurons.calcPosPad(), Tone.Transport.bpm.value, metric, bn, Neurons.getCtx(), synth);
         Part.initPart();
         Part.createPart();   
     }
@@ -296,11 +309,11 @@ function startRhythm(Part, Neurons, sound, metric, id){
         Neurons.visualClick(a);
         PlayButt.disabled = "";
         PlayClick.disabled = "";
-        Part = new RhythmSound(Neurons.calcDistNormNeu(), bpm, sound, metric, Neurons.getCtx());
+        Part = new RhythmSound(Neurons.calcDistNormNeu(), Tone.Transport.bpm.value, sound, metric, Neurons.getCtx());
         //const MelodicPart = new MelodicSound(nmPad.calcDistNormNeu(), nmPad.calcPosPad(), bpm, 4, 440);
         Part.createPart();
         arrPart.push(Part.getarrDur());
-        console.log(arrPart)
+        //console.log(arrPart)
         //MelodicPart.createPart(); 
     }
     else{
@@ -315,12 +328,6 @@ const learningButton = document.getElementById("neurons-button");
 learningButton.onclick = () => startLearning();
 
 
-// var synthAtk = MelodicPart.getSynthAtk(); 
-// var atk = document.getElementsByName("atkslider");
-
-// atk.onchange= function(){
-//     synthAtk = parseFloat(atk.value);
-// }
 
  //play butt
 function play(){

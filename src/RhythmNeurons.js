@@ -62,7 +62,7 @@ module.exports = class RhythmNeurons{
                         }
                         if(i== 1){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -72,7 +72,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 2){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -82,7 +82,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 3){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -92,7 +92,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if(i == 4){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -102,9 +102,9 @@ module.exports = class RhythmNeurons{
                         }
                         i++;
                     })
-                }), [{time: 0},{time: 60/this.bpm},{time: 60/this.bpm*2},{time: 60/this.bpm*3}]).start(0);
+                }), [{time: 0},{time: 60/Tone.Transport.bpm.value},{time: 60/Tone.Transport.bpm.value*2},{time: 60/Tone.Transport.bpm.value*3}]).start(0);
                 part.loopStart = 0;
-                part.loopEnd = 4*(60/this.bpm);
+                part.loopEnd = 4*(60/Tone.Transport.bpm.value);
                 part.loop = true;
                 return part;
             }
@@ -118,7 +118,7 @@ module.exports = class RhythmNeurons{
                         }
                         if(i== 1){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -128,7 +128,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 2){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -138,7 +138,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 3){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -148,9 +148,9 @@ module.exports = class RhythmNeurons{
                         }
                         i++;
                     })
-                }), [{time: 0},{time: 60/this.bpm},{time: 60/this.bpm*2}]).start(0);
+                }), [{time: 0},{time: 60/Tone.Transport.bpm.value},{time: 60/Tone.Transport.bpm.value*2}]).start(0);
                 part.loopStart = 0;
-                part.loopEnd = 3*(60/this.bpm);
+                part.loopEnd = 3*(60/Tone.Transport.bpm.value);
                 part.loop = true;
                 return part;
             }
@@ -167,7 +167,7 @@ module.exports = class RhythmNeurons{
                         }
                         if(i== 1){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -177,7 +177,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 2){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -187,7 +187,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 3){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -197,7 +197,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 4){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -207,7 +207,7 @@ module.exports = class RhythmNeurons{
                         }
                         else if (i == 5){
                             circClick.animate({
-                                duration: 60/this.bpm*1000,
+                                duration: 60/Tone.Transport.bpm.value*1000,
                                 delay: 0,
                                 when: 'now',
                                 swing: false,
@@ -217,9 +217,9 @@ module.exports = class RhythmNeurons{
                         }
                         i++;
                     })
-                }), [{time: 0},{time: 60/this.bpm},{time: 60/this.bpm*2},{time: 60/this.bpm*3},{time: 60/this.bpm*4}]).start(0);
+                }), [{time: 0},{time: 60/Tone.Transport.bpm.value},{time: 60/Tone.Transport.bpm.value*2},{time: 60/Tone.Transport.bpm.value*3},{time: 60/Tone.Transport.bpm.value*4}]).start(0);
                 part.loopStart = 0;
-                part.loopEnd = 5*(60/this.bpm);
+                part.loopEnd = 5*(60/Tone.Transport.bpm.value);
                 part.loop = true;
                 return part;
             }
@@ -412,9 +412,6 @@ module.exports = class RhythmNeurons{
                     throw Error("rand Dot Error on Pent");
                 }
 
-                /* this.ctx.beginPath();
-                this.ctx.arc(x, y, 1, 0, 2 * Math.PI, true);
-                this.ctx.stroke(); */
                 return [x, y];
             
             default:
