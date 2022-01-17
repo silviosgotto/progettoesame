@@ -7,8 +7,11 @@
 
 
 html, body{
+  position: absolute;
   height: 100%;
   width: 100%;
+  min-height: 50%;
+  min-width: 50%;
   display: flex;
   background: linear-gradient(217deg, #23044e, rgba(20, 4, 65, 0.459) 20%, black, #13052e ),
               linear-gradient(270deg, #23044e, rgba(20, 4, 65, 0.459) 35%, black, #13052e),
@@ -80,7 +83,6 @@ input[type=number] {
   width: 100%;
   margin-left: 2%;
   margin-right: 2%;
-  
 }
 
 /* pad ritmici */
@@ -142,6 +144,26 @@ input[type=number] {
 }
 
 .numNeuInput:valid+span:after {
+  content: '✓';
+  padding-left: 5px;
+  color: #ff1d70;
+}
+
+.numNeuInputHarm{
+  background-color: transparent;
+  border-color: transparent;
+  color:#ff1d70;
+  padding-left: 5px;
+  text-align: left;
+}
+
+.numNeuInputHarm:invalid+span:after {
+  content: '4-12';
+  padding-left: 5px;
+  color: #ff1d70;
+}
+
+.numNeuInputHarm:valid+span:after {
   content: '✓';
   padding-left: 5px;
   color: #ff1d70;
@@ -263,21 +285,27 @@ input[type=number] {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 5px;
+  display: inline-flex;
 }
 
 .padAndControlsMel{
   border: solid 3px #ff1d7067;
   height: 256px;
-  width: fit-content;
+  width: 506px;
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.padAndControlsHarm{
+  position: relative;
+  margin-left: 10px;
+  border: solid 3px #ff1d7067;
+  width: 248px;
+  height: 256px;
 }
 
 
 #init-mel{
-  margin: 10px 0px 0px 5px;
+  margin: 10px 0px 0px 10px;
   width: 223.2px;
 }
 
@@ -309,6 +337,20 @@ input[type=number] {
 #initMelodicPad{
   position: relative;
   margin: 10px 0px 0px 0px;
+}
+
+#Harmonicinit{
+  margin: 10px;
+}
+
+#harmonic-pad1{
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+  background-image: url('/images/circ.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
 }
 
 /* effetto neon  */

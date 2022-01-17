@@ -9,7 +9,7 @@ module.exports = class MelodicSound {
         this.baseNote = baseNote;
         this.ctx = ctx;
         this.count = 0;
-        this.synth = synth
+        this.synth = synth;
         this.part;        
     }
 
@@ -36,8 +36,6 @@ module.exports = class MelodicSound {
 
     rightLoop(){
         var loopEnd = this.arrDur.at(-1)
-        console.log("arr dur ultima pos prima di molt per bpm")
-        console.log(this.arrDur.at(-1));
         if (loopEnd % this.metrica == 0){
             loopEnd = loopEnd + this.metrica
         }
@@ -54,15 +52,19 @@ module.exports = class MelodicSound {
     createPart(){
         var bpm = 60/this.bpm;
         this.part.loopStart=0;
-        console.log(bpm);
         this.part.loopEnd = this.rightLoop()*bpm;
+        console.log("loopend mel: ", this.part.loopEnd);
         for (var j = 0; j<this.arrDur.length; j++){
             this.arrDur[j] = this.arrDur[j]*bpm;
             this.part.add({time: this.arrDur[j], note: this.baseNote*Math.pow(2, (this.arrPos[j] - 1)/12)});
         }
         this.part.loop = true;
-        console.log(this.arrDur);
+        /* console.log(this.arrDur);
         console.log(this.metrica);
-        console.log(this.part.loopEnd);
+        console.log(this.part.loopEnd); */
+    }
+
+    getLoopEnd(){
+        return this.part.loopEnd;
     }
 }

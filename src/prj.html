@@ -391,8 +391,45 @@
                         </div>
                     </div>
                 </div>
+
+                <div id = "harmony">
+                    <div class="padAndControlsHarm">
+    
+                        <!-- pad 1 numero neuroni-->
+                        <div id= "Harmonicinit" class="">
+                            <div style="margin-bottom: 10px;">
+                                <label for="numNeuronsHarm" class="init-text-color"> Chords Number </label>
+                                <input class=" numNeuInputHarm" type="number" id="NeuronsPadHarm" name="numNeuronsHarm" min="4" max="12" step="1" style="width: 50px; border-color: #ff1d70;" required>
+                                <span class="validity"></span>
+                            </div>
+    
+                            <div style="margin-top: 10px; position:relative; bottom:100%;">
+                                <button id="initNeuronsPadHarm" class="neon btn ">Init Neurons</button>
+                            </div>
+                            <div id="errorMessageh" style="color: red;">
+                                
+                            </div>
+                        </div>
+    
+                        <!-- pad 1 post inizializzazione -->
+    
+                        <div id="afterInitHarm" class="disabledNeurons">
+                            <div id="vol-bar">
+                                <div id = "harmonic-pad1" class="">
+                                </div>
+                                <input name = "volPadHarm" type="range" class="slider" min="0" max="1" value="0.5" step="0.05" orient="vertical">
+                            </div>
+                            <div class="audio-controls">
+                                <button id = "mute1" class = "neon vol-button btn btn-warning">M</button>
+                                <button id = "solo1" class = "neon vol-button btn btn-success">S</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
+
+            
             
         </div>
     </body>
