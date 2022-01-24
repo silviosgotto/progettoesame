@@ -93,6 +93,54 @@ var fd = 0;
 
 var delay = new Tone.FeedbackDelay({delayTime:dt, wet:wd, feedback: fd}).toDestination();
 
+function ToggleSolo(SoloArr, Solo){
+    for(let i = 0; i < SoloArr.length; i++){
+        if(SoloArr[i] == Solo){
+            Solo.solo = !(Solo.solo);
+        }
+        else{
+            SoloArr[i].solo = false;
+        }
+    }
+}
+
+//Volumi Solo e Mute
+var SoloArr = [];
+const VolMel = new Tone.Volume(-10)
+const SoloMel = new Tone.Solo().toDestination();
+SoloArr.push(SoloMel);
+//SoloMel.solo = false;
+const SliderVolMel = document.getElementById("VolMel");
+const ButtSoloMel = document.getElementById("solo-mel");
+const MuteMel = document.getElementById("mute-mel");
+SliderVolMel.oninput = function(){
+    VolMel.volume.value = SliderVolMel.value;
+}
+ButtSoloMel.onclick = function(){
+    ToggleSolo(SoloArr, SoloMel);
+}
+MuteMel.onclick = function(){
+    VolMel.mute = !VolMel.mute;
+}
+
+
+const VolHarm = new Tone.Volume(-10)
+const SoloHarm = new Tone.Solo().toDestination();
+//SoloHarm.solo = false;
+SoloArr.push(SoloHarm);
+const SliderVolHarm = document.getElementById("VolHarm");
+const ButtSoloHarm = document.getElementById("solo-harm");
+const MuteHarm = document.getElementById("mute-harm");
+SliderVolHarm.oninput = function(){
+    VolHarm.volume.value = SliderVolHarm.value;
+}
+ButtSoloHarm.onclick = function(){
+    ToggleSolo(SoloArr, SoloHarm);
+}
+MuteHarm.onclick = function(){
+    VolHarm.mute = !VolHarm.mute;
+}
+
 var synth = new Tone.Synth({
     volume: 3,
     envelope: {
@@ -101,14 +149,14 @@ var synth = new Tone.Synth({
         sustain: 0.5,
         release: 0.5
     }
-}).toDestination();
+}).chain(VolMel, SoloMel);
 
-var synth2 = new Tone.PolySynth({volume: -8}).set({envelope: {
+var synth2 = new Tone.PolySynth().set({envelope: {
     attack: 0.5,
     decay: 0.2,
     sustain: 1.0,
     release: 4
-}}).toDestination();
+}}).chain(VolHarm, SoloHarm);
 
 var atkValue = document.getElementById("atkslider")
 atkValue.onchange = () => {
