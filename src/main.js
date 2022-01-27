@@ -10,6 +10,7 @@ import { Context, dbToGain, Solo, TransportTime } from 'tone';
 import * as bootstrap from 'bootstrap';
 
 
+console.log(`%c Designed With Love By Us `, "background: #0055CC; color: #CCFF00");
 const SoundDictionary = {
     "kick": document.getElementById("kickSample").src,
     "808": document.getElementById("808Sample").src,
@@ -173,6 +174,23 @@ ResetButtonMel.onclick = function(){
     });
 }
 
+//Panner Melodico
+const PanHarm = new Tone.Panner(0);
+const PanSlideHarm = document.getElementById("PanSlideHarm");
+PanSlideHarm.value = 0;
+PanSlideHarm.oninput = function(){
+    PanHarm.set({
+        pan: PanSlideHarm.value
+    })
+}
+const ResetButtonHarm = document.getElementById("ResHarm");
+ResetButtonHarm.onclick = function(){
+    PanSlideHarm.value = 0;
+    PanHarm.set({
+        pan: PanSlideHarm.value
+    });
+}
+
 //Volumi Solo e Mute Melodico
 var SoloArr = [];
 const VolMel = new Tone.Volume(-10)
@@ -290,7 +308,7 @@ var synth2 = new Tone.PolySynth().set({
     release: 4
     },
     maxPolyphony: 32
-}).chain(VolHarm, SoloHarm);
+}).chain(VolHarm, PanHarm, SoloHarm);
 
 var atkValue = document.getElementById("atkslider")
 atkValue.value = synth.get().envelope.attack;

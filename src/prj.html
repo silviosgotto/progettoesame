@@ -34,7 +34,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Reverb Properties</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Pan</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -52,7 +52,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Reverb Properties</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Pan</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -66,21 +66,38 @@
             </div>
         </div>
 
-        <!-- Effects Melodic -->
+        <!-- Pan Melodic -->
 
-        <div class="modal fade" id="EffectsMelodic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="PanMelodic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Effects Properties</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Pan</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <div style="border-bottom: solid rgb(255, 29, 112) 1px; padding-bottom: 10px;">
-                        <p style="color: rgb(255, 29, 112);">Pan</p>
                         <input name="PanSlideMel" type="range" id="PanSlideMel" class="sliderhor"  value= "0" min="-1" max="1" step="0.05" ></input>
                         <button id="ResMel" class="btn neon btn-primary">Reset</button>
                     </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary neon" data-bs-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pan Hamonic -->
+
+        <div class="modal fade" id="PanHarmonic" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Pan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input name="PanSlideHarm" type="range" id="PanSlideHarm" class="sliderhor"  value= "0" min="-1" max="1" step="0.05" ></input>
+                        <button id="ResHarm" class="btn neon btn-primary">Reset</button>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-primary neon" data-bs-dismiss="modal">Save</button>
@@ -421,6 +438,9 @@
                             <div id="audio-controls-mel">
                                 <button id = "mute-mel" class = "neon vol-button btn btn-warning">M</button>
                                 <button id = "solo-mel" class = "neon vol-button btn btn-success">S</button>
+                                <button id="PanMButt" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#PanMelodic" style="font-size: small; letter-spacing: 0px;">
+                                    Pan
+                                </button>
                             </div>
                         </div>
 
@@ -508,6 +528,9 @@
                             <div class="audio-controls">
                                 <button id = "mute-harm" class = "neon vol-button btn btn-warning">M</button>
                                 <button id = "solo-harm" class = "neon vol-button btn btn-success">S</button>
+                                <button id="PanHButt" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#PanHarmonic" style="font-size: small; letter-spacing: 0px;">
+                                    Pan
+                                </button>
                             </div>
                         </div>
                     </div>
