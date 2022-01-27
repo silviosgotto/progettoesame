@@ -95,6 +95,7 @@ var fd = 0;
 
 var delay = new Tone.FeedbackDelay({delayTime:dt, wet:wd, feedback: fd}).toDestination();
 
+
 function ToggleSolo(SoloArr, Solo){
     for(let i = 0; i < SoloArr.length; i++){
         if(SoloArr[i] == Solo){
@@ -104,6 +105,72 @@ function ToggleSolo(SoloArr, Solo){
             SoloArr[i].solo = false;
         }
     }
+}
+
+//Panner Rhythm
+const PanRhy1 = new Tone.Panner(0);
+const PanSlideRhy1 = document.getElementById("PanSlideRhy1");
+PanSlideRhy1.value = 0;
+PanSlideRhy1.oninput = function(){
+    PanRhy1.set({
+        pan: PanSlideRhy1.value
+    })
+}
+const ResetButtonRhy1 = document.getElementById("ResRhy1");
+ResetButtonRhy1.onclick = function(){
+    PanSlideRhy1.value = 0;
+    PanRhy1.set({
+        pan: PanSlideRhy1.value
+    });
+}
+
+const PanRhy2 = new Tone.Panner(0);
+const PanSlideRhy2 = document.getElementById("PanSlideRhy2");
+PanSlideRhy2.value = 0;
+PanSlideRhy2.oninput = function(){
+    PanRhy2.set({
+        pan: PanSlideRhy2.value
+    })
+}
+const ResetButtonRhy2 = document.getElementById("ResRhy2");
+ResetButtonRhy2.onclick = function(){
+    PanSlideRhy2.value = 0;
+    PanRhy2.set({
+        pan: PanSlideRhy2.value
+    });
+}
+
+const PanRhy3 = new Tone.Panner(0);
+const PanSlideRhy3 = document.getElementById("PanSlideRhy3");
+PanSlideRhy3.value = 0;
+PanSlideRhy3.oninput = function(){
+    PanRhy3.set({
+        pan: PanSlideRhy3.value
+    })
+}
+const ResetButtonRhy3 = document.getElementById("ResRhy3");
+ResetButtonRhy3.onclick = function(){
+    PanSlideRhy3.value = 0;
+    PanRhy3.set({
+        pan: PanSlideRhy3.value
+    });
+}
+
+//Panner Melodico
+const PanMel = new Tone.Panner(0);
+const PanSlideMel = document.getElementById("PanSlideMel");
+PanSlideMel.value = 0;
+PanSlideMel.oninput = function(){
+    PanMel.set({
+        pan: PanSlideMel.value
+    })
+}
+const ResetButtonMel = document.getElementById("ResMel");
+ResetButtonMel.onclick = function(){
+    PanSlideMel.value = 0;
+    PanMel.set({
+        pan: PanSlideMel.value
+    });
 }
 
 //Volumi Solo e Mute Melodico
@@ -199,7 +266,7 @@ var synth = new Tone.PolySynth().set({
         release: 0.5
     },
     maxPolyphony: 32
-}).chain(VolMel, SoloMel);
+}).chain(VolMel, PanMel, SoloMel);
 
 const MelWave = document.getElementById("selectWaveMel");
 MelWave.onchange = function(){
@@ -273,7 +340,7 @@ initrPad1Butt.onclick = function(){
         document.getElementById("rhythm-pad1").classList.add(shape1);
         //document.getElementById("clickPad1").children[0].classList.add("click"+shape1);
         metricRhythm1 = MetricDictionary[shape1];
-        nrPad1 = new RhythmNeurons("1", n1, w1, h1, rPad1, shape1, Tone.Transport.bpm.value, VolRhy1, SoloRhy1);
+        nrPad1 = new RhythmNeurons("1", n1, w1, h1, rPad1, shape1, Tone.Transport.bpm.value, VolRhy1, SoloRhy1, PanRhy1);
         document.getElementById('init1').classList.add('disabledNeurons');
         document.getElementById('afterInit1').classList.remove('disabledNeurons');
         nrPad1.initNeurons();
@@ -297,7 +364,7 @@ initrPad2Butt.onclick = function(){
         //document.getElementById("clickPad2").children[0].classList.add("click"+shape2);
         metricRhythm2 = MetricDictionary[shape2];
         //console.log(metricRhythm2);
-        nrPad2 = new RhythmNeurons("2", n2, w2, h2, rPad2, shape2, Tone.Transport.bpm.value, VolRhy2, SoloRhy2);
+        nrPad2 = new RhythmNeurons("2", n2, w2, h2, rPad2, shape2, Tone.Transport.bpm.value, VolRhy2, SoloRhy2, PanRhy2);
         document.getElementById('init2').classList.add('disabledNeurons');
         document.getElementById('afterInit2').classList.remove('disabledNeurons');
         nrPad2.initNeurons();
@@ -322,7 +389,7 @@ initrPad3Butt.onclick = function(){
         //document.getElementById("clickPad3").children[0].classList.add("click"+shape3);
         metricRhythm3 = MetricDictionary[shape3];
         //console.log(metricRhythm3);
-        nrPad3 = new RhythmNeurons("3", n3, w3, h3, rPad3, shape3, Tone.Transport.bpm.value, VolRhy3, SoloRhy3);
+        nrPad3 = new RhythmNeurons("3", n3, w3, h3, rPad3, shape3, Tone.Transport.bpm.value, VolRhy3, SoloRhy3, PanRhy3);
         document.getElementById('init3').classList.add('disabledNeurons');
         document.getElementById('afterInit3').classList.remove('disabledNeurons');
         nrPad3.initNeurons();
@@ -491,7 +558,7 @@ function startRhythm(Part, Neurons, sound, metric, id){
         Neurons.visualClick(a);
         PlayButt.disabled = "";
         //PlayClick.disabled = "";
-        Part = new RhythmSound(Neurons.calcDistNormNeu(), Tone.Transport.bpm.value, sound, metric, Neurons.getCtx(), Neurons.getVol(), Neurons.getSol());
+        Part = new RhythmSound(Neurons.calcDistNormNeu(), Tone.Transport.bpm.value, sound, metric, Neurons.getCtx(), Neurons.getVol(), Neurons.getSol(), Neurons.getPan());
         //const MelodicPart = new MelodicSound(nmPad.calcDistNormNeu(), nmPad.calcPosPad(), bpm, 4, 440);
         Part.createPart();
         arrPart.push(Part.getarrDur());
@@ -513,7 +580,6 @@ learningButton.onclick = () => startLearning();
 
  //play butt
 function play(){
-    Tone.start();
     var currTime = Tone.now();
     Tone.Transport.start(currTime);
 }
@@ -528,8 +594,13 @@ function setClickGain(){
     console.log(clickGain.gain.getValueAtTime(Tone.now()))
 } */
 //bottone
-PlayButt.onclick = () => play();
-
+PlayButt.onclick = async () => {
+    await Tone.start();
+    play();
+}
 /* PlayClick.onclick = () => setClickGain(); */
 
 
+
+
+//effects bitcrusher, chorus, delay
