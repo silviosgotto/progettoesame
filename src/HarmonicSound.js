@@ -108,7 +108,7 @@ module.exports = class HarmonicSound{
 
     initPart(){
         this.part = new Tone.Part(((time, value) => {
-            this.PolySynth.triggerAttackRelease(value.note, "8n", time);
+            this.PolySynth.triggerAttackRelease(value.note, "4n", time);
             Tone.Draw.schedule(()=> {
                 if(this.count == 0){
                     this.ctx.get(this.arrDur.length-1+this.count).css({fill: "white"});

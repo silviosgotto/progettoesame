@@ -55,6 +55,8 @@ bpmValue.oninput = function(){
     document.getElementById("bpmValuespan").innerText = bpmValue.value;
 }
 
+
+
 clickurl = document.getElementById("clickSample").src;
 
 //click
@@ -189,44 +191,70 @@ MuteRhy3.onclick = function(){
     VolRhy3.mute = !VolRhy3.mute;
 }
 
-var synth = new Tone.Synth({
+var synth = new Tone.PolySynth().set({
     envelope: {
         attack: 0.5,
         decay: 0.5,
         sustain: 0.5,
         release: 0.5
-    }
+    },
+    maxPolyphony: 32
 }).chain(VolMel, SoloMel);
 
-var synth2 = new Tone.PolySynth().set({envelope: {
+const MelWave = document.getElementById("selectWaveMel");
+MelWave.onchange = function(){
+    synth.set({oscillator: {
+        type: MelWave.value
+    }});
+}
+
+const HarmWave = document.getElementById("selectWaveHarm");
+HarmWave.onchange = function(){
+    synth2.set({oscillator: {
+        type: HarmWave.value
+    }});
+}
+
+var synth2 = new Tone.PolySynth().set({
+    envelope: {
     attack: 0.5,
     decay: 0.2,
     sustain: 1.0,
     release: 4
-}}).chain(VolHarm, SoloHarm);
+    },
+    maxPolyphony: 32
+}).chain(VolHarm, SoloHarm);
 
 var atkValue = document.getElementById("atkslider")
-atkValue.value = synth.envelope.attack;
+atkValue.value = synth.get().envelope.attack;
 atkValue.onchange = () => {
-    synth.envelope.attack = parseFloat(atkValue.value);
+    synth.set({envelope: {
+        attack: parseFloat(atkValue.value)
+    }})
 }
 
 var decayValue = document.getElementById("decayslider")
-decayValue.value = synth.envelope.decay;
+decayValue.value = synth.get().envelope.decay;
 decayValue.onchange = () => {
-    synth.envelope.decay = parseFloat(decayValue.value);
+    synth.set({envelope: {
+        decay: parseFloat(decayValue.value)
+    }}) 
 }
 
 var susValue = document.getElementById("susslider")
-susValue.value = synth.envelope.sustain;
+susValue.value = synth.get().envelope.sustain;
 susValue.onchange = () => {
-    synth.envelope.sustaun = parseFloat(susValue.value);
+    synth.set({envelope: {
+        sustain: parseFloat(susValue.value)
+    }}) 
 }
 
 var relValue = document.getElementById("relslider")
-relValue.value = synth.envelope.release;
+relValue.value = synth.get().envelope.release;
 relValue.onchange = () => {
-    synth.envelope.release = parseFloat(relValue.value);
+    synth.set({envelope: {
+        release: parseFloat(relValue.value)
+    }})
 }
 
 initrPad1Butt = document.getElementById('initNeuronsPad1');
@@ -307,18 +335,21 @@ initmPadButt.onclick = function(){
     const nm = document.getElementById("NeuronsPadMel").value;
     const lm = 200;
     metricMelodic = parseFloat(document.getElementById("selectMetricMel").value);
+    console.log(metricMelodic);
     const wavem = document.getElementById("selectWaveMel").value;
-    synth.oscillator.type = wavem;
     modeMelodic = document.getElementById("selectScaleMel").value;
     BaseNote = FreqencyDictionary[document.getElementById("selectKeyMel").value];
 
-    if(nm<4 || nm>32 || metricMelodic == "Metric" || wavem == "Wave Type" || modeMelodic == "Scale" || BaseNote == undefined){
+    if(nm<4 || nm>32 || metricMelodic == 0 || wavem == "Wave Type" || modeMelodic == "Scale" || BaseNote == undefined){
         document.getElementById("errorMessagem").innerText = "Compilare correttamente tutti i campi!"
         return;
     }
     else{
         document.getElementById("selectScaleMel").disabled = "disabled";
         document.getElementById("selectKeyMel").disabled = "disabled";
+        synth.set({oscillator: {
+            type: wavem
+        }});
         const mPad = SVG().addTo("#melodic-pad").size(lm,lm);
         nmPad = new MelodicNeurons(nm, lm, mPad, modeMelodic);
         document.getElementById('init-mel').classList.add('disabledNeurons');
@@ -332,12 +363,16 @@ inithPadButt = document.getElementById("initNeuronsPadHarm");
 inithPadButt.onclick = function(){
     const nh = document.getElementById("NeuronsPadHarm").value;
     const lh = 200;
-    if(nh<4 || nh>12 || actMel == false){
+    const waveh = document.getElementById("selectWaveHarm").value;
+    if(nh<4 || nh>12 || actMel == false || waveh == "Wave Type"){
         document.getElementById("errorMessageh").innerText = "Compilare correttamente tutti i campi!\nQuesto Pad necessita l'inizializzazione del Pad Melidico"
         return;
     }
     else{
         const hPad = SVG().addTo("#harmonic-pad1").size(lh,lh);
+        synth2.set({oscillator: {
+            type: waveh
+        }});
         nhPad = new HarmonicNeurons(nh, lh, hPad, Tone.Transport.bpm.value);
         document.getElementById('Harmonicinit').classList.add('disabledNeurons');
         document.getElementById('afterInitHarm').classList.remove('disabledNeurons');

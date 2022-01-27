@@ -83,6 +83,30 @@
                     <option value="arm" >Harmonic Minor</option>
                 </select>
             </div>
+            <div style="margin-top: 10px;">
+                <a style="color: rgb(255, 29, 112);">Melodic Wave Type</a>
+                <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
+                    <option hidden selected>Wave Type</option>
+                    <option value="sine" >Sine</option>
+                    <option value="sine3" >Sine3</option>
+                    <option value="sine8" >Sine8</option>
+                    <option value="square" >Square</option>
+                    <option value="sawtooth" >Saw</option>
+                    <option value="triangle" >Triangle</option>
+                </select>
+            </div>
+            <div style="margin-top: 10px;">
+                <a style="color: rgb(255, 29, 112);">Harmonic Wave Type</a>
+                <select id = "selectWaveHarm" class="form-select" aria-label="Default select example">
+                    <option hidden selected>Wave Type</option>
+                    <option value="sine" >Sine</option>
+                    <option value="sine3" >Sine3</option>
+                    <option value="sine8" >Sine8</option>
+                    <option value="square" >Square</option>
+                    <option value="sawtooth" >Saw</option>
+                    <option value="triangle" >Triangle</option>
+                </select>
+            </div>
             <div>
                 <input name="bpmSlide" type="range" id="bpmValue" class="sliderhor"  value= "120" min="30" max="200" step="1" ></input>
                 <span for="bpmSlide" id="bpmValuespan" class="init-text-color" style="margin-bottom: 5px;"></span>
@@ -341,7 +365,7 @@
 
                             <div style="margin-top: 10px;">
                                 <select id = "selectMetricMel" class="form-select" aria-label="Default select example">
-                                    <option hidden selected>Metric</option>
+                                    <option hidden selected value = "0">Metric</option>
                                     <option value="4" >4/4</option>
                                     <option value="3">3/4</option>
                                     <option value="5">5/4</option>
@@ -349,7 +373,7 @@
                             </div>
 
 
-                            <div style="margin-top: 10px;">
+                            <!-- <div style="margin-top: 10px;">
                                 <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
                                     <option hidden selected>Wave Type</option>
                                     <option value="sine" >Sine</option>
@@ -357,7 +381,7 @@
                                     <option value="sawtooth" >Saw</option>
                                     <option value="triangle" >Triangle</option>
                                 </select>
-                            </div>
+                            </div> -->
 
                             
                             <button id="initMelodicPad" class="neon btn btn-outline-danger">Init Neurons</button>
@@ -371,7 +395,7 @@
                             <span for="atkslider" class="init-text-color" style="margin-bottom: 5px;">A</span>
                             <input id = "decayslider" type="range" class="sliderhor" min="0" max="2" value="0.5" step="0.05" >
                             <span for="decayslider" class="init-text-color" style="margin-bottom: 5px;">D</span>
-                            <input id = "susslider" type="range" class="sliderhor" min="0" max="5" value="0.5" step="0.05" >
+                            <input id = "susslider" type="range" class="sliderhor" min="0" max="1" value="0.5" step="0.05" >
                             <span for="susslider" class="init-text-color" style="margin-bottom: 5px;">S</span>
                             <input id = "relslider" type="range" class="sliderhor" min="0.05" max="5" value="0.5" step="0.05" >
                             <span for="relslider" class="init-text-color" style="margin-bottom: 5px;">R</span>

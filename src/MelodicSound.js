@@ -53,9 +53,21 @@ module.exports = class MelodicSound {
     }
 
     createPart(){
+        console.log(this.arrDur)
         var bpm = 60/this.bpm;
         this.part.loopStart=0;
         this.part.loopEnd = this.rightLoop()*bpm;
+        /* var arrDiff = [];
+        for(let i = 0; i < this.arrDur.length; i++){
+            if(i == this.arrDur.length-1){
+                arrDiff[i] = (this.part.loopEnd/bpm - this.arrDur[i]);
+            }
+            else{
+                arrDiff[i] = (this.arrDur[i+1] - this.arrDur[i]);
+            }
+        } */
+        //arrDiff = arrDiff.map(x => x * 60/Tone.Transport.bpm.value);
+        //console.log(arrDiff);
         console.log("loopend mel: ", this.part.loopEnd);
         for (var j = 0; j<this.arrDur.length; j++){
             this.arrDur[j] = this.arrDur[j]*bpm;
