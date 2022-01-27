@@ -71,6 +71,8 @@ input[type=number] {
   display: block;
   position: relative;
   width: 20%;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 /* colonna dei pad */

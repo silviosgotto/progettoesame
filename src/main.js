@@ -58,17 +58,6 @@ bpmValue.oninput = function(){
 
 
 
-clickurl = document.getElementById("clickSample").src;
-
-//click
-/* const clickGain = new Tone.Gain(0).toDestination();
-const PlayClick = document.getElementById('click-button');
-PlayClick.disabled = "";
-arrclick = [0, 1];
-const click = new RhythmSound(arrclick, bpm, clickurl, 1); */
-//click.createPart();
-
-
 
 const lmel = parseFloat(document.getElementById("melodic-pad").clientWidth);
 
@@ -523,7 +512,6 @@ function startMelodic(Part, Neurons, bn, metric, id){
     if(Neurons.getEps()<=0.15){
         cancelAnimationFrame(id);
         PlayButt.disabled = "";
-        //PlayClick.disabled = "";
         melodicDurr = Neurons.calcDistNormNeu();
         melodicPos = Neurons.calcPosPad();
         Part = new MelodicSound(melodicDurr, melodicPos, Tone.Transport.bpm.value, metric, bn, Neurons.getCtx(), synth);
@@ -541,7 +529,6 @@ function startHarmonic(Part, Neurons, metric, bn, id){
     if(Neurons.getEps()<=0.15){
         cancelAnimationFrame(id);
         PlayButt.disabled = "";
-        //PlayClick.disabled = "";
         Part = new HarmonicSound(Neurons.calcDistNormNeu(), loopEnd, Tone.Transport.bpm.value, metric, bn, Neurons.getCtx(), synth2, melodicPos,  melodicDurr, modeMelodic);
         Part.initPart();
         Part.createPart();
@@ -598,25 +585,28 @@ learningButton.onclick = () => startLearning();
 
  //play butt
 function play(){
+    PlayButt.innerText = "Pause";
     var currTime = Tone.now();
     Tone.Transport.start(currTime);
 }
-/* 
-function setClickGain(){
-    if(clickGain.gain.getValueAtTime(Tone.now()) == 0){
-        clickGain.gain.setValueAtTime(1, Tone.now());
-    }
-    else{
-        clickGain.gain.setValueAtTime(0, Tone.now());
-    }
-    console.log(clickGain.gain.getValueAtTime(Tone.now()))
-} */
+
+var playing = false;
+
 //bottone
 PlayButt.onclick = async () => {
     await Tone.start();
-    play();
+    if(!playing){
+        playing = true;
+        play();
+
+    }
+    else{
+        Tone.Transport.pause(Tone.now());
+        PlayButt.innerText = "Play";
+        playing = false;
+    }
 }
-/* PlayClick.onclick = () => setClickGain(); */
+
 
 
 
