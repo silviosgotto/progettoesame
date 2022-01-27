@@ -1,7 +1,7 @@
 import * as Tone from 'tone'
 
 module.exports = class RhythmNeurons{
-    constructor(pad, n, width, height, ctx, shape, bpm){
+    constructor(pad, n, width, height, ctx, shape, bpm, vol, sol){
         this.pad = pad;
         this.n = n;
         this.width = width;
@@ -13,10 +13,19 @@ module.exports = class RhythmNeurons{
         this.eps = 0.2;
         this.count = 0;
         this.bpm = bpm;
+        this.vol = vol;
+        this.sol = sol;
         //this.part = this.visualClick();
     }
 
     //GETTER//
+    getVol(){
+        return this.vol;
+    }
+    getSol(){
+        return this.sol;
+    }
+    
     getPad(){
         return this.pad;
     }

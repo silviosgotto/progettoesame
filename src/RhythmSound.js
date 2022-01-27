@@ -2,14 +2,16 @@ import * as Tone from 'tone'
 
 
 module.exports = class RhythmSound{
-    constructor(arrDur, bpm, url, metrica, ctx){
+    constructor(arrDur, bpm, url, metrica, ctx, vol, sol){
         this.arrDur = arrDur;
         this.bpm = bpm;
         this.url = url;
         this.metrica = metrica;
         this.count = 0;
         this.ctx = ctx;
-        this.sampler = new Tone.Player(this.url).toDestination();
+        this.vol = vol;
+        this.sol = sol;
+        this.sampler = new Tone.Player(this.url).chain(vol, sol);
         this.part = new Tone.Part(((time) => {
             this.sampler.start(time);
             Tone.Draw.schedule(()=> {

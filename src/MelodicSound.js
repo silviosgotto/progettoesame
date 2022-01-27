@@ -32,6 +32,9 @@ module.exports = class MelodicSound {
                 }
             });
           }), []).start(0);
+          this.part.set({
+              humanize: true
+          });
     }
 
     rightLoop(){
