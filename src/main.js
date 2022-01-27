@@ -41,7 +41,9 @@ const FreqencyDictionary = {
 
 
 const PlayButt = document.getElementById('rhythm-button');
+const learningButton = document.getElementById("neurons-button");
 PlayButt.disabled = true;
+learningButton.disabled = true;
 
 
 //ToneJs
@@ -351,6 +353,9 @@ initrPad1Butt.onclick = function(){
         document.getElementById('init1').classList.add('disabledNeurons');
         document.getElementById('afterInit1').classList.remove('disabledNeurons');
         nrPad1.initNeurons();
+        if(learningButton.disabled){
+            learningButton.disabled = "";
+        }
     }
 }
 
@@ -375,6 +380,9 @@ initrPad2Butt.onclick = function(){
         document.getElementById('init2').classList.add('disabledNeurons');
         document.getElementById('afterInit2').classList.remove('disabledNeurons');
         nrPad2.initNeurons();
+        if(learningButton.disabled){
+            learningButton.disabled = "";
+        }
     }
 }
 
@@ -400,6 +408,9 @@ initrPad3Butt.onclick = function(){
         document.getElementById('init3').classList.add('disabledNeurons');
         document.getElementById('afterInit3').classList.remove('disabledNeurons');
         nrPad3.initNeurons();
+        if(learningButton.disabled){
+            learningButton.disabled = "";
+        }
     }
 }
 
@@ -430,6 +441,9 @@ initmPadButt.onclick = function(){
         document.getElementById('afterInit-mel').classList.remove('disabledNeurons');
         nmPad.initNeurons();
         actMel = true;
+        if(learningButton.disabled){
+            learningButton.disabled = "";
+        }
     }
 }
 
@@ -451,6 +465,9 @@ inithPadButt.onclick = function(){
         document.getElementById('Harmonicinit').classList.add('disabledNeurons');
         document.getElementById('afterInitHarm').classList.remove('disabledNeurons');
         nhPad.initNeurons();
+        if(learningButton.disabled){
+            learningButton.disabled = "";
+        }
     }
 }
 
@@ -577,22 +594,26 @@ function startRhythm(Part, Neurons, sound, metric, id){
     
 }
 
- 
-const learningButton = document.getElementById("neurons-button");
-learningButton.onclick = () => startLearning();
+//learning button
+var learning = false;
+learningButton.onclick = () => {
+    if(!learning){
+        startLearning();
+        learningButton.innerText = '↻';
+        learning = true;
+    }
+    else{
+        window.location.reload();
+    }
+}
 
-
-
- //play butt
+//Play/Pause Button
+var playing = false;
 function play(){
     PlayButt.innerText = "Pause";
     var currTime = Tone.now();
     Tone.Transport.start(currTime);
 }
-
-var playing = false;
-
-//bottone
 PlayButt.onclick = async () => {
     await Tone.start();
     if(!playing){
