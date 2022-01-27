@@ -185,12 +185,12 @@ module.exports = class HarmonicSound{
     }
 
     rightLoop(){
-        var loopEnd = this.arrDur.at(-1);
+        var loopEnd = this.arrDur[this.arrDur.length -1]; //this.arrDur.at(-1);
         if (loopEnd % this.metrica == 0){
             loopEnd = loopEnd + this.metrica
         }
         else{
-            loopEnd = Math.ceil(this.arrDur.at(-1))
+            loopEnd = Math.ceil(this.arrDur[this.arrDur.length -1])//this.arrDur.at(-1))
             if (loopEnd % this.metrica != 0) {
                 loopEnd = loopEnd + (this.metrica - (loopEnd % this.metrica))
             }
