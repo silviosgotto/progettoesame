@@ -81,13 +81,6 @@ var BaseNote;
 var nhPad = new HarmonicNeurons(0, 0, "", bpm);
 
 
-var wd = 1;
-var dt = "8n";
-var fd = 0;
-
-var delay = new Tone.FeedbackDelay({delayTime:dt, wet:wd, feedback: fd}).toDestination();
-
-
 function ToggleSolo(SoloArr, Solo){
     for(let i = 0; i < SoloArr.length; i++){
         if(SoloArr[i] == Solo){
@@ -182,6 +175,49 @@ ResetButtonHarm.onclick = function(){
     });
 }
 
+//FeedBack Delay
+const delay = new Tone.FeedbackDelay({
+    wet:0,
+    delayTime: "4n",
+    feedback: 0
+})
+const WetDelSlider = document.getElementById("WetDelay");
+const SpanWet = document.getElementById("WetDelSpan");
+WetDelSlider.value = 0;
+WetDelSlider.oninput = function(){
+    delay.set({wet: WetDelSlider.value});
+    SpanWet.innerText = WetDelSlider.value;
+}
+const FeedDelSlider = document.getElementById("FeedbackDelay");
+const SpanFeedDel = document.getElementById("FeedbackDelSpan");
+FeedDelSlider.value = 0;
+FeedDelSlider.oninput = function(){
+    delay.set({feedback: FeedDelSlider.value});
+    SpanFeedDel.innerText = FeedDelSlider.value;
+}
+const NoteSelect = document.getElementById("selectNoteDelay");
+NoteSelect.onchange = function(){
+    delay.set({delayTime: NoteSelect.value});
+}
+
+//BitCrusher
+const bitcrusher = new Tone.BitCrusher({
+    wet: 0,
+    bits: "6"
+})
+const WetBitSlider = document.getElementById("WetBit");
+const SpanWetBit = document.getElementById("WetBitSpan");
+WetBitSlider.value = 0;
+WetBitSlider.oninput = function(){
+    bitcrusher.set({wet: WetBitSlider.value});
+    SpanWetBit.innerText = WetBitSlider.value;
+}
+const selectBit = document.getElementById("selectBit");
+selectBit.onchange = function(){
+    bitcrusher.set({bits: selectBit.value});
+}
+
+
 //Volumi Solo e Mute Melodico
 var SoloArr = [];
 const VolMel = new Tone.Volume(-10)
@@ -275,7 +311,7 @@ var synth = new Tone.PolySynth().set({
         release: 0.5
     },
     maxPolyphony: 32
-}).chain(VolMel, PanMel, SoloMel);
+}).chain(VolMel, PanMel, delay, bitcrusher, SoloMel);
 
 const MelWave = document.getElementById("selectWaveMel");
 MelWave.onchange = function(){

@@ -15,6 +15,22 @@ module.exports = class HarmonicSound{
         this.mode = mode;           
         this.part;
         this.melnotes = [];
+        this.baseChords = {
+            "ionic": [0, 2, 4, 5, 7, 9, 11],
+            "doric": [0, 2, 3, 5, 7, 9, 10],
+            "frigian": [0, 1, 3, 5, 7, 8, 10],
+            "lydian": [0, 2, 4, 6, 7, 9, 11],
+            "mixolydian": [0, 2, 4, 5, 7, 9, 10],
+            "eolian": [0, 2, 3, 5, 7, 8, 10],
+            "locrian": [0, 1, 3, 5, 6, 8, 10],
+            "arm": [0, 2, 3, 5, 7, 8, 11],
+            "dim": [0, 1, 3, 4, 6, 7, 9, 10],
+            "semid": [0, 2, 3, 5, 6, 8, 9, 11],
+            "esa": [0, 2, 4, 6, 8, 10],
+            "petmin":[0, 3, 5, 7, 10],
+            "petmag": [0, 2, 5, 7, 9],
+            "blues": [0, 5, 7]
+        }
         this.chords = {
             "ionic": [[1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0],
                     [0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0],
@@ -179,6 +195,7 @@ module.exports = class HarmonicSound{
                     chords.push(this.BaseNote*Math.pow(2, y/12));
                 }
             }
+            chords.push(this.BaseNote*Math.pow(2, this.baseChords[this.mode][index]/12)/2);
             this.melnotes[k] = chords;
         }
 

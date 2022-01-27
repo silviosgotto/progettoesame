@@ -112,11 +112,58 @@
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Pan</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Effects Properties</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    ...
+                    <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
+                        <h2>Delay</h2>
+                        <div style="display: inline-flex;">
+                            <div style="margin-right: 10px;">
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">FeedBack:</p>
+                                    <span id="FeedbackDelSpan">0</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="FeedbackDelay" type="range" id="FeedbackDelay" class="sliderhor"  value= "0" min="0" max="0.6" step="0.01" ></input>
+                            </div>
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Wet:</p>
+                                    <span id="WetDelSpan">0</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="WetDelay" type="range" id="WetDelay" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
+                            </div>
+                        </div>
+                        <div style="margin-top: 5px; width: 400px;">
+                            <select id = "selectNoteDelay" class="form-select effects" aria-label="Default select example">
+                                <option value="4n" selected>4n</option>
+                                <option value="6n" >6n</option>
+                                <option value="8n" >8n</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
+                        <h2>BitCrusher</h2>
+                        <div style="display: inline-flex;">
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Wet:</p>
+                                    <span id="WetBitSpan">0</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="WetBit" type="range" id="WetBit" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
+                            </div>
+                        </div>
+                        <div style="margin-top: 5px; width: 400px;">
+                            <select id = "selectBit" class="form-select effects" aria-label="Default select example">
+                                <option value="6" selected>6</option>
+                                <option value="7" >7</option>
+                                <option value="8" >8</option>
+                                <option value="9" >9</option>
+                            </select>
+                        </div>
+                    </div>
+
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-primary neon" data-bs-dismiss="modal">Save</button>

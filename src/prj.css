@@ -182,6 +182,13 @@ input[type=number] {
   border-color: #ff1d70;
 }
 
+.effects{
+  background-color: #f99f3f;
+  color: #000000;
+  border-color: #000000;
+}
+
+
 
 /* post inizializzazione pad ritmici */
 
