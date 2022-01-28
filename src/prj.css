@@ -1,22 +1,26 @@
-*{
+/* *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  
+  box-sizing: border-box; 
+} */
+
+html{
+  width: 100%;
+  height: 100%;
+  min-width: 1300px;
 }
 
-
-html, body{
+body{
   position: absolute;
+  margin: 0;
   height: 100%;
   width: 100%;
   min-height: 550px;
   min-width: 1025px;
   display: flex;
-  background: linear-gradient(217deg, #23044e, rgba(20, 4, 65, 0.459) 20%, black, #13052e ),
-              linear-gradient(270deg, #23044e, rgba(20, 4, 65, 0.459) 35%, black, #13052e),
-              linear-gradient(300deg, #23044e, rgba(20, 4, 65, 0.459) 60%, black, #13052e )
-  ;  
+  background: linear-gradient(217deg, #23044e, rgba(20, 4, 65, 0.459), 20%, black, #13052e ),
+              linear-gradient(270deg, #23044e, rgba(20, 4, 65, 0.459), 35%, black, #13052e),
+              linear-gradient(300deg, #23044e, rgba(20, 4, 65, 0.459), 60%, black, #13052e );
 }
 
 input[type=number] { 
@@ -75,6 +79,7 @@ input[type=number] {
   padding-left: 10px;
 }
 
+
 /* colonna dei pad */
 
 #column2{
@@ -85,6 +90,7 @@ input[type=number] {
   width: 100%;
   margin-left: 2%;
   margin-right: 2%;
+  min-width: 1129px;
 }
 
 /* pad ritmici */
@@ -296,6 +302,7 @@ input[type=number] {
   cursor: pointer;
 }
 
+
 #vol-bar{
   display:flex;
   margin: 2px 2px 0px 2px;
@@ -390,7 +397,6 @@ input[type=number] {
   background-color: transparent;
   border-color: #ff1d70;
   transition: 0.6s;
-
 }
 
 .neon:hover{
@@ -399,6 +405,7 @@ input[type=number] {
   color: black;
   box-shadow: 0px 0px 10px  #fd3d84f6, 0px 0px 7px  #fd5190, 0px 0px 20px  #ff71a5 ;             
 }
+
 
 
 
@@ -411,10 +418,10 @@ input[type=number] {
 }
 
 .btn-primary:focus{
-  color: black;
-background-color: #ff1d70;
-border-color: rgb(255, 29, 112);
-box-shadow: 0px 0px 10px  #fd3d84f6, 0px 0px 7px  #fd5190, 0px 0px 20px  #ff71a5 ;
+  color: rgb(255, 29, 112);
+  background-color: transparent;
+  border-color: rgb(255, 29, 112);
+  box-shadow: 0px 0px 10px  #fd3d84f6, 0px 0px 7px  #fd5190, 0px 0px 20px  #ff71a5 ;
 }
 
 

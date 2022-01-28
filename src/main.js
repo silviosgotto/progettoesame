@@ -110,6 +110,36 @@ function ToggleSolo(SoloArr, Solo){
     }
 }
 
+function biri(buttsoloarr, butt){
+    for(let i = 0; i< buttsoloarr.length; i++){
+        if(buttsoloarr[i] == butt){
+            if(butt.style.backgroundColor != "orange"){
+                butt.style.backgroundColor = "orange"
+                butt.style.color = "black"
+            }
+            else{
+                butt.style.backgroundColor = ""
+                butt.style.color = ""
+            }
+        }
+        else{
+            buttsoloarr[i].style.backgroundColor = ""
+            buttsoloarr[i].style.color = ""
+        }
+    }
+}
+
+function birimute(butt){
+    if(butt.style.backgroundColor != "lime"){
+        butt.style.backgroundColor = "lime"
+        butt.style.color = "black"
+    }
+    else{
+        butt.style.backgroundColor = ""
+        butt.style.color = ""
+    }
+}
+
 //Panner Rhythm
 const PanRhy1 = new Tone.Panner(0);
 const PanSlideRhy1 = document.getElementById("PanSlideRhy1");
@@ -364,22 +394,26 @@ BFPhaSlider.oninput = function(){
 
 
 //Volumi Solo e Mute Melodico
+var arrButtSolo = [];
 var SoloArr = [];
 const VolMel = new Tone.Volume(-10)
 const SoloMel = new Tone.Solo(); //.toDestination();
 SoloArr.push(SoloMel);
 const SliderVolMel = document.getElementById("VolMel");
-SliderVolMel.value = VolMel.volume.value;
+SliderVolMel.value = 5.84;
 const ButtSoloMel = document.getElementById("solo-mel");
+arrButtSolo.push(ButtSoloMel);
 const MuteMel = document.getElementById("mute-mel");
 SliderVolMel.oninput = function(){
-    VolMel.volume.value = SliderVolMel.value;
+    VolMel.volume.value = -Math.pow((SliderVolMel.value-9), 2);
 }
 ButtSoloMel.onclick = function(){
     ToggleSolo(SoloArr, SoloMel);
+    biri(arrButtSolo, ButtSoloMel);
 }
 MuteMel.onclick = function(){
     VolMel.mute = !VolMel.mute;
+    birimute(MuteMel);
 }
 
 //volumi Solo e Mute armonico
@@ -387,17 +421,20 @@ const VolHarm = new Tone.Volume(-10)
 const SoloHarm = new Tone.Solo().toDestination();
 SoloArr.push(SoloHarm);
 const SliderVolHarm = document.getElementById("VolHarm");
-SliderVolHarm.value = VolHarm.volume.value;
+SliderVolHarm.value = 5.84
 const ButtSoloHarm = document.getElementById("solo-harm");
+arrButtSolo.push(ButtSoloHarm);
 const MuteHarm = document.getElementById("mute-harm");
 SliderVolHarm.oninput = function(){
-    VolHarm.volume.value = SliderVolHarm.value;
+    VolHarm.volume.value = -Math.pow((SliderVolHarm.value-9), 2);
 }
 ButtSoloHarm.onclick = function(){
     ToggleSolo(SoloArr, SoloHarm);
+    biri(arrButtSolo, ButtSoloHarm);
 }
 MuteHarm.onclick = function(){
     VolHarm.mute = !VolHarm.mute;
+    birimute(MuteHarm);
 }
 
 //Volumi Solo e Mute Ritmo
@@ -409,43 +446,51 @@ const SoloRhy2 = new Tone.Solo().toDestination();
 const SoloRhy3 = new Tone.Solo().toDestination();
 SoloArr.push(SoloRhy1, SoloRhy2, SoloRhy3);
 const SliderVolRhy1 = document.getElementById("VolRhy1");
-SliderVolRhy1.value = VolRhy1.volume.value;
+SliderVolRhy1.value = 5.84
 const SliderVolRhy2 = document.getElementById("VolRhy2");
-SliderVolRhy2.value = VolRhy2.volume.value;
+SliderVolRhy2.value = 5.84
 const SliderVolRhy3 = document.getElementById("VolRhy3");
-SliderVolRhy3.value = VolRhy3.volume.value;
+SliderVolRhy3.value = 5.84
 const ButtSoloRhy1 = document.getElementById("solo1");
 const ButtSoloRhy2 = document.getElementById("solo2");
 const ButtSoloRhy3 = document.getElementById("solo3");
+arrButtSolo.push(ButtSoloRhy1, ButtSoloRhy2, ButtSoloRhy3);
 const MuteRhy1 = document.getElementById("mute1");
 const MuteRhy2 = document.getElementById("mute2");
 const MuteRhy3 = document.getElementById("mute3");
 SliderVolRhy1.oninput = function(){
-    VolRhy1.volume.value = SliderVolRhy1.value;
+    VolRhy1.volume.value = -Math.pow((SliderVolRhy1.value-9), 2);
+    console.log(VolRhy1.volume.value)
 }
 SliderVolRhy2.oninput = function(){
-    VolRhy2.volume.value = SliderVolRhy2.value;
+    VolRhy2.volume.value = -Math.pow((SliderVolRhy2.value-9), 2);;
 }
 SliderVolRhy3.oninput = function(){
-    VolRhy3.volume.value = SliderVolRhy3.value;
+    VolRhy3.volume.value = -Math.pow((SliderVolRhy3.value-9), 2);;
 }
 ButtSoloRhy1.onclick = function(){
     ToggleSolo(SoloArr, SoloRhy1);
+    biri(arrButtSolo, ButtSoloRhy1);
 }
 ButtSoloRhy2.onclick = function(){
     ToggleSolo(SoloArr, SoloRhy2);
+    biri(arrButtSolo, ButtSoloRhy2);
 }
 ButtSoloRhy3.onclick = function(){
     ToggleSolo(SoloArr, SoloRhy3);
+    biri(arrButtSolo, ButtSoloRhy3);
 }
 MuteRhy1.onclick = function(){
     VolRhy1.mute = !VolRhy1.mute;
+    birimute(MuteRhy1);
 }
 MuteRhy2.onclick = function(){
     VolRhy2.mute = !VolRhy2.mute;
+    birimute(MuteRhy2);
 }
 MuteRhy3.onclick = function(){
     VolRhy3.mute = !VolRhy3.mute;
+    birimute(MuteRhy3);
 }
 
 var synth = new Tone.PolySynth().set({
