@@ -116,6 +116,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                    <!-- Delay -->
                     <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
                         <h2>Delay</h2>
                         <div style="display: inline-flex;">
@@ -142,28 +143,104 @@
                             </select>
                         </div>
                     </div>
-
+                    <!-- Distortion -->
                     <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
-                        <h2>BitCrusher</h2>
+                        <h2>Distortion</h2>
                         <div style="display: inline-flex;">
-                            <div>
+                            <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Wet:</p>
-                                    <span id="WetBitSpan">0</span>
+                                    <span id="WetDistSpan">0</span>
                                 </div>
-                                <input style="margin-bottom: 3px;" name="WetBit" type="range" id="WetBit" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
+                                <input style="margin-bottom: 3px;" name="WetDist" type="range" id="WetDist" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
+                            </div>
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Distortion:</p>
+                                    <span id="DistSpan">0.1</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="Dist" type="range" id="Dist" class="sliderhor"  value= "0.1" min="0.1" max="1" step="0.01" ></input>
                             </div>
                         </div>
                         <div style="margin-top: 5px; width: 400px;">
-                            <select id = "selectBit" class="form-select effects" aria-label="Default select example">
-                                <option value="6" selected>6</option>
-                                <option value="7" >7</option>
-                                <option value="8" >8</option>
-                                <option value="9" >9</option>
-                            </select>
+        
                         </div>
                     </div>
+                    <!-- Tremolo -->
+                    <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
+                        <h2>Tremolo</h2>
+                        <div style="display: inline-flex;">
+                            <div style="margin-right: 10px;">
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Wet:</p>
+                                    <span id="WetTremSpan">0</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="WetTrem" type="range" id="WetTrem" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
+                            </div>
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Frequency(Hz):</p>
+                                    <span id="FreqTremSpan">1</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="FreqTrem" type="range" id="FreqTrem" class="sliderhor"  value= "1" min="1" max="15" step="0.01" ></input>
+                            </div>
+                        </div>
 
+                        <div style="display: inline-flex;">
+                            <div style="margin-right: 10px;">
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Depth:</p>
+                                    <span id="DepthTremSpan">0</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="DepthTrem" type="range" id="DepthTrem" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
+                            </div>
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Spread:</p>
+                                    <span id="SpreadTremSpan">180</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="SpreadTrem" type="range" id="SpreadTrem" class="sliderhor"  value= "180" min="0" max="180" step="1" ></input>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phaser -->
+                    
+                    <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
+                        <h2>Phaser</h2>
+                        <div style="display: inline-flex;">
+                            <div style="margin-right: 10px;">
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Wet:</p>
+                                    <span id="WetPhaSpan">0</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="WetPha" type="range" id="WetPha" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
+                            </div>
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Frequency(Hz):</p>
+                                    <span id="FreqPhaSpan">1</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="FreqPha" type="range" id="FreqPha" class="sliderhor"  value= "1" min="1" max="10" step="0.01" ></input>
+                            </div>
+                        </div>
+
+                        <div style="display: inline-flex;">
+                            <div style="margin-right: 10px;">
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">Octaves:</p>
+                                    <span id="OctPhaSpan">2</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="OctPha" type="range" id="OctPha" class="sliderhor"  value= "2" min="2" max="5" step="1" ></input>
+                            </div>
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">BaseFrequency(Hz):</p>
+                                    <span id="BFPhaSpan">150</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="BFPha" type="range" id="BFPha" class="sliderhor"  value= "150" min="150" max="400" step="0.01" ></input>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-primary neon" data-bs-dismiss="modal">Save</button>

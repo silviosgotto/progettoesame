@@ -6,7 +6,7 @@ import HarmonicNeurons from './HarmonicNeurons.js';
 import HarmonicSound from './HarmonicSound.js';
 import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js';
 import * as Tone from 'tone';
-import { Context, dbToGain, Solo, TransportTime } from 'tone';
+import { Context, dbToGain, Phaser, Solo, TransportTime } from 'tone';
 import * as bootstrap from 'bootstrap';
 
 
@@ -200,28 +200,123 @@ NoteSelect.onchange = function(){
     delay.set({delayTime: NoteSelect.value});
 }
 
-//BitCrusher
-const bitcrusher = new Tone.BitCrusher({
+//Distortion
+const distortion = new Tone.Distortion({
     wet: 0,
-    bits: "6"
+    distortion: 0.1
 })
-const WetBitSlider = document.getElementById("WetBit");
-const SpanWetBit = document.getElementById("WetBitSpan");
-WetBitSlider.value = 0;
-WetBitSlider.oninput = function(){
-    bitcrusher.set({wet: WetBitSlider.value});
-    SpanWetBit.innerText = WetBitSlider.value;
+const WetDistSlider = document.getElementById("WetDist");
+const SpanWetDist = document.getElementById("WetDistSpan");
+WetDistSlider.value = 0;
+WetDistSlider.oninput = function(){
+    distortion.set({wet: WetDistSlider.value});
+    SpanWetDist.innerText = WetDistSlider.value;
 }
-const selectBit = document.getElementById("selectBit");
-selectBit.onchange = function(){
-    bitcrusher.set({bits: selectBit.value});
+const DistSlider = document.getElementById("Dist");
+const SpanDist = document.getElementById("DistSpan");
+DistSlider.value = 0;
+DistSlider.oninput = function(){
+    distortion.set({distortion: DistSlider.value});
+    SpanDist.innerText = DistSlider.value;
 }
+
+//Tremolo
+const tremolo = new Tone.Tremolo({
+    wet: 0,
+    frequency: 1,
+    depth: 0,
+    spread: 180
+}).toDestination().start();
+const WetTremSlider = document.getElementById("WetTrem");
+const SpanWetTrem = document.getElementById("WetTremSpan");
+WetTremSlider.value = 0;
+WetTremSlider.oninput = function(){
+    tremolo.set({
+        wet: WetTremSlider.value
+    })
+    SpanWetTrem.innerText = WetTremSlider.value;
+}
+const FreqTremSlider = document.getElementById("FreqTrem");
+const SpanFreqTrem = document.getElementById("FreqTremSpan");
+FreqTremSlider.value = 1;
+FreqTremSlider.oninput = function(){
+    tremolo.set({
+        frequency: FreqTremSlider.value
+    })
+    SpanFreqTrem.innerText = FreqTremSlider.value;
+}
+const DepthTremSlider = document.getElementById("DepthTrem");
+const SpanDepthTrem = document.getElementById("DepthTremSpan");
+DepthTremSlider.value = 0;
+DepthTremSlider.oninput = function(){
+    tremolo.set({
+        depth: DepthTremSlider.value
+    })
+    SpanDepthTrem.innerText = DepthTremSlider.value;
+}
+const SpreadTremSlider = document.getElementById("SpreadTrem");
+const SpanSpreadTrem = document.getElementById("SpreadTremSpan");
+SpreadTremSlider.value = 180;
+SpreadTremSlider.oninput = function(){
+    tremolo.set({
+        spread: SpreadTremSlider.value
+    })
+    SpanSpreadTrem.innerText = SpreadTremSlider.value;
+}
+
+//Phaser
+const phaser = new Tone.Phaser({
+    wet: 0,
+    frequency: 1,
+    baseFrequency: 150,
+    octaves: 2
+})
+const WetPhaSlider = document.getElementById("WetPha");
+const SpanWetPha = document.getElementById("WetPhaSpan");
+WetPhaSlider.value = 0;
+WetPhaSlider.oninput = function(){
+    phaser.set({
+        wet: WetPhaSlider.value
+    })
+    SpanWetPha.innerText = WetPhaSlider.value;
+}
+const FreqPhaSlider = document.getElementById("FreqPha");
+const SpanFreqPha = document.getElementById("FreqPhaSpan");
+FreqPhaSlider.value = 1;
+FreqPhaSlider.oninput = function(){
+    phaser.set({
+        frequency: FreqPhaSlider.value
+    })
+    SpanFreqPha.innerText = FreqPhaSlider.value;
+}
+
+const OctPhaSlider = document.getElementById("OctPha");
+const SpanOctPha = document.getElementById("OctPhaSpan");
+OctPhaSlider.value = 1;
+OctPhaSlider.oninput = function(){
+    phaser.set({
+        octaves: OctPhaSlider.value
+    })
+    SpanOctPha.innerText = OctPhaSlider.value;
+}
+
+const BFPhaSlider = document.getElementById("BFPha");
+const SpanBFPha = document.getElementById("BFPhaSpan");
+BFPhaSlider.value = 100;
+BFPhaSlider.oninput = function(){
+    phaser.set({
+        baseFrequency: BFPhaSlider.value
+    })
+    SpanBFPha.innerText = BFPhaSlider.value;
+}
+
+
 
 
 //Volumi Solo e Mute Melodico
 var SoloArr = [];
 const VolMel = new Tone.Volume(-10)
-const SoloMel = new Tone.Solo().toDestination();
+const SoloMel = new Tone.Solo(); //.toDestination();
 SoloArr.push(SoloMel);
 const SliderVolMel = document.getElementById("VolMel");
 SliderVolMel.value = VolMel.volume.value;
@@ -311,7 +406,7 @@ var synth = new Tone.PolySynth().set({
         release: 0.5
     },
     maxPolyphony: 32
-}).chain(VolMel, PanMel, delay, bitcrusher, SoloMel);
+}).chain(phaser, distortion, delay, PanMel, VolMel, SoloMel, tremolo);
 
 const MelWave = document.getElementById("selectWaveMel");
 MelWave.onchange = function(){
