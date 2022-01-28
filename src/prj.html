@@ -12,7 +12,7 @@
     <body>
         <!-- Modal -->
         <!-- Pan Rhythm -->
-        <div class="modal fade" id="PanRhy1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="PanRhy1" data-show = "false" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -118,22 +118,27 @@
                     <div class="modal-body">
                     <!-- Delay -->
                     <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
-                        <h2>Delay</h2>
+                        <div style="display: block ruby;">
+                            <h2>Delay</h2>
+                            <div id = "delon" class="effect-off"></div>
+                        </div>
+                        
                         <div style="display: inline-flex;">
-                            <div style="margin-right: 10px;">
-                                <div style="display: block ruby;">
-                                    <p style="margin-bottom: 3px;">FeedBack:</p>
-                                    <span id="FeedbackDelSpan">0</span>
-                                </div>
-                                <input style="margin-bottom: 3px;" name="FeedbackDelay" type="range" id="FeedbackDelay" class="sliderhor"  value= "0" min="0" max="0.6" step="0.01" ></input>
-                            </div>
-                            <div>
+                            <div  style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Wet:</p>
                                     <span id="WetDelSpan">0</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="WetDelay" type="range" id="WetDelay" class="sliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
                             </div>
+                            <div>
+                                <div style="display: block ruby;">
+                                    <p style="margin-bottom: 3px;">FeedBack:</p>
+                                    <span id="FeedbackDelSpan">0</span>
+                                </div>
+                                <input style="margin-bottom: 3px;" name="FeedbackDelay" type="range" id="FeedbackDelay" class="sliderhor"  value= "0" min="0" max="0.6" step="0.01" ></input>
+                            </div>
+                            
                         </div>
                         <div style="margin-top: 5px; width: 400px;">
                             <select id = "selectNoteDelay" class="form-select effects" aria-label="Default select example">
@@ -145,7 +150,10 @@
                     </div>
                     <!-- Distortion -->
                     <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
-                        <h2>Distortion</h2>
+                        <div style="display: block ruby;">
+                            <h2>Distortion</h2>
+                            <div id = "diston" class="effect-off"></div>
+                        </div>
                         <div style="display: inline-flex;">
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
@@ -168,7 +176,10 @@
                     </div>
                     <!-- Tremolo -->
                     <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
-                        <h2>Tremolo</h2>
+                        <div style="display: block ruby;">
+                            <h2>Tremolo</h2>
+                            <div id = "tremon" class="effect-off"></div>
+                        </div>
                         <div style="display: inline-flex;">
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
@@ -206,7 +217,10 @@
                     <!-- Phaser -->
                     
                     <div style="border-bottom: solid 2px rgb(255, 29, 112); padding-bottom: 5px;">
-                        <h2>Phaser</h2>
+                        <div style="display: block ruby;">
+                            <h2>Phaser</h2>
+                            <div id = "phaon" class="effect-off"></div>
+                        </div>
                         <div style="display: inline-flex;">
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
@@ -242,9 +256,9 @@
                         </div>
                     </div>
                     </div>
-                    <div class="modal-footer">
+                    <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-primary neon" data-bs-dismiss="modal">Save</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -262,6 +276,14 @@
             <button id = "rhythm-button"  class = "neon btn btn-outline-danger" style="width: 100%;">Play</button>
             <div style="margin-top: 20px;">
             <button id = "neurons-button" class = "neon btn btn-outline-danger" style="width: 100%;" >Start learning neurons</button>
+            </div>
+            <div style="border:rgb(255, 29, 112) solid 1px; margin-top: 20px; border-radius: 5px; padding: 10px;">
+                <div style="display: block ruby; right: 50%;">
+                    <p style="margin-bottom: 3px; color: rgb(255, 29, 112);">BPM:</p>
+                    <span for="bpmSlide" id="bpmValuespan" class="init-text-color" style="margin-bottom: 5px;"></span>
+                </div>
+                <input style="width: 100%;" name="bpmSlide" type="range" id="bpmValue" class="sliderhor"  value= "120" min="30" max="200" step="1" ></input>
+                
             </div>
 
             <div style="margin-top: 10px;">
@@ -324,10 +346,6 @@
                     <option value="sawtooth" >Saw</option>
                     <option value="triangle" >Triangle</option>
                 </select>
-            </div>
-            <div>
-                <input name="bpmSlide" type="range" id="bpmValue" class="sliderhor"  value= "120" min="30" max="200" step="1" ></input>
-                <span for="bpmSlide" id="bpmValuespan" class="init-text-color" style="margin-bottom: 5px;"></span>
             </div>
         </div>
 

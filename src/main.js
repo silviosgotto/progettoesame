@@ -185,6 +185,14 @@ const WetDelSlider = document.getElementById("WetDelay");
 const SpanWet = document.getElementById("WetDelSpan");
 WetDelSlider.value = 0;
 WetDelSlider.oninput = function(){
+    if(WetDelSlider.value == 0){
+        document.getElementById("delon").classList.add("effect-off");
+        document.getElementById("delon").classList.remove("effect-on");
+    }
+    else{
+        document.getElementById("delon").classList.add("effect-on");
+        document.getElementById("delon").classList.remove("effect-off");
+    }
     delay.set({wet: WetDelSlider.value});
     SpanWet.innerText = WetDelSlider.value;
 }
@@ -209,6 +217,14 @@ const WetDistSlider = document.getElementById("WetDist");
 const SpanWetDist = document.getElementById("WetDistSpan");
 WetDistSlider.value = 0;
 WetDistSlider.oninput = function(){
+    if(WetDistSlider.value == 0){
+        document.getElementById("diston").classList.add("effect-off");
+        document.getElementById("diston").classList.remove("effect-on");
+    }
+    else{
+        document.getElementById("diston").classList.add("effect-on");
+        document.getElementById("diston").classList.remove("effect-off");
+    }
     distortion.set({wet: WetDistSlider.value});
     SpanWetDist.innerText = WetDistSlider.value;
 }
@@ -231,6 +247,14 @@ const WetTremSlider = document.getElementById("WetTrem");
 const SpanWetTrem = document.getElementById("WetTremSpan");
 WetTremSlider.value = 0;
 WetTremSlider.oninput = function(){
+    if(WetTremSlider.value == 0){
+        document.getElementById("tremon").classList.add("effect-off");
+        document.getElementById("tremon").classList.remove("effect-on");
+    }
+    else{
+        document.getElementById("tremon").classList.add("effect-on");
+        document.getElementById("tremon").classList.remove("effect-off");
+    }
     tremolo.set({
         wet: WetTremSlider.value
     })
@@ -275,6 +299,14 @@ const WetPhaSlider = document.getElementById("WetPha");
 const SpanWetPha = document.getElementById("WetPhaSpan");
 WetPhaSlider.value = 0;
 WetPhaSlider.oninput = function(){
+    if(WetPhaSlider.value == 0){
+        document.getElementById("phaon").classList.add("effect-off");
+        document.getElementById("phaon").classList.remove("effect-on");
+    }
+    else{
+        document.getElementById("phaon").classList.add("effect-on");
+        document.getElementById("phaon").classList.remove("effect-off");
+    }
     phaser.set({
         wet: WetPhaSlider.value
     })

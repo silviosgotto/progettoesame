@@ -10,8 +10,8 @@ html, body{
   position: absolute;
   height: 100%;
   width: 100%;
-  min-height: 50%;
-  min-width: 50%;
+  min-height: 550px;
+  min-width: 1025px;
   display: flex;
   background: linear-gradient(217deg, #23044e, rgba(20, 4, 65, 0.459) 20%, black, #13052e ),
               linear-gradient(270deg, #23044e, rgba(20, 4, 65, 0.459) 35%, black, #13052e),
@@ -182,10 +182,27 @@ input[type=number] {
   border-color: #ff1d70;
 }
 
+/*effetti */
 .effects{
   background-color: #f99f3f;
   color: #000000;
   border-color: #000000;
+}
+
+.effect-off{
+  width: 15px;
+  height: 15px;
+  border: solid black 0.5px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.effect-on{
+  width: 15px;
+  height: 15px;
+  border: solid black 0.5px;
+  border-radius: 50%;
+  background-color: rgb(0, 255, 0);
 }
 
 
