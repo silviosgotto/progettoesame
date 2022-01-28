@@ -6,9 +6,27 @@ import HarmonicNeurons from './HarmonicNeurons.js';
 import HarmonicSound from './HarmonicSound.js';
 import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js';
 import * as Tone from 'tone';
+import { Popover } from 'bootstrap';
 import { Context, dbToGain, Phaser, Solo, TransportTime } from 'tone';
 import * as bootstrap from 'bootstrap';
 
+
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
+popoverList[0].show();
+setTimeout(function(){
+    popoverList[0].hide();
+}, 3000)
+
+const rulesModal = new bootstrap.Modal(document.getElementById("rulesModal"));
+const spanBlob = document.getElementById("rules");
+spanBlob.onclick = function(){
+    console.log("ciao");
+    rulesModal.show();
+}
 
 console.log(`%c Designed With Love By Us `, "background: #0055CC; color: #CCFF00");
 const SoundDictionary = {
