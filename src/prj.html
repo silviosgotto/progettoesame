@@ -21,10 +21,46 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                Welcome!!!
+                Pagina 1
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary neon" data-bs-dismiss="modal">Let's Start</button>
+                  <button type="button" class="btn btn-secondary neon" data-bs-target="#rules2" data-bs-toggle="modal" data-bs-dismiss="modal">Page 2</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="rules2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Pagina 2
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rulesModal" data-bs-toggle="modal" data-bs-dismiss="modal">Page 1</button>
+                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rules3" data-bs-toggle="modal" data-bs-dismiss="modal">Page 3</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="rules3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Pagina 3
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rules2" data-bs-toggle="modal" data-bs-dismiss="modal">Page 2</button>
+                    <button type="button" class="btn btn-secondary neon" data-bs-dismiss="modal">Let's Start!!</button>
                 </div>
               </div>
             </div>
@@ -299,11 +335,39 @@
         </div>
 
         <!-- sample caricati per la parte ritmica -->
-        <audio id="kickSample" src="../sounds/kick-lofi.wav" type="audio/wav"></audio>
-        <audio id="snareSample" src="../sounds/snare-lofi.wav" type="audio/wav"></audio>
-        <audio id="hihatSample" src="../sounds/hihat-lofi.wav" type="audio/wav"></audio>
-        <audio id="808Sample" src="../sounds/808E.wav" type="audio/wav"></audio>
-        <audio id="clickSample" src="../sounds/click.wav" type="audio/wav"></audio>
+        <audio id="kicklofi" src="../sounds/kick-lofi.wav" type="audio/wav"></audio>
+        <audio id="snarelofi" src="../sounds/snare-lofi.wav" type="audio/wav"></audio>
+        <audio id="hihatlofi" src="../sounds/hihat-lofi.wav" type="audio/wav"></audio>
+        <audio id="afrocowbell" src="../sounds/AfricanKit_Cowbell.wav" type="audio/wav"></audio>
+        <audio id="afrodjembe" src="../sounds/AfricanKit_Djembe.wav" type="audio/wav"></audio>
+        <audio id="afrodjembe2" src="../sounds/AfricanKit_Djembe2.wav" type="audio/wav"></audio>
+        <audio id="afrodjembe3" src="../sounds/AfricanKit_Djembe3.wav" type="audio/wav"></audio>
+        <audio id="afrorattle" src="../sounds/AfricanKit_sonaglio.wav" type="audio/wav"></audio>
+        <audio id="analogtechnohh" src="../sounds/AnalogTechnoKit_HH.wav" type="audio/wav"></audio>
+        <audio id="analogtechnokick" src="../sounds/AnalogTechnoKit_Kick.wav" type="audio/wav"></audio>
+        <audio id="analogtechnoopenhh" src="../sounds/AnalogTechnoKit_OpenHH.wav" type="audio/wav"></audio>
+        <audio id="analogtechnosnare" src="../sounds/AnalogTechnoKit_Snare.wav" type="audio/wav"></audio>
+        <audio id="conga" src="../sounds/BrokenBeatKit_Conga1.wav" type="audio/wav"></audio>
+        <audio id="conga2" src="../sounds/BrokenBeatKit_Conga2.wav" type="audio/wav"></audio>
+        <audio id="conga3" src="../sounds/BrokenBeatKit_Conga3.wav" type="audio/wav"></audio>
+        <audio id="rimshot" src="../sounds/ClassicDubKit_Rim.wav" type="audio/wav"></audio>
+        <audio id="shaker" src="../sounds/DrumNBassKit_Shaker.wav" type="audio/wav"></audio>
+        <audio id="electrodubhh" src="../sounds/ElectronicDubKit_HH.wav" type="audio/wav"></audio>
+        <audio id="pluic" src="../sounds/ElectronicDubKit_Pluic.wav" type="audio/wav"></audio>
+        <audio id="indiancymbal" src="../sounds/IndianMiddleEasternKit_Cymbal.wav" type="audio/wav"></audio>
+        <audio id="indiancymbal2" src="../sounds/IndianMiddleEasternKit_Cymbal2.wav" type="audio/wav"></audio>
+        <audio id="indiandumbek" src="../sounds/IndianMiddleEasternKit_Dumbek.wav" type="audio/wav"></audio>
+        <audio id="indiantabla" src="../sounds/IndianMiddleEasternKit_Tabla.wav" type="audio/wav"></audio>
+        <audio id="indiantar" src="../sounds/IndianMiddleEasternKit_Tar.wav" type="audio/wav"></audio>
+        <audio id="conga4" src="../sounds/LatinKit_Conga.wav" type="audio/wav"></audio>
+        <audio id="conga5" src="../sounds/LatinKit_Conga2.wav" type="audio/wav"></audio>
+        <audio id="latinkick" src="../sounds/LatinKit_Kick.wav" type="audio/wav"></audio>
+        <audio id="maracas" src="../sounds/LatinKit_Maracas.wav" type="audio/wav"></audio>
+        <audio id="timbale" src="../sounds/LatinKit_Timbale.wav" type="audio/wav"></audio>
+        <audio id="pureanalogkick" src="../sounds/PureAnalog_Kick.wav" type="audio/wav"></audio>
+
+
+        <!-- <audio id="808Sample" src="../sounds/808E.wav" type="audio/wav"></audio> -->
 
             <!-- colonna dei comandi di avvio -->
 
@@ -322,7 +386,7 @@
                     
                 </div>
                 
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 10px;">
                     <a style="color: rgb(255, 29, 112);">Harmony</a>
                     <div>
                         <select id = "selectKeyMel" class="form-select" aria-label="Default select example">
@@ -362,8 +426,120 @@
                         </select>
                     </div>
                 </div>
+
+                <!-- pad 1 suono -->
+                <div style="margin-top: 10px;">
+                    <a style="color: rgb(255, 29, 112);">Rhythm Pads Sounds</a>
+                    <select class="form-select" id="soundP1" aria-label="Default select example">
+                        <option hidden selected>Pad 1</option>
+                        <option value="kicklofi">Lo-Fi Kick</option>
+                        <option value="analogtechnokick">Analog Techno Kick</option>
+                        <option value="latinkick">Latin Kick</option>
+                        <option value="pureanalogkick">Pure Analog Kick</option>
+                        <option value="snarelofi">Lo-Fi Snare</option>
+                        <option value="analogtechnosnare">Analog Techno Snare</option>
+                        <option value="rimshot">Rim Shot</option>
+                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                        <option value="afrocowbell">CowBell</option>
+                        <option value="afrodjembe">Djembe</option>
+                        <option value="afrodjembe2">Djembe2</option>
+                        <option value="afrodjembe3">Djembe3</option>
+                        <option value="afrorattle">Rattle</option>
+                        <option value="conga">Conga</option>
+                        <option value="conga2">Conga2</option>
+                        <option value="conga3">Conga3</option>
+                        <option value="conga4">Conga4</option>
+                        <option value="conga5">Conga5</option>
+                        <option value="shaker">Shaker</option>
+                        <option value="pluic">Pluic</option>
+                        <option value="indiancymbal">Indian Cymbal</option>
+                        <option value="indiancymbal2">Indian Cymbal2</option>
+                        <option value="indiandumbek">Dumbek</option>
+                        <option value="indiantabla">Tabla</option>
+                        <option value="indiantar">Tar</option>
+                        <option value="maracas">Maracas</option>
+                        <option value="timbale">Timbale</option>
+                    </select>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <select class="form-select" id="soundP2" aria-label="Default select example">
+                        <option hidden selected>Pad 2</option>
+                        <option value="kicklofi">Lo-Fi Kick</option>
+                        <option value="analogtechnokick">Analog Techno Kick</option>
+                        <option value="latinkick">Latin Kick</option>
+                        <option value="pureanalogkick">Pure Analog Kick</option>
+                        <option value="snarelofi">Lo-Fi Snare</option>
+                        <option value="analogtechnosnare">Analog Techno Snare</option>
+                        <option value="rimshot">Rim Shot</option>
+                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                        <option value="afrocowbell">CowBell</option>
+                        <option value="afrodjembe">Djembe</option>
+                        <option value="afrodjembe2">Djembe2</option>
+                        <option value="afrodjembe3">Djembe3</option>
+                        <option value="afrorattle">Rattle</option>
+                        <option value="conga">Conga</option>
+                        <option value="conga2">Conga2</option>
+                        <option value="conga3">Conga3</option>
+                        <option value="conga4">Conga4</option>
+                        <option value="conga5">Conga5</option>
+                        <option value="shaker">Shaker</option>
+                        <option value="pluic">Pluic</option>
+                        <option value="indiancymbal">Indian Cymbal</option>
+                        <option value="indiancymbal2">Indian Cymbal2</option>
+                        <option value="indiandumbek">Dumbek</option>
+                        <option value="indiantabla">Tabla</option>
+                        <option value="indiantar">Tar</option>
+                        <option value="maracas">Maracas</option>
+                        <option value="timbale">Timbale</option>
+                    </select>
+                </div>
+
+                <!-- pad 3 suono -->
+
+                <div style="margin-top: 10px;">
+                    <select class="form-select" id="soundP3" aria-label="Default select example">
+                        <option hidden selected>Pad 3</option>
+                        <option value="kicklofi">Lo-Fi Kick</option>
+                        <option value="analogtechnokick">Analog Techno Kick</option>
+                        <option value="latinkick">Latin Kick</option>
+                        <option value="pureanalogkick">Pure Analog Kick</option>
+                        <option value="snarelofi">Lo-Fi Snare</option>
+                        <option value="analogtechnosnare">Analog Techno Snare</option>
+                        <option value="rimshot">Rim Shot</option>
+                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                        <option value="afrocowbell">CowBell</option>
+                        <option value="afrodjembe">Djembe</option>
+                        <option value="afrodjembe2">Djembe2</option>
+                        <option value="afrodjembe3">Djembe3</option>
+                        <option value="afrorattle">Rattle</option>
+                        <option value="conga">Conga</option>
+                        <option value="conga2">Conga2</option>
+                        <option value="conga3">Conga3</option>
+                        <option value="conga4">Conga4</option>
+                        <option value="conga5">Conga5</option>
+                        <option value="shaker">Shaker</option>
+                        <option value="pluic">Pluic</option>
+                        <option value="indiancymbal">Indian Cymbal</option>
+                        <option value="indiancymbal2">Indian Cymbal2</option>
+                        <option value="indiandumbek">Dumbek</option>
+                        <option value="indiantabla">Tabla</option>
+                        <option value="indiantar">Tar</option>
+                        <option value="maracas">Maracas</option>
+                        <option value="timbale">Timbale</option>
+                    </select>
+                </div>
                 
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 10px;">
                     <a style="color: rgb(255, 29, 112);">Melodic Wave Type</a>
                     <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
                         <option hidden selected>Wave Type</option>
@@ -375,7 +551,7 @@
                         <option value="triangle" >Triangle</option>
                     </select>
                 </div>
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 10px;">
                     <a style="color: rgb(255, 29, 112);">Harmonic Wave Type</a>
                     <select id = "selectWaveHarm" class="form-select" aria-label="Default select example">
                         <option hidden selected>Wave Type</option>
@@ -424,16 +600,7 @@
                             </select>
                         </div>
 
-                        <!-- pad 1 suono -->
-                        <div style="margin-top: 10px;">
-                            <select class="form-select" id="soundP1" aria-label="Default select example">
-                                <option hidden selected>Sound</option>
-                                <option value="kick">Kick</option>
-                                <option value="808">808E</option>
-                                <option value="snare">Snare</option>
-                                <option value="hihat">Hi-Hat</option>
-                            </select>
-                        </div>
+                        
 
                         <div style="margin-top: 10px; position:relative; bottom:100%;">
                             <button id="initNeuronsPad1" class="neon btn ">Init Neurons</button>
@@ -491,15 +658,7 @@
 
                         <!-- pad 2 suono -->
 
-                        <div style="margin-top: 10px;">
-                            <select class="form-select" id="soundP2" aria-label="Default select example">
-                                <option hidden selected>Sound</option>
-                                <option value="kick">Kick</option>
-                                <option value="808">808E</option>
-                                <option value="snare">Snare</option>
-                                <option value="hihat">Hi-Hat</option>
-                            </select>
-                        </div>
+                        
 
                         <div style="margin-top: 10px; position:relative; bottom:100%;">
                             <button id="initNeuronsPad2" class=" neon btn btn-outline-danger">Init Neurons</button>
@@ -554,17 +713,7 @@
                             </select>
                         </div>
 
-                        <!-- pad 3 suono -->
-
-                        <div style="margin-top: 10px;">
-                            <select class="form-select" id="soundP3" aria-label="Default select example">
-                                <option hidden selected>Sound</option>
-                                <option value="kick">Kick</option>
-                                <option value="808">808E</option>
-                                <option value="snare">Snare</option>
-                                <option value="hihat">Hi-Hat</option>
-                            </select>
-                        </div>
+                        
                         <div style="margin-top: 10px; position:relative; bottom:100%;">
                             <button id="initNeuronsPad3" class="neon btn btn-outline-danger">Init Neurons</button>
                         </div>

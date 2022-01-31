@@ -24,16 +24,41 @@ setTimeout(function(){
 const rulesModal = new bootstrap.Modal(document.getElementById("rulesModal"));
 const spanBlob = document.getElementById("rules");
 spanBlob.onclick = function(){
-    console.log("ciao");
     rulesModal.show();
 }
 
 console.log(`%c Designed With Love By Us `, "background: #0055CC; color: #CCFF00");
 const SoundDictionary = {
-    "kick": document.getElementById("kickSample").src,
-    "808": document.getElementById("808Sample").src,
-    "snare": document.getElementById("snareSample").src,
-    "hihat": document.getElementById("hihatSample").src
+    "kicklofi": document.getElementById("kicklofi").src,
+    "snarelofi": document.getElementById("snarelofi").src,
+    "hihatlofi": document.getElementById("hihatlofi").src,
+    "analogtechnokick": document.getElementById("analogtechnokick").src,
+    "latinkick": document.getElementById("latinkick").src,
+    "pureanalogkick": document.getElementById("pureanalogkick").src,
+    "analogtechnosnare": document.getElementById("analogtechnosnare").src,
+    "rimshot": document.getElementById("rimshot").src,
+    "analogtechnohh": document.getElementById("analogtechnohh").src,
+    "analogtechnoopenhh": document.getElementById("analogtechnoopenhh").src,
+    "electrodubhh": document.getElementById("electrodubhh").src,
+    "afrocowbell": document.getElementById("afrocowbell").src,
+    "afrodjembe": document.getElementById("afrodjembe").src,
+    "afrodjembe2": document.getElementById("afrodjembe2").src,
+    "afrodjembe3": document.getElementById("afrodjembe3").src,
+    "afrorattle": document.getElementById("afrorattle").src,
+    "conga": document.getElementById("conga").src,
+    "conga2": document.getElementById("conga2").src,
+    "conga3": document.getElementById("conga3").src,
+    "conga4": document.getElementById("conga4").src,
+    "conga5": document.getElementById("conga5").src,
+    "shaker": document.getElementById("shaker").src,
+    "pluic": document.getElementById("pluic").src,
+    "indiancymbal": document.getElementById("indiancymbal").src,
+    "indiancymbal2": document.getElementById("indiancymbal2").src,
+    "indiandumbek": document.getElementById("indiandumbek").src,
+    "indiantabla": document.getElementById("indiantabla").src,
+    "indiantar": document.getElementById("indiantar").src,
+    "maracas": document.getElementById("maracas").src,
+    "timbale": document.getElementById("timbale").src,
 }
 
 const MetricDictionary = {
@@ -80,6 +105,11 @@ bpmValue.oninput = function(){
 
 
 const lmel = parseFloat(document.getElementById("melodic-pad").clientWidth);
+
+//players
+var player1;
+var player2;
+var player3;
 
 //prova neuroni ritmo
 
@@ -517,6 +547,8 @@ HarmWave.onchange = function(){
     }});
 }
 
+//synth 
+
 var synth2 = new Tone.PolySynth().set({
     envelope: {
     attack: 0.5,
@@ -559,6 +591,8 @@ relValue.onchange = () => {
     }})
 }
 
+var sound1 = false;
+
 initrPad1Butt = document.getElementById('initNeuronsPad1');
 initrPad1Butt.onclick = function(){
     const n1 = document.getElementById("NeuronsPad1").value;
@@ -571,11 +605,13 @@ initrPad1Butt.onclick = function(){
         return;
     }
     else{
+        player1 = new Tone.Player(soundRhythm1).chain(VolRhy1, PanRhy1, SoloRhy1);
+        sound1 = true;
         const rPad1 = SVG().addTo("#rhythm-pad1").size(w1, h1);
         document.getElementById("rhythm-pad1").classList.add(shape1);
         //document.getElementById("clickPad1").children[0].classList.add("click"+shape1);
         metricRhythm1 = MetricDictionary[shape1];
-        nrPad1 = new RhythmNeurons("1", n1, w1, h1, rPad1, shape1, Tone.Transport.bpm.value, VolRhy1, SoloRhy1, PanRhy1);
+        nrPad1 = new RhythmNeurons("1", n1, w1, h1, rPad1, shape1, Tone.Transport.bpm.value, VolRhy1, SoloRhy1, PanRhy1, player1);
         document.getElementById('init1').classList.add('disabledNeurons');
         document.getElementById('afterInit1').classList.remove('disabledNeurons');
         nrPad1.initNeurons();
@@ -584,6 +620,14 @@ initrPad1Butt.onclick = function(){
         }
     }
 }
+
+document.getElementById("soundP1").onchange = function(){
+    if(sound1){
+        player1.load(SoundDictionary[document.getElementById("soundP1").value]);
+    }
+}
+
+var sound2 = false;
 
 initrPad2Butt = document.getElementById('initNeuronsPad2');
 initrPad2Butt.onclick = function(){
@@ -597,12 +641,14 @@ initrPad2Butt.onclick = function(){
         return;
     }
     else{
+        player2 = new Tone.Player(soundRhythm2).chain(VolRhy2, PanRhy2, SoloRhy2);
+        sound2 = true;
         const rPad2 = SVG().addTo("#rhythm-pad2").size(w2, h2);
         document.getElementById("rhythm-pad2").classList.add(shape2);
         //document.getElementById("clickPad2").children[0].classList.add("click"+shape2);
         metricRhythm2 = MetricDictionary[shape2];
         //console.log(metricRhythm2);
-        nrPad2 = new RhythmNeurons("2", n2, w2, h2, rPad2, shape2, Tone.Transport.bpm.value, VolRhy2, SoloRhy2, PanRhy2);
+        nrPad2 = new RhythmNeurons("2", n2, w2, h2, rPad2, shape2, Tone.Transport.bpm.value, VolRhy2, SoloRhy2, PanRhy2, player2);
         document.getElementById('init2').classList.add('disabledNeurons');
         document.getElementById('afterInit2').classList.remove('disabledNeurons');
         nrPad2.initNeurons();
@@ -612,6 +658,14 @@ initrPad2Butt.onclick = function(){
     }
 }
 
+document.getElementById("soundP2").onchange = function(){
+    if(sound2){
+        player2.load(SoundDictionary[document.getElementById("soundP2").value]);
+    }
+    
+}
+
+var sound3 = false;
 
 initrPad3Butt = document.getElementById('initNeuronsPad3');
 initrPad3Butt.onclick = function(){
@@ -625,18 +679,26 @@ initrPad3Butt.onclick = function(){
         return;
     }
     else{
+        player3 = new Tone.Player(soundRhythm3).chain(VolRhy3, PanRhy3, SoloRhy3);
+        sound3 = true;
         const rPad3 = SVG().addTo("#rhythm-pad3").size(w3, h3);
         document.getElementById("rhythm-pad3").classList.add(shape3);
         //document.getElementById("clickPad3").children[0].classList.add("click"+shape3);
         metricRhythm3 = MetricDictionary[shape3];
         //console.log(metricRhythm3);
-        nrPad3 = new RhythmNeurons("3", n3, w3, h3, rPad3, shape3, Tone.Transport.bpm.value, VolRhy3, SoloRhy3, PanRhy3);
+        nrPad3 = new RhythmNeurons("3", n3, w3, h3, rPad3, shape3, Tone.Transport.bpm.value, VolRhy3, SoloRhy3, PanRhy3, player3);
         document.getElementById('init3').classList.add('disabledNeurons');
         document.getElementById('afterInit3').classList.remove('disabledNeurons');
         nrPad3.initNeurons();
         if(learningButton.disabled){
             learningButton.disabled = "";
         }
+    }
+}
+
+document.getElementById("soundP3").onchange = function(){
+    if(sound3){
+        player3.load(SoundDictionary[document.getElementById("soundP3").value]);
     }
 }
 
@@ -806,7 +868,7 @@ function startRhythm(Part, Neurons, sound, metric, id){
         Neurons.visualClick(a);
         PlayButt.disabled = "";
         //PlayClick.disabled = "";
-        Part = new RhythmSound(Neurons.calcDistNormNeu(), Tone.Transport.bpm.value, sound, metric, Neurons.getCtx(), Neurons.getVol(), Neurons.getSol(), Neurons.getPan());
+        Part = new RhythmSound(Neurons.calcDistNormNeu(), Tone.Transport.bpm.value, sound, metric, Neurons.getCtx(), Neurons.getVol(), Neurons.getSol(), Neurons.getPan(), Neurons.getPlayer());
         //const MelodicPart = new MelodicSound(nmPad.calcDistNormNeu(), nmPad.calcPosPad(), bpm, 4, 440);
         Part.createPart();
         arrPart.push(Part.getarrDur());
