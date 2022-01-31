@@ -24,8 +24,9 @@
                 Pagina 1
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary neon" data-bs-target="#rules2" data-bs-toggle="modal" data-bs-dismiss="modal">Page 2</button>
+                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rules2" data-bs-toggle="modal" data-bs-dismiss="modal">→</button>
                 </div>
+                
               </div>
             </div>
         </div>
@@ -41,9 +42,10 @@
                 Pagina 2
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rulesModal" data-bs-toggle="modal" data-bs-dismiss="modal">Page 1</button>
-                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rules3" data-bs-toggle="modal" data-bs-dismiss="modal">Page 3</button>
+                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rulesModal" data-bs-toggle="modal" data-bs-dismiss="modal">←</button>
+                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rules3" data-bs-toggle="modal" data-bs-dismiss="modal">→</button> 
                 </div>
+                
               </div>
             </div>
         </div>
@@ -59,7 +61,7 @@
                 Pagina 3
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rules2" data-bs-toggle="modal" data-bs-dismiss="modal">Page 2</button>
+                    <button type="button" class="btn btn-secondary neon" data-bs-target="#rules2" data-bs-toggle="modal" data-bs-dismiss="modal">←</button>
                     <button type="button" class="btn btn-secondary neon" data-bs-dismiss="modal">Let's Start!!</button>
                 </div>
               </div>
@@ -365,6 +367,9 @@
         <audio id="maracas" src="../sounds/LatinKit_Maracas.wav" type="audio/wav"></audio>
         <audio id="timbale" src="../sounds/LatinKit_Timbale.wav" type="audio/wav"></audio>
         <audio id="pureanalogkick" src="../sounds/PureAnalog_Kick.wav" type="audio/wav"></audio>
+        <audio id="eternsnare" src="../sounds/Eterniity_Snare4.wav" type="audio/wav"></audio>
+        <audio id="eternsnare2" src="../sounds/Eterniity_Snare8.wav" type="audio/wav"></audio>
+        <audio id="lazersnare" src="../sounds/Lazer_Snare5.wav" type="audio/wav"></audio>
 
 
         <!-- <audio id="808Sample" src="../sounds/808E.wav" type="audio/wav"></audio> -->
@@ -384,6 +389,139 @@
                     </div>
                     <input style="width: 100%;" name="bpmSlide" type="range" id="bpmValue" class="sliderhor"  value= "120" min="30" max="200" step="1" ></input>
                     
+                </div>
+
+                <!-- pad 1 suono -->
+                <div style="margin-top: 10px;">
+                    <a style="color: rgb(255, 29, 112);">Rhythm Pads Sounds</a>
+                    <select class="form-select" id="soundP1" aria-label="Default select example">
+                        <option hidden selected>Pad 1</option>
+                        <option disabled>KICK</option>
+                        <option value="kicklofi">Lo-Fi Kick</option>
+                        <option value="analogtechnokick">Analog Techno Kick</option>
+                        <option value="latinkick">Latin Kick</option>
+                        <option value="pureanalogkick">Pure Analog Kick</option>
+                        <option disabled>SNARE</option>
+                        <option value="snarelofi">Lo-Fi Snare</option>
+                        <option value="analogtechnosnare">Analog Techno Snare</option>
+                        <option value="eternsnare">Blob Snare</option>
+                        <option value="eternsnare2">Mlom Snare</option>
+                        <option value="lazersnare">Klok Snare</option>
+                        <option value="rimshot">Rim Shot</option>
+                        <option disabled>HI-HAT</option>
+                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                        <option disabled>PERCUSSIONS</option>
+                        <option value="afrocowbell">CowBell</option>
+                        <option value="afrodjembe">Djembe</option>
+                        <option value="afrodjembe2">Djembe2</option>
+                        <option value="afrodjembe3">Djembe3</option>
+                        <option value="afrorattle">Rattle</option>
+                        <option value="conga">Conga</option>
+                        <option value="conga2">Conga2</option>
+                        <option value="conga3">Conga3</option>
+                        <option value="conga4">Conga4</option>
+                        <option value="conga5">Conga5</option>
+                        <option value="shaker">Shaker</option>
+                        <option value="pluic">Pluic</option>
+                        <option value="indiancymbal">Indian Cymbal</option>
+                        <option value="indiancymbal2">Indian Cymbal2</option>
+                        <option value="indiandumbek">Dumbek</option>
+                        <option value="indiantabla">Tabla</option>
+                        <option value="indiantar">Tar</option>
+                        <option value="maracas">Maracas</option>
+                        <option value="timbale">Timbale</option>
+                    </select>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <select class="form-select" id="soundP2" aria-label="Default select example">
+                        <option hidden selected>Pad 2</option>
+                        <option disabled>KICK</option>
+                        <option value="kicklofi">Lo-Fi Kick</option>
+                        <option value="analogtechnokick">Analog Techno Kick</option>
+                        <option value="latinkick">Latin Kick</option>
+                        <option value="pureanalogkick">Pure Analog Kick</option>
+                        <option disabled>SNARE</option>
+                        <option value="snarelofi">Lo-Fi Snare</option>
+                        <option value="analogtechnosnare">Analog Techno Snare</option>
+                        <option value="eternsnare">Blob Snare</option>
+                        <option value="eternsnare2">Mlom Snare</option>
+                        <option value="lazersnare">Klok Snare</option>
+                        <option value="rimshot">Rim Shot</option>
+                        <option disabled>HI-HAT</option>
+                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                        <option disabled>PERCUSSIONS</option>
+                        <option value="afrocowbell">CowBell</option>
+                        <option value="afrodjembe">Djembe</option>
+                        <option value="afrodjembe2">Djembe2</option>
+                        <option value="afrodjembe3">Djembe3</option>
+                        <option value="afrorattle">Rattle</option>
+                        <option value="conga">Conga</option>
+                        <option value="conga2">Conga2</option>
+                        <option value="conga3">Conga3</option>
+                        <option value="conga4">Conga4</option>
+                        <option value="conga5">Conga5</option>
+                        <option value="shaker">Shaker</option>
+                        <option value="pluic">Pluic</option>
+                        <option value="indiancymbal">Indian Cymbal</option>
+                        <option value="indiancymbal2">Indian Cymbal2</option>
+                        <option value="indiandumbek">Dumbek</option>
+                        <option value="indiantabla">Tabla</option>
+                        <option value="indiantar">Tar</option>
+                        <option value="maracas">Maracas</option>
+                        <option value="timbale">Timbale</option>
+                    </select>
+                </div>
+
+                <!-- pad 3 suono -->
+
+                <div style="margin-top: 10px;">
+                    <select class="form-select" id="soundP3" aria-label="Default select example">
+                        <option hidden selected>Pad 3</option>
+                        <option disabled>KICK</option>
+                        <option value="kicklofi">Lo-Fi Kick</option>
+                        <option value="analogtechnokick">Analog Techno Kick</option>
+                        <option value="latinkick">Latin Kick</option>
+                        <option value="pureanalogkick">Pure Analog Kick</option>
+                        <option disabled>SNARE</option>
+                        <option value="snarelofi">Lo-Fi Snare</option>
+                        <option value="analogtechnosnare">Analog Techno Snare</option>
+                        <option value="eternsnare">Blob Snare</option>
+                        <option value="eternsnare2">Mlom Snare</option>
+                        <option value="lazersnare">Klok Snare</option>
+                        <option value="rimshot">Rim Shot</option>
+                        <option disabled>HI-HAT</option>
+                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                        <option disabled>PERCUSSIONS</option>
+                        <option value="afrocowbell">CowBell</option>
+                        <option value="afrodjembe">Djembe</option>
+                        <option value="afrodjembe2">Djembe2</option>
+                        <option value="afrodjembe3">Djembe3</option>
+                        <option value="afrorattle">Rattle</option>
+                        <option value="conga">Conga</option>
+                        <option value="conga2">Conga2</option>
+                        <option value="conga3">Conga3</option>
+                        <option value="conga4">Conga4</option>
+                        <option value="conga5">Conga5</option>
+                        <option value="shaker">Shaker</option>
+                        <option value="pluic">Pluic</option>
+                        <option value="indiancymbal">Indian Cymbal</option>
+                        <option value="indiancymbal2">Indian Cymbal2</option>
+                        <option value="indiandumbek">Dumbek</option>
+                        <option value="indiantabla">Tabla</option>
+                        <option value="indiantar">Tar</option>
+                        <option value="maracas">Maracas</option>
+                        <option value="timbale">Timbale</option>
+                    </select>
                 </div>
                 
                 <div style="margin-top: 10px;">
@@ -425,118 +563,6 @@
                             <option value="arm" >Harmonic Minor</option>
                         </select>
                     </div>
-                </div>
-
-                <!-- pad 1 suono -->
-                <div style="margin-top: 10px;">
-                    <a style="color: rgb(255, 29, 112);">Rhythm Pads Sounds</a>
-                    <select class="form-select" id="soundP1" aria-label="Default select example">
-                        <option hidden selected>Pad 1</option>
-                        <option value="kicklofi">Lo-Fi Kick</option>
-                        <option value="analogtechnokick">Analog Techno Kick</option>
-                        <option value="latinkick">Latin Kick</option>
-                        <option value="pureanalogkick">Pure Analog Kick</option>
-                        <option value="snarelofi">Lo-Fi Snare</option>
-                        <option value="analogtechnosnare">Analog Techno Snare</option>
-                        <option value="rimshot">Rim Shot</option>
-                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
-                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
-                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
-                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
-                        <option value="afrocowbell">CowBell</option>
-                        <option value="afrodjembe">Djembe</option>
-                        <option value="afrodjembe2">Djembe2</option>
-                        <option value="afrodjembe3">Djembe3</option>
-                        <option value="afrorattle">Rattle</option>
-                        <option value="conga">Conga</option>
-                        <option value="conga2">Conga2</option>
-                        <option value="conga3">Conga3</option>
-                        <option value="conga4">Conga4</option>
-                        <option value="conga5">Conga5</option>
-                        <option value="shaker">Shaker</option>
-                        <option value="pluic">Pluic</option>
-                        <option value="indiancymbal">Indian Cymbal</option>
-                        <option value="indiancymbal2">Indian Cymbal2</option>
-                        <option value="indiandumbek">Dumbek</option>
-                        <option value="indiantabla">Tabla</option>
-                        <option value="indiantar">Tar</option>
-                        <option value="maracas">Maracas</option>
-                        <option value="timbale">Timbale</option>
-                    </select>
-                </div>
-
-                <div style="margin-top: 10px;">
-                    <select class="form-select" id="soundP2" aria-label="Default select example">
-                        <option hidden selected>Pad 2</option>
-                        <option value="kicklofi">Lo-Fi Kick</option>
-                        <option value="analogtechnokick">Analog Techno Kick</option>
-                        <option value="latinkick">Latin Kick</option>
-                        <option value="pureanalogkick">Pure Analog Kick</option>
-                        <option value="snarelofi">Lo-Fi Snare</option>
-                        <option value="analogtechnosnare">Analog Techno Snare</option>
-                        <option value="rimshot">Rim Shot</option>
-                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
-                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
-                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
-                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
-                        <option value="afrocowbell">CowBell</option>
-                        <option value="afrodjembe">Djembe</option>
-                        <option value="afrodjembe2">Djembe2</option>
-                        <option value="afrodjembe3">Djembe3</option>
-                        <option value="afrorattle">Rattle</option>
-                        <option value="conga">Conga</option>
-                        <option value="conga2">Conga2</option>
-                        <option value="conga3">Conga3</option>
-                        <option value="conga4">Conga4</option>
-                        <option value="conga5">Conga5</option>
-                        <option value="shaker">Shaker</option>
-                        <option value="pluic">Pluic</option>
-                        <option value="indiancymbal">Indian Cymbal</option>
-                        <option value="indiancymbal2">Indian Cymbal2</option>
-                        <option value="indiandumbek">Dumbek</option>
-                        <option value="indiantabla">Tabla</option>
-                        <option value="indiantar">Tar</option>
-                        <option value="maracas">Maracas</option>
-                        <option value="timbale">Timbale</option>
-                    </select>
-                </div>
-
-                <!-- pad 3 suono -->
-
-                <div style="margin-top: 10px;">
-                    <select class="form-select" id="soundP3" aria-label="Default select example">
-                        <option hidden selected>Pad 3</option>
-                        <option value="kicklofi">Lo-Fi Kick</option>
-                        <option value="analogtechnokick">Analog Techno Kick</option>
-                        <option value="latinkick">Latin Kick</option>
-                        <option value="pureanalogkick">Pure Analog Kick</option>
-                        <option value="snarelofi">Lo-Fi Snare</option>
-                        <option value="analogtechnosnare">Analog Techno Snare</option>
-                        <option value="rimshot">Rim Shot</option>
-                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
-                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
-                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
-                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
-                        <option value="afrocowbell">CowBell</option>
-                        <option value="afrodjembe">Djembe</option>
-                        <option value="afrodjembe2">Djembe2</option>
-                        <option value="afrodjembe3">Djembe3</option>
-                        <option value="afrorattle">Rattle</option>
-                        <option value="conga">Conga</option>
-                        <option value="conga2">Conga2</option>
-                        <option value="conga3">Conga3</option>
-                        <option value="conga4">Conga4</option>
-                        <option value="conga5">Conga5</option>
-                        <option value="shaker">Shaker</option>
-                        <option value="pluic">Pluic</option>
-                        <option value="indiancymbal">Indian Cymbal</option>
-                        <option value="indiancymbal2">Indian Cymbal2</option>
-                        <option value="indiandumbek">Dumbek</option>
-                        <option value="indiantabla">Tabla</option>
-                        <option value="indiantar">Tar</option>
-                        <option value="maracas">Maracas</option>
-                        <option value="timbale">Timbale</option>
-                    </select>
                 </div>
                 
                 <div style="margin-top: 10px;">
@@ -624,7 +650,7 @@
                         <div class="audio-controls">
                             <button id = "mute1" class = "neon vol-button btn">M</button>
                             <button id = "solo1" class = "neon vol-button btn">S</button>
-                            <button id="panButt1" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#PanRhy1" style="font-size: small; letter-spacing: 0px;">
+                            <button id="panButt1" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy1" style="font-size: small; letter-spacing: 0px;">
                                 Pan
                             </button>
                         </div>
@@ -682,7 +708,7 @@
                         <div class="audio-controls">
                             <button id = "mute2" class = "neon vol-button btn">M</button>
                             <button id = "solo2" class = "neon vol-button btn">S</button>
-                            <button id="PanButt2" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#PanRhy2" style="font-size: small; letter-spacing: 0px;">
+                            <button id="PanButt2" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy2" style="font-size: small; letter-spacing: 0px;">
                                 Pan
                             </button>
                         </div>
@@ -737,7 +763,7 @@
                         <div class="audio-controls">
                             <button id = "mute3" class = "neon vol-button btn">M</button>
                             <button id = "solo3" class = "neon vol-button btn">S</button>
-                            <button id="PanButt3" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#PanRhy3" style="font-size: small; letter-spacing: 0px;">
+                            <button id="PanButt3" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy3" style="font-size: small; letter-spacing: 0px;">
                                 Pan
                             </button>
                         </div>
@@ -823,7 +849,7 @@
                             <div id="audio-controls-mel">
                                 <button id = "mute-mel" class = "neon vol-button btn">M</button>
                                 <button id = "solo-mel" class = "neon vol-button btn">S</button>
-                                <button id="PanMButt" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#PanMelodic" style="font-size: small; letter-spacing: 0px;">
+                                <button id="PanMButt" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanMelodic" style="font-size: small; letter-spacing: 0px;">
                                     Pan
                                 </button>
                             </div>
@@ -874,7 +900,7 @@
                             <span for="relslider" class="init-text-color" style="margin-bottom: 5px;">R</span>
                             <div style="margin-top: 10px; height: 27.2px; color:#ff1d70">Effects Properties</div>
                             <div>
-                                <button id="EffMButt" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#EffectsMelodic" style="font-size: small; letter-spacing: 0px; margin: 5px 5px 5px 0px;">
+                                <button id="EffMButt" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#EffectsMelodic" style="font-size: small; letter-spacing: 0px; margin: 5px 5px 5px 0px;">
                                     Effects
                                 </button>
                             </div>
@@ -913,7 +939,7 @@
                             <div class="audio-controls">
                                 <button id = "mute-harm" class = "neon vol-button btn">M</button>
                                 <button id = "solo-harm" class = "neon vol-button btn">S</button>
-                                <button id="PanHButt" type="button" class="btn btn-primary neon" data-bs-toggle="modal" data-bs-target="#PanHarmonic" style="font-size: small; letter-spacing: 0px;">
+                                <button id="PanHButt" type="button" class="neon btn" data-bs-toggle="modal" data-bs-target="#PanHarmonic" style="font-size: small; letter-spacing: 0px;">
                                     Pan
                                 </button>
                             </div>

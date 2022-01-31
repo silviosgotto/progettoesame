@@ -59,6 +59,9 @@ const SoundDictionary = {
     "indiantar": document.getElementById("indiantar").src,
     "maracas": document.getElementById("maracas").src,
     "timbale": document.getElementById("timbale").src,
+    "lazersnare": document.getElementById("lazersnare").src,
+    "eternsnare": document.getElementById("eternsnare").src,
+    "eternsnare2": document.getElementById("eternsnare2").src
 }
 
 const MetricDictionary = {
@@ -128,6 +131,7 @@ var modeMelodic;
 var BaseNote;
 var nhPad = new HarmonicNeurons(0, 0, "", bpm);
 
+//funzioni bottoni
 
 function ToggleSolo(SoloArr, Solo){
     for(let i = 0; i < SoloArr.length; i++){
@@ -148,6 +152,7 @@ function biri(buttsoloarr, butt){
                 butt.style.color = "black"
             }
             else{
+                butt.blur();
                 butt.style.backgroundColor = ""
                 butt.style.color = ""
             }
@@ -165,10 +170,12 @@ function birimute(butt){
         butt.style.color = "black"
     }
     else{
+        butt.blur();
         butt.style.backgroundColor = ""
         butt.style.color = ""
     }
 }
+
 
 //Panner Rhythm
 const PanRhy1 = new Tone.Panner(0);
@@ -185,6 +192,7 @@ ResetButtonRhy1.onclick = function(){
     PanRhy1.set({
         pan: PanSlideRhy1.value
     });
+    ResetButtonRhy1.blur();
 }
 
 const PanRhy2 = new Tone.Panner(0);
@@ -201,6 +209,7 @@ ResetButtonRhy2.onclick = function(){
     PanRhy2.set({
         pan: PanSlideRhy2.value
     });
+    ResetButtonRhy2.blur();
 }
 
 const PanRhy3 = new Tone.Panner(0);
@@ -217,6 +226,7 @@ ResetButtonRhy3.onclick = function(){
     PanRhy3.set({
         pan: PanSlideRhy3.value
     });
+    ResetButtonRhy3.blur();
 }
 
 //Panner Melodico
@@ -234,6 +244,7 @@ ResetButtonMel.onclick = function(){
     PanMel.set({
         pan: PanSlideMel.value
     });
+    ResetButtonMel.blur();
 }
 
 //Panner Melodico
@@ -251,6 +262,7 @@ ResetButtonHarm.onclick = function(){
     PanHarm.set({
         pan: PanSlideHarm.value
     });
+    ResetButtonHarm.blur();
 }
 
 //FeedBack Delay
@@ -914,6 +926,7 @@ PlayButt.onclick = async () => {
         PlayButt.innerText = "Play";
         playing = false;
     }
+    PlayButt.blur();
 }
 
 

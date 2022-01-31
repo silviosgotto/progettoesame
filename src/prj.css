@@ -75,12 +75,19 @@ input[type=number] {
 
 /* colonnna comandi di avvio  */
 #column1{
-  display: grid;
+  display:block;
   position: relative;
   width: 20%;
   min-width: 200px;
   padding-top: 10px;
   padding-left: 10px;
+}
+
+#c1center{
+  position: relative;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -190,6 +197,16 @@ input[type=number] {
   background-color: #1f012d;
   color: #ff1d70;
   border-color: #ff1d70;
+}
+
+.form-select:disabled{
+  background-color: #000000;
+}
+
+/* play learning disabled */
+
+.btn-outline-danger:disabled{
+  color:#ff1d70;
 }
 
 /*effetti */
@@ -432,6 +449,8 @@ input[type=number] {
 .btn:focus{
   box-shadow: none ;
 }
+
+
 
 
 
