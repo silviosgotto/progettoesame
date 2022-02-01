@@ -758,7 +758,7 @@ inithPadButt.onclick = function(){
     const lh = 200;
     const waveh = document.getElementById("selectWaveHarm").value;
     if(nh<4 || nh>12 || actMel == false || waveh == "Wave Type"){
-        document.getElementById("errorMessageh").innerText = "Compilare correttamente tutti i campi!\nQuesto Pad necessita l'inizializzazione del Pad Melidico"
+        document.getElementById("errorMessageh").innerText = "Compilare correttamente tutti i campi!\nQuesto Pad necessita l'inizializzazione del Pad Melodico"
         return;
     }
     else{
