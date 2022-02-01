@@ -198,6 +198,10 @@ input[type=number] {
   color: #ff1d70;
   border-color: #ff1d70;
 }
+.form-select:focus{
+  border-color: #ff1d70;
+  box-shadow:none
+}
 
 .form-select:disabled{
   background-color: #000000;
@@ -207,6 +211,7 @@ input[type=number] {
 
 .btn-outline-danger:disabled{
   color:#ff1d70;
+  
 }
 
 /*effetti */
@@ -219,7 +224,7 @@ input[type=number] {
 .effect-off{
   width: 15px;
   height: 15px;
-  border: solid black 0.5px;
+  border: none;
   border-radius: 50%;
   background-color: red;
 }
@@ -227,7 +232,7 @@ input[type=number] {
 .effect-on{
   width: 15px;
   height: 15px;
-  border: solid black 0.5px;
+  border: none;
   border-radius: 50%;
   background-color: rgb(0, 255, 0);
 }
@@ -295,6 +300,26 @@ input[type=number] {
   background: #f99f3f;
   cursor: pointer;
   border: 2px solid black;
+  border-radius: 50%;
+}
+
+.Effectsliderhor {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 195px;
+  background: #f99f3f;
+  border: 6px solid;
+  border-color: transparent;
+  border-radius: 8px;
+  
+}
+
+.Effectsliderhor::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #f99f3f;
+  cursor: pointer;
+  border: 2px solid white;
   border-radius: 50%;
 }
 
@@ -438,12 +463,12 @@ input[type=number] {
   transform: translate(50%,50%);
 }
 
-.btn-primary:focus{
+/* .btn-primary:focus{
   color: rgb(255, 29, 112);
   background-color: transparent;
   border-color: rgb(255, 29, 112);
   box-shadow: 0px 0px 10px  #fd3d84f6, 0px 0px 7px  #fd5190, 0px 0px 20px  #ff71a5 ;
-}
+} */
 
 
 .btn:focus{

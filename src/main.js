@@ -147,32 +147,37 @@ function ToggleSolo(SoloArr, Solo){
 function biri(buttsoloarr, butt){
     for(let i = 0; i< buttsoloarr.length; i++){
         if(buttsoloarr[i] == butt){
-            if(butt.style.backgroundColor != "orange"){
-                butt.style.backgroundColor = "orange"
+            if(butt.style.backgroundColor != "rgb(78, 190, 255)"){
+                butt.style.backgroundColor = "rgb(78, 190, 255)"
                 butt.style.color = "black"
+                butt.style.borderColor = "rgb(78, 190, 255)"
             }
             else{
                 butt.blur();
                 butt.style.backgroundColor = ""
                 butt.style.color = ""
+                butt.style.borderColor = ""
             }
         }
         else{
             buttsoloarr[i].style.backgroundColor = ""
             buttsoloarr[i].style.color = ""
+            buttsoloarr[i].style.borderColor = ""
         }
     }
 }
 
 function birimute(butt){
-    if(butt.style.backgroundColor != "lime"){
-        butt.style.backgroundColor = "lime"
+    if(butt.style.backgroundColor != "rgb(177, 0, 32)"){
+        butt.style.backgroundColor = "rgb(177, 0, 32)"
         butt.style.color = "black"
+        butt.style.borderColor = "rgb(177, 0, 32)"
     }
     else{
         butt.blur();
         butt.style.backgroundColor = ""
         butt.style.color = ""
+        butt.style.borderColor = ""
     }
 }
 
