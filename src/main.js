@@ -453,6 +453,12 @@ arrButtSolo.push(ButtSoloMel);
 const MuteMel = document.getElementById("mute-mel");
 SliderVolMel.oninput = function(){
     VolMel.volume.value = -Math.pow((SliderVolMel.value-9), 2);
+    if(MuteMel.style.backgroundColor == "rgb(177, 0, 32)"){
+        MuteMel.blur();
+        MuteMel.style.backgroundColor = ""
+        MuteMel.style.color = ""
+        MuteMel.style.borderColor = ""
+    }
 }
 ButtSoloMel.onclick = function(){
     ToggleSolo(SoloArr, SoloMel);
@@ -474,6 +480,12 @@ arrButtSolo.push(ButtSoloHarm);
 const MuteHarm = document.getElementById("mute-harm");
 SliderVolHarm.oninput = function(){
     VolHarm.volume.value = -Math.pow((SliderVolHarm.value-9), 2);
+    if(MuteHarm.style.backgroundColor == "rgb(177, 0, 32)"){
+        MuteHarm.blur();
+        MuteHarm.style.backgroundColor = ""
+        MuteHarm.style.color = ""
+        MuteHarm.style.borderColor = ""
+    }
 }
 ButtSoloHarm.onclick = function(){
     ToggleSolo(SoloArr, SoloHarm);
@@ -507,13 +519,31 @@ const MuteRhy2 = document.getElementById("mute2");
 const MuteRhy3 = document.getElementById("mute3");
 SliderVolRhy1.oninput = function(){
     VolRhy1.volume.value = -Math.pow((SliderVolRhy1.value-9), 2);
-    console.log(VolRhy1.volume.value)
+    if(MuteRhy1.style.backgroundColor == "rgb(177, 0, 32)"){
+        MuteRhy1.blur();
+        MuteRhy1.style.backgroundColor = ""
+        MuteRhy1.style.color = ""
+        MuteRhy1.style.borderColor = ""
+    }
+    
 }
 SliderVolRhy2.oninput = function(){
     VolRhy2.volume.value = -Math.pow((SliderVolRhy2.value-9), 2);;
+    if(MuteRhy2.style.backgroundColor == "rgb(177, 0, 32)"){
+        MuteRhy2.blur();
+        MuteRhy2.style.backgroundColor = ""
+        MuteRhy2.style.color = ""
+        MuteRhy2.style.borderColor = ""
+    }
 }
 SliderVolRhy3.oninput = function(){
     VolRhy3.volume.value = -Math.pow((SliderVolRhy3.value-9), 2);;
+    if(MuteRhy3.style.backgroundColor == "rgb(177, 0, 32)"){
+        MuteRhy3.blur();
+        MuteRhy3.style.backgroundColor = ""
+        MuteRhy3.style.color = ""
+        MuteRhy3.style.borderColor = ""
+    }
 }
 ButtSoloRhy1.onclick = function(){
     ToggleSolo(SoloArr, SoloRhy1);
