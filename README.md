@@ -4,11 +4,12 @@
   <img width="501" height="500" src="./images/blob.svg">
 </p>
 
+
 <!-- ![](./images/blob.svg) -->
 
 - ## General infos
 
-Blob is a project developped for the course Advance Coding Tools and Methodologies. <br>
+Blob is a project developed for the course Advance Coding Tools and Methodologies. <br>
 The idea driving the project is the sonification of Kohonen Neural Network (KNN);(spiegare). <br>
 
 We implemented the following web frameworks: Tone.js, Canvas API, Bootstrap.js, SVG.js. <br>

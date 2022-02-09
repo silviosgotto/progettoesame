@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500">
     <defs>
-        <circle id="eye1" r="10" fill="black">
+        <circle id="eye1" fill="black">
             <animate attributeName="cx" values="10;25;47;32;80;10" dur="20s" repeatCount="indefinite" />
             <animate attributeName="cy" values="10;56;23;87;43;10" dur="50s" repeatCount="indefinite" />
+            <animate attributeName="r" values="10;17;12;15;12;10" dur="25s" repeatCount="indefinite" />
         </circle>
-        <circle id="eye2" r="10" fill="black">
+        <circle id="eye2" fill="black">
             <animate attributeName="cx" values="10;34;55;62;20;10" dur="30s" repeatCount="indefinite" />
             <animate attributeName="cy" values="10;70;14;43;24;10" dur="40s" repeatCount="indefinite" />
+			<animate attributeName="r" values="10;15;11;14;13;10" dur="20s" repeatCount="indefinite" />
         </circle>
         <path id="mocc" stroke="Black" stroke-width="5" fill="none">
             <animate attributeName="d"
