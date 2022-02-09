@@ -21,6 +21,8 @@ This .js file has the function to handle the graphic part of the RhythmPads. <br
 We used the SVG.js web framework to draw and animate the map and the geometric shape (triangle, square or pentagon) in which it is placed. <br>
 The _learning_ function applies kohonen algorhythm to the map.
 
+![Alt Text](./images/readme/RhythmPad.gif)
+
 ### 2) MelodicNeurons.js
 This .js file has the function to handle the graphic part of the MelodicPad. <br>
 We used the SVG.js web framework to draw and animate the map and the grid in which it is  placed. <br>
@@ -30,6 +32,9 @@ The _learning_ function applies kohonen algorhythm to the map. <br>
 This .js file has the function to handle the graphic part of the HarmonicPad. <br>
 We used the SVG.js web framework to draw and animate the map and the geometric shape (a circle) in which it is  placed. <br>
 The _learning_ function applies kohonen algorhythm to the map. <br>
+
+![Alt Text](./images/readme/melodicNeurons.gif)
+
 
 
 
