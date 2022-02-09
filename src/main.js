@@ -936,6 +936,11 @@ learningButton.onclick = () => {
         startLearning();
         learningButton.innerText = '↻';
         learning = true;
+        initrPad1Butt.disabled = true;
+        initrPad2Butt.disabled = true;
+        initrPad3Butt.disabled = true;
+        initmPadButt.disabled = true;
+        inithPadButt.disabled = true;
     }
     else{
         window.location.reload();
