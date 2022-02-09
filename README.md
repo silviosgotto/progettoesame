@@ -24,6 +24,7 @@ We implemented the following web frameworks: <br>
 - [Tone.js](https://tonejs.github.io/) <br>
 - [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) <br>
 - [Bootstrap.js](https://getbootstrap.com/)<br>
+- [Popper.js](https://popper.js.org/)<br>
 - [SVG.js](https://svgjs.dev/docs/3.0/)<br>
 - [Parcel API](https://parceljs.org/)<br>
 
@@ -47,9 +48,9 @@ Notice: KNs are not a physical analogy of an expected neuronal configuration. Th
 2) The learning process is fed with input data (observation vectors): $x(t)$ 
 
 3) Model vectors (nodes) regression is made by the following process: <br>
-
+```math
 $$m_i(t+1) = mi(t) + h{c(x),i}(x(t) - m_i(t))$$
-
+```
 where index $c$ (winner) is defined by the condition:
 
 $$||x(t) - m_c(t)|| \leq ||x(t) - m_i(t)|| \ \forall i$$
