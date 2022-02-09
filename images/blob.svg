@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500">
+    <defs>
+        <circle id="eye1" r="10" fill="black">
+            <animate attributeName="cx" values="10;25;47;32;80;10" dur="20s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="10;56;23;87;43;10" dur="50s" repeatCount="indefinite" />
+        </circle>
+        <circle id="eye2" r="10" fill="black">
+            <animate attributeName="cx" values="10;34;55;62;20;10" dur="30s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="10;70;14;43;24;10" dur="40s" repeatCount="indefinite" />
+        </circle>
+        <path id="mocc" stroke="Black" stroke-width="5" fill="none">
+            <animate attributeName="d"
+            dur="5000ms" 
+            repeatCount="indefinite"
+            values="M12,14 C19,73 79,70 151,13;
+            M12,14 C19,73 153,69 151,13;
+            M12,14 C56,51 152,63 151,13;
+            M12,14 C23,81 210,109 151,13;
+            M12,14 C18,92 142,100 151,13;
+            M12,14 C19,73 79,70 151,13"
+            >
+            </animate>
+        </path>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color: #300f9b;"></stop>
+            <stop offset="100%" style="stop-color: #ff1d70;"></stop>
+        </linearGradient>
+        <path  id="blob" fill="url(#gradient)">
+            <animate attributeName="d"
+            dur="10000ms" 
+            repeatCount="indefinite"
+            values="M341.5,287Q324,324,287,354.5Q250,385,212.5,355Q175,325,162,287.5Q149,250,119.5,170Q90,90,170,60Q250,30,301.5,88.5Q353,147,356,198.5Q359,250,341.5,287Z;
+            M391,290.5Q331,331,290.5,342Q250,353,186,365.5Q122,378,86.5,314Q51,250,66,165.5Q81,81,165.5,76Q250,71,296,114.5Q342,158,396.5,204Q451,250,391,290.5Z;
+            M385.5,299Q348,348,299,359.5Q250,371,188,372.5Q126,374,104,312Q82,250,124.5,208.5Q167,167,208.5,122.5Q250,78,326.5,87.5Q403,97,413,173.5Q423,250,385.5,299Z;
+            M403.5,325.5Q401,401,325.5,384Q250,367,165,393.5Q80,420,92.5,335Q105,250,121.5,194Q138,138,194,103.5Q250,69,306,103.5Q362,138,384,194Q406,250,403.5,325.5Z;
+            M409,331Q412,412,331,406.5Q250,401,192,383.5Q134,366,68.5,308Q3,250,54,177.5Q105,105,177.5,116.5Q250,128,298,141Q346,154,376,202Q406,250,409,331Z;
+            M341.5,287Q324,324,287,354.5Q250,385,212.5,355Q175,325,162,287.5Q149,250,119.5,170Q90,90,170,60Q250,30,301.5,88.5Q353,147,356,198.5Q359,250,341.5,287Z"
+            >
+            </animate>
+        </path>
+    </defs>
+
+    <g>
+        <use xlink:href="#blob"/>
+    </g>
+    <g transform="translate(250,150)">
+        <use xlink:href="#eye1"/>
+    </g>
+    <g transform="translate(150,150)">
+        <use xlink:href="#eye2"/>
+    </g>
+    <g transform="translate(150,250)" stroke-linecap="round">
+        <use xlink:href="#mocc"/>
+    </g>
+</svg>
