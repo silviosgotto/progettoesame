@@ -49,14 +49,20 @@ Notice: KNs are not a physical analogy of an expected neuronal configuration. Th
 
 3) Model vectors (nodes) regression is made by the following process: <br>
 
-$$m_i(t+1) = m_i(t) + h_{c(x),i}(x(t) - m_i(t))$$
+<p align="center">
+  <img width="350" src="./images/readme/Formula_1.svg">
+</p>
 
 where index $c$ (winner) is defined by the condition:
 
-$$||x(t) - m_c(t)|| \leq ||x(t) - m_i(t)|| \ \forall i$$
+<p align="center">
+  <img width="350" src="./images/readme/Formula_2.svg">
+</p>
 
 and the neighborhood function (NF):
-$$h_{c(x),i} = \epsilon(t) \Big( e^{-\frac{|r_i - r_c|^2}{2\sigma(t)^2}} \Big)$$
+<p align="center">
+  <img width="350" src="./images/readme/Formula_3.svg">
+</p>
 Where $\epsilon(t)$  is the learning rate factor and $\sigma(t)$  is the width of the NF. They both decrease monotonically with the regression steps. <br>
 In the project we chose $\epsilon(t_0)=0.2$ and $\sigma(t_0)=20$.
 
