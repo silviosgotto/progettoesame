@@ -190,6 +190,18 @@ PanSlideRhy1.oninput = function(){
     PanRhy1.set({
         pan: PanSlideRhy1.value
     })
+    if(PanSlideRhy1.value > 0){
+        let perc = 100+(1-PanSlideRhy1.value)*100;
+        document.getElementById("panButt1").style.background = "linear-gradient(0.25turn, transparent, #ff1d70 "+perc+"%)"
+    }
+    else if(PanSlideRhy1.value < 0){
+        let perc = 100+(1+parseFloat(PanSlideRhy1.value))*100;
+        document.getElementById("panButt1").style.background = "linear-gradient(0.75turn, transparent, #ff1d70 "+perc+"%)"
+        console.log(perc);
+    }
+    else{
+        document.getElementById("panButt1").style.background = "transparent"
+    }
 }
 const ResetButtonRhy1 = document.getElementById("ResRhy1");
 ResetButtonRhy1.onclick = function(){
@@ -198,6 +210,7 @@ ResetButtonRhy1.onclick = function(){
         pan: PanSlideRhy1.value
     });
     ResetButtonRhy1.blur();
+    document.getElementById("panButt1").style.background = "transparent"
 }
 
 const PanRhy2 = new Tone.Panner(0);
