@@ -45,7 +45,7 @@ Notice: KNs are not a physical analogy of an expected neuronal configuration. Th
 
 1) The learning process proceeds along discrete time moments: $t= 1, 2,...$ 
 
-2) The learning process is fed with input data (observation vectors): $x(t)$ 
+2) The learning process is fed with input data (observation vectors): $x(t)$
 
 3) Model vectors (nodes) regression is made by the following process: <br>
 
@@ -60,16 +60,23 @@ where index $c$ (winner) is defined by the condition:
 </p>
 
 and the neighborhood function (NF):
+
 <p align="center">
   <img width="350" src="./images/readme/Formula_3.svg">
 </p>
-Where $\epsilon(t)$  is the learning rate factor and $\sigma(t)$  is the width of the NF. They both decrease monotonically with the regression steps. <br>
-In the project we chose $\epsilon(t_0)=0.2$ and $\sigma(t_0)=20$.
+
+Where _ε(t)_  is the learning rate factor and _σ(t)_  is the width of the NF. They both decrease monotonically with the regression steps. <br>
+In the project we chose _ε( t<sub>0</sub> ) = 0.2_ and _σ( t<sub>0</sub> ) = 20_.
+
+
+
+
 
 <p align="center">
   <img width="350" src="./images/readme/Group_1.svg">
 </p>
 ​
+
  ## Kohonen Algorhythm Applications
  The KN Sonification is achieved extrapolating:​
  
