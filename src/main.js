@@ -183,6 +183,8 @@ function birimute(butt){
 
 
 //Panner Rhythm
+
+//Panner1
 const PanRhy1 = new Tone.Panner(0);
 const PanSlideRhy1 = document.getElementById("PanSlideRhy1");
 PanSlideRhy1.value = 0;
@@ -191,16 +193,16 @@ PanSlideRhy1.oninput = function(){
         pan: PanSlideRhy1.value
     })
     if(PanSlideRhy1.value > 0){
-        let perc = 100+(1-PanSlideRhy1.value)*100;
-        document.getElementById("panButt1").style.background = "linear-gradient(0.25turn, transparent, #ff1d70 "+perc+"%)"
+        document.getElementById("panButt1").classList.add("din-pandx");
+        document.getElementById("panButt1").classList.remove("din-pansx");
     }
     else if(PanSlideRhy1.value < 0){
-        let perc = 100+(1+parseFloat(PanSlideRhy1.value))*100;
-        document.getElementById("panButt1").style.background = "linear-gradient(0.75turn, transparent, #ff1d70 "+perc+"%)"
-        console.log(perc);
+        document.getElementById("panButt1").classList.add("din-pansx");
+        document.getElementById("panButt1").classList.remove("din-pandx");
     }
     else{
-        document.getElementById("panButt1").style.background = "transparent"
+        document.getElementById("panButt1").classList.remove("din-pandx");
+        document.getElementById("panButt1").classList.remove("din-pansx");
     }
 }
 const ResetButtonRhy1 = document.getElementById("ResRhy1");
@@ -210,9 +212,11 @@ ResetButtonRhy1.onclick = function(){
         pan: PanSlideRhy1.value
     });
     ResetButtonRhy1.blur();
-    document.getElementById("panButt1").style.background = "transparent"
+    document.getElementById("panButt1").classList.remove("din-pandx");
+    document.getElementById("panButt1").classList.remove("din-pansx");
 }
 
+//Panner2
 const PanRhy2 = new Tone.Panner(0);
 const PanSlideRhy2 = document.getElementById("PanSlideRhy2");
 PanSlideRhy2.value = 0;
@@ -220,6 +224,19 @@ PanSlideRhy2.oninput = function(){
     PanRhy2.set({
         pan: PanSlideRhy2.value
     })
+    if(PanSlideRhy2.value > 0){ 
+        document.getElementById("PanButt2").classList.add("din-pandx");
+        document.getElementById("PanButt2").classList.remove("din-pansx");
+
+    }
+    else if(PanSlideRhy2.value < 0){
+        document.getElementById("PanButt2").classList.add("din-pansx");
+        document.getElementById("PanButt2").classList.remove("din-pandx");
+    }
+    else{
+        document.getElementById("PanButt2").classList.remove("din-pandx");
+        document.getElementById("PanButt2").classList.remove("din-pansx");
+    }
 }
 const ResetButtonRhy2 = document.getElementById("ResRhy2");
 ResetButtonRhy2.onclick = function(){
@@ -228,8 +245,11 @@ ResetButtonRhy2.onclick = function(){
         pan: PanSlideRhy2.value
     });
     ResetButtonRhy2.blur();
+    document.getElementById("PanButt2").classList.remove("din-pandx");
+    document.getElementById("PanButt2").classList.remove("din-pansx");
 }
 
+//Panner3
 const PanRhy3 = new Tone.Panner(0);
 const PanSlideRhy3 = document.getElementById("PanSlideRhy3");
 PanSlideRhy3.value = 0;
@@ -237,6 +257,18 @@ PanSlideRhy3.oninput = function(){
     PanRhy3.set({
         pan: PanSlideRhy3.value
     })
+    if(PanSlideRhy3.value > 0){
+        document.getElementById("PanButt3").classList.add("din-pandx");
+        document.getElementById("PanButt3").classList.remove("din-pansx");
+    }
+    else if(PanSlideRhy3.value < 0){
+        document.getElementById("PanButt3").classList.add("din-pansx");
+        document.getElementById("PanButt3").classList.remove("din-pandx");
+    }
+    else{
+        document.getElementById("PanButt3").classList.remove("din-pandx");
+        document.getElementById("PanButt3").classList.remove("din-pansx");
+    }
 }
 const ResetButtonRhy3 = document.getElementById("ResRhy3");
 ResetButtonRhy3.onclick = function(){
@@ -245,6 +277,8 @@ ResetButtonRhy3.onclick = function(){
         pan: PanSlideRhy3.value
     });
     ResetButtonRhy3.blur();
+    document.getElementById("PanButt3").classList.remove("din-pandx");
+    document.getElementById("PanButt3").classList.remove("din-pansx");
 }
 
 //Panner Melodico
@@ -255,6 +289,19 @@ PanSlideMel.oninput = function(){
     PanMel.set({
         pan: PanSlideMel.value
     })
+    if(PanSlideMel.value > 0){
+        document.getElementById("PanMButt").classList.add("din-pandx");
+        document.getElementById("PanMButt").classList.remove("din-pansx");
+
+    }
+    else if(PanSlideMel.value < 0){
+        document.getElementById("PanMButt").classList.add("din-pansx");
+        document.getElementById("PanMButt").classList.remove("din-pandx");
+    }
+    else{
+        document.getElementById("PanMButt").classList.remove("din-pandx");
+        document.getElementById("PanMButt").classList.remove("din-pansx");
+    }
 }
 const ResetButtonMel = document.getElementById("ResMel");
 ResetButtonMel.onclick = function(){
@@ -263,9 +310,11 @@ ResetButtonMel.onclick = function(){
         pan: PanSlideMel.value
     });
     ResetButtonMel.blur();
+    document.getElementById("PanMButt").classList.remove("din-pandx");
+    document.getElementById("PanMButt").classList.remove("din-pansx");
 }
 
-//Panner Melodico
+//Panner Armonico
 const PanHarm = new Tone.Panner(0);
 const PanSlideHarm = document.getElementById("PanSlideHarm");
 PanSlideHarm.value = 0;
@@ -273,6 +322,19 @@ PanSlideHarm.oninput = function(){
     PanHarm.set({
         pan: PanSlideHarm.value
     })
+    if(PanSlideHarm.value > 0){
+        document.getElementById("PanHButt").classList.add("din-pandx");
+        document.getElementById("PanHButt").classList.remove("din-pansx");
+
+    }
+    else if(PanSlideHarm.value < 0){
+        document.getElementById("PanHButt").classList.add("din-pansx");
+        document.getElementById("PanHButt").classList.remove("din-pandx");
+    }
+    else{
+        document.getElementById("PanHButt").classList.remove("din-pandx");
+        document.getElementById("PanHButt").classList.remove("din-pansx");
+    }
 }
 const ResetButtonHarm = document.getElementById("ResHarm");
 ResetButtonHarm.onclick = function(){
@@ -281,6 +343,8 @@ ResetButtonHarm.onclick = function(){
         pan: PanSlideHarm.value
     });
     ResetButtonHarm.blur();
+    document.getElementById("PanHButt").classList.remove("din-pandx");
+    document.getElementById("PanHButt").classList.remove("din-pansx");
 }
 
 //FeedBack Delay
