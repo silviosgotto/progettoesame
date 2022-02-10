@@ -90,7 +90,7 @@ Time position in the measure is provided by relative nodes' distances.​ <br>
 The metric of the measure is associated to a geometric figure. ​
 
 <p align="center">
-  <img width="350" src="./images/readme/Formula_4.svg">
+  <img width="400" src="./images/readme/Formula_4.svg">
 </p>
 
 
