@@ -43,9 +43,9 @@ Notice: KNs are not a physical analogy of an expected neuronal configuration. Th
 
 ### Learning algorhythm
 
-1) The learning process proceeds along discrete time moments: $t= 1, 2,...$ 
+1) The learning process proceeds along discrete time moments: _t = 0, 1, 2, ..._ 
 
-2) The learning process is fed with input data (observation vectors): $x(t)$
+2) The learning process is fed with input data (observation vectors): _x(t)_
 
 3) Model vectors (nodes) regression is made by the following process: <br>
 
@@ -53,7 +53,7 @@ Notice: KNs are not a physical analogy of an expected neuronal configuration. Th
   <img width="350" src="./images/readme/Formula_1.svg">
 </p>
 
-where index $c$ (winner) is defined by the condition:
+where index _c_ (winner) is defined by the condition:
 
 <p align="center">
   <img width="350" src="./images/readme/Formula_2.svg">
@@ -66,10 +66,7 @@ and the neighborhood function (NF):
 </p>
 
 Where _ε(t)_  is the learning rate factor and _σ(t)_  is the width of the NF. They both decrease monotonically with the regression steps. <br>
-In the project we chose _ε( t<sub>0</sub> ) = 0.2_ and _σ( t<sub>0</sub> ) = 20_.
-
-
-
+In the project we chose _ε( t<sub>0</sub> ) = 0.2_ and _σ( t<sub>0</sub> ) = 20_. <br><br>
 
 
 <p align="center">
@@ -92,11 +89,9 @@ The Rhythmic Pad performs solely percussive sounds. In particular, a single node
 Time position in the measure is provided by relative nodes' distances.​ <br>
 The metric of the measure is associated to a geometric figure. ​
 
-$$\begin{align*}
-triangle \rightarrow \frac{3}{4}&&
-square \rightarrow \frac{4}{4}&&
-pentagon \rightarrow \frac{5}{4}&&
-\end{align*}$$
+<p align="center">
+  <img width="350" src="./images/readme/Formula_4.svg">
+</p>
 
 
 ### 2) MelodicPad
