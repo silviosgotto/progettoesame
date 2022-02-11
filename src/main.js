@@ -725,7 +725,7 @@ initrPad1Butt.onclick = function(){
     const shape1 = document.getElementById("selectShape1").value;
     soundRhythm1 = SoundDictionary[document.getElementById("soundP1").value];
     if(n1<4 || n1>32 || shape1 == "Metric" || soundRhythm1 == undefined){
-        document.getElementById("errorMessage1").innerText = "Compilare correttamente tutti i campi!"
+        document.getElementById("errorMessage1").innerText = "Please, fill in all the fields correctly!"
         return;
     }
     else{
@@ -761,7 +761,7 @@ initrPad2Butt.onclick = function(){
     const shape2 = document.getElementById("selectShape2").value;
     soundRhythm2 = SoundDictionary[document.getElementById("soundP2").value];
     if(n2<4 || n2>32 || shape2 == "Metric" || soundRhythm2 == undefined){
-        document.getElementById("errorMessage2").innerText = "Compilare correttamente tutti i campi!"
+        document.getElementById("errorMessage2").innerText = "Please, fill in all the fields correctly!"
         return;
     }
     else{
@@ -799,7 +799,7 @@ initrPad3Butt.onclick = function(){
     const shape3 = document.getElementById("selectShape3").value;
     soundRhythm3 = SoundDictionary[document.getElementById("soundP3").value];
     if(n3<4 || n3>32 || shape3 == "Metric" || soundRhythm3 == undefined){
-        document.getElementById("errorMessage3").innerText = "Compilare correttamente tutti i campi!"
+        document.getElementById("errorMessage3").innerText = "Please, fill in all the fields correctly!"
         return;
     }
     else{
@@ -838,7 +838,7 @@ initmPadButt.onclick = function(){
     BaseNote = FreqencyDictionary[document.getElementById("selectKeyMel").value];
 
     if(nm<4 || nm>32 || metricMelodic == 0 || wavem == "Wave Type" || modeMelodic == "Scale" || BaseNote == undefined){
-        document.getElementById("errorMessagem").innerText = "Compilare correttamente tutti i campi!"
+        document.getElementById("errorMessagem").innerText = "Please, fill in all the fields correctly!"
         return;
     }
     else{
@@ -865,7 +865,7 @@ inithPadButt.onclick = function(){
     const lh = 200;
     const waveh = document.getElementById("selectWaveHarm").value;
     if(nh<4 || nh>12 || actMel == false || waveh == "Wave Type"){
-        document.getElementById("errorMessageh").innerText = "Compilare correttamente tutti i campi!\nQuesto Pad necessita l'inizializzazione del Pad Melodico"
+        document.getElementById("errorMessageh").innerText = "Please, fill in all the fields correctly!!\nInitialize the Melodic Pad before this one!"
         return;
     }
     else{
