@@ -10,7 +10,9 @@
     </head>
 
 
-    <body>
+    <body id="body">
+        <div id="load-page" class="load-page visible">
+        </div>
         <!-- Modal -->
         <!-- blob modal -->
         <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -232,14 +234,14 @@
                             <div  style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Wet:</p>
-                                    <span id="WetDelSpan">0</span>
+                                    <span style="color: black;" id="WetDelSpan">0</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="WetDelay" type="range" id="WetDelay" class="Effectsliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
                             </div>
                             <div>
                                 <div style="display:block ruby;">
                                     <p style="margin-bottom: 3px;">FeedBack:</p>
-                                    <span id="FeedbackDelSpan">0</span>
+                                    <span style="color: black;" id="FeedbackDelSpan">0</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="FeedbackDelay" type="range" id="FeedbackDelay" class="Effectsliderhor"  value= "0" min="0" max="0.6" step="0.01" ></input>
                             </div>
@@ -263,14 +265,14 @@
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Wet:</p>
-                                    <span id="WetDistSpan">0</span>
+                                    <span style="color: black;" id="WetDistSpan">0</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="WetDist" type="range" id="WetDist" class="Effectsliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
                             </div>
                             <div>
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Distortion:</p>
-                                    <span id="DistSpan">0.1</span>
+                                    <span style="color: black;" id="DistSpan">0.1</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="Dist" type="range" id="Dist" class="Effectsliderhor"  value= "0.1" min="0.1" max="1" step="0.01" ></input>
                             </div>
@@ -289,14 +291,14 @@
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Wet:</p>
-                                    <span id="WetTremSpan">0</span>
+                                    <span style="color: black;" id="WetTremSpan">0</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="WetTrem" type="range" id="WetTrem" class="Effectsliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
                             </div>
                             <div>
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Frequency(Hz):</p>
-                                    <span id="FreqTremSpan">1</span>
+                                    <span style="color: black;" id="FreqTremSpan">1</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="FreqTrem" type="range" id="FreqTrem" class="Effectsliderhor"  value= "1" min="1" max="15" step="0.01" ></input>
                             </div>
@@ -306,14 +308,14 @@
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Depth:</p>
-                                    <span id="DepthTremSpan">0</span>
+                                    <span style="color: black;" id="DepthTremSpan">0</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="DepthTrem" type="range" id="DepthTrem" class="Effectsliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
                             </div>
                             <div>
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Spread:</p>
-                                    <span id="SpreadTremSpan">180</span>
+                                    <span style="color: black;" id="SpreadTremSpan">180</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="SpreadTrem" type="range" id="SpreadTrem" class="Effectsliderhor"  value= "180" min="0" max="180" step="0.01" ></input>
                             </div>
@@ -347,14 +349,14 @@
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Wet:</p>
-                                    <span id="WetPhaSpan">0</span>
+                                    <span style="color: black;" id="WetPhaSpan">0</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="WetPha" type="range" id="WetPha" class="Effectsliderhor"  value= "0" min="0" max="1" step="0.01" ></input>
                             </div>
                             <div>
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Frequency(Hz):</p>
-                                    <span id="FreqPhaSpan">1</span>
+                                    <span style="color: black;" id="FreqPhaSpan">1</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="FreqPha" type="range" id="FreqPha" class="Effectsliderhor"  value= "1" min="1" max="10" step="0.01" ></input>
                             </div>
@@ -364,14 +366,14 @@
                             <div style="margin-right: 10px;">
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">Octaves:</p>
-                                    <span id="OctPhaSpan">2</span>
+                                    <span style="color: black;" id="OctPhaSpan">2</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="OctPha" type="range" id="OctPha" class="Effectsliderhor"  value= "2" min="2" max="5" step="1" ></input>
                             </div>
                             <div>
                                 <div style="display: block ruby;">
                                     <p style="margin-bottom: 3px;">BaseFrequency(Hz):</p>
-                                    <span id="BFPhaSpan">150</span>
+                                    <span style="color: black;" id="BFPhaSpan">150</span>
                                 </div>
                                 <input style="margin-bottom: 3px;" name="BFPha" type="range" id="BFPha" class="Effectsliderhor"  value= "150" min="150" max="400" step="0.01" ></input>
                             </div>
@@ -424,583 +426,595 @@
         <!-- <audio id="808Sample" src="../sounds/808E.wav" type="audio/wav"></audio> -->
 
             <!-- colonna dei comandi di avvio -->
-
-        <div id="column1">
-            <div id="c1center">
-                <button id = "rhythm-button"  class = "neon btn btn-outline-danger" style="width: 100%;">Play</button>
-                <div style="margin-top: 20px;">
-                <button id = "neurons-button" class = "neon btn btn-outline-danger" style="width: 100%;" >Start Self Ordering</button>
-                </div>
-                <div style="border:rgb(255, 29, 112) solid 1px; margin-top: 20px; border-radius: 5px; padding: 10px;">
-                    <div style="display: inline-flex; right: 50%;">
-                        <p style="margin-bottom: 3px; color: rgb(255, 29, 112);">BPM:</p>
-                        <span for="bpmSlide" id="bpmValuespan" class="init-text-color" style="margin-bottom: 5px;"></span>
+        <div class="main-page">
+            <div id="column1">
+                <div id="c1center">
+                    <button id = "rhythm-button"  class = "neon btn btn-outline-danger" style="width: 100%;">Play</button>
+                    <div style="margin-top: 20px;">
+                    <button id = "neurons-button" class = "neon btn btn-outline-danger" style="width: 100%;" >Start Self Ordering</button>
                     </div>
-                    <input style="width: 100%;" name="bpmSlide" type="range" id="bpmValue" class="sliderhor"  value= "120" min="30" max="200" step="1" ></input>
-                    
-                </div>
-
-                <!-- pad 1 suono -->
-                <div style="margin-top: 10px;">
-                    <a style="color: rgb(255, 29, 112);">Rhythm Pads Sounds</a>
-                    <select class="form-select" id="soundP1" aria-label="Default select example">
-                        <option hidden selected>Pad 1</option>
-                        <option disabled>KICK</option>
-                        <option value="kicklofi">Lo-Fi Kick</option>
-                        <option value="analogtechnokick">Analog Techno Kick</option>
-                        <option value="latinkick">Latin Kick</option>
-                        <option value="pureanalogkick">Pure Analog Kick</option>
-                        <option disabled>SNARE</option>
-                        <option value="snarelofi">Lo-Fi Snare</option>
-                        <option value="analogtechnosnare">Analog Techno Snare</option>
-                        <option value="eternsnare">Blob Snare</option>
-                        <option value="eternsnare2">Mlom Snare</option>
-                        <option value="lazersnare">Klok Snare</option>
-                        <option value="rimshot">Rim Shot</option>
-                        <option disabled>HI-HAT</option>
-                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
-                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
-                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
-                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
-                        <option disabled>PERCUSSIONS</option>
-                        <option value="afrocowbell">CowBell</option>
-                        <option value="afrodjembe">Djembe</option>
-                        <option value="afrodjembe2">Djembe2</option>
-                        <option value="afrodjembe3">Djembe3</option>
-                        <option value="afrorattle">Rattle</option>
-                        <option value="conga">Conga</option>
-                        <option value="conga2">Conga2</option>
-                        <option value="conga3">Conga3</option>
-                        <option value="conga4">Conga4</option>
-                        <option value="conga5">Conga5</option>
-                        <option value="shaker">Shaker</option>
-                        <option value="pluic">Pluic</option>
-                        <option value="indiancymbal">Indian Cymbal</option>
-                        <option value="indiancymbal2">Indian Cymbal2</option>
-                        <option value="indiandumbek">Dumbek</option>
-                        <option value="indiantabla">Tabla</option>
-                        <option value="indiantar">Tar</option>
-                        <option value="maracas">Maracas</option>
-                        <option value="timbale">Timbale</option>
-                    </select>
-                </div>
-
-                <div style="margin-top: 10px;">
-                    <select class="form-select" id="soundP2" aria-label="Default select example">
-                        <option hidden selected>Pad 2</option>
-                        <option disabled>KICK</option>
-                        <option value="kicklofi">Lo-Fi Kick</option>
-                        <option value="analogtechnokick">Analog Techno Kick</option>
-                        <option value="latinkick">Latin Kick</option>
-                        <option value="pureanalogkick">Pure Analog Kick</option>
-                        <option disabled>SNARE</option>
-                        <option value="snarelofi">Lo-Fi Snare</option>
-                        <option value="analogtechnosnare">Analog Techno Snare</option>
-                        <option value="eternsnare">Blob Snare</option>
-                        <option value="eternsnare2">Mlom Snare</option>
-                        <option value="lazersnare">Klok Snare</option>
-                        <option value="rimshot">Rim Shot</option>
-                        <option disabled>HI-HAT</option>
-                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
-                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
-                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
-                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
-                        <option disabled>PERCUSSIONS</option>
-                        <option value="afrocowbell">CowBell</option>
-                        <option value="afrodjembe">Djembe</option>
-                        <option value="afrodjembe2">Djembe2</option>
-                        <option value="afrodjembe3">Djembe3</option>
-                        <option value="afrorattle">Rattle</option>
-                        <option value="conga">Conga</option>
-                        <option value="conga2">Conga2</option>
-                        <option value="conga3">Conga3</option>
-                        <option value="conga4">Conga4</option>
-                        <option value="conga5">Conga5</option>
-                        <option value="shaker">Shaker</option>
-                        <option value="pluic">Pluic</option>
-                        <option value="indiancymbal">Indian Cymbal</option>
-                        <option value="indiancymbal2">Indian Cymbal2</option>
-                        <option value="indiandumbek">Dumbek</option>
-                        <option value="indiantabla">Tabla</option>
-                        <option value="indiantar">Tar</option>
-                        <option value="maracas">Maracas</option>
-                        <option value="timbale">Timbale</option>
-                    </select>
-                </div>
-
-                <!-- pad 3 suono -->
-
-                <div style="margin-top: 10px;">
-                    <select class="form-select" id="soundP3" aria-label="Default select example">
-                        <option hidden selected>Pad 3</option>
-                        <option disabled>KICK</option>
-                        <option value="kicklofi">Lo-Fi Kick</option>
-                        <option value="analogtechnokick">Analog Techno Kick</option>
-                        <option value="latinkick">Latin Kick</option>
-                        <option value="pureanalogkick">Pure Analog Kick</option>
-                        <option disabled>SNARE</option>
-                        <option value="snarelofi">Lo-Fi Snare</option>
-                        <option value="analogtechnosnare">Analog Techno Snare</option>
-                        <option value="eternsnare">Blob Snare</option>
-                        <option value="eternsnare2">Mlom Snare</option>
-                        <option value="lazersnare">Klok Snare</option>
-                        <option value="rimshot">Rim Shot</option>
-                        <option disabled>HI-HAT</option>
-                        <option value="hihatlofi">Lo-Fi Hi-Hat</option>
-                        <option value="analogtechnohh">Analog Techno Hi-Hat</option>
-                        <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
-                        <option value="electrodubhh">Electro Dub Hi-Hat</option>
-                        <option disabled>PERCUSSIONS</option>
-                        <option value="afrocowbell">CowBell</option>
-                        <option value="afrodjembe">Djembe</option>
-                        <option value="afrodjembe2">Djembe2</option>
-                        <option value="afrodjembe3">Djembe3</option>
-                        <option value="afrorattle">Rattle</option>
-                        <option value="conga">Conga</option>
-                        <option value="conga2">Conga2</option>
-                        <option value="conga3">Conga3</option>
-                        <option value="conga4">Conga4</option>
-                        <option value="conga5">Conga5</option>
-                        <option value="shaker">Shaker</option>
-                        <option value="pluic">Pluic</option>
-                        <option value="indiancymbal">Indian Cymbal</option>
-                        <option value="indiancymbal2">Indian Cymbal2</option>
-                        <option value="indiandumbek">Dumbek</option>
-                        <option value="indiantabla">Tabla</option>
-                        <option value="indiantar">Tar</option>
-                        <option value="maracas">Maracas</option>
-                        <option value="timbale">Timbale</option>
-                    </select>
-                </div>
-                
-                <div style="margin-top: 10px;">
-                    <a style="color: rgb(255, 29, 112);">Harmony</a>
-                    <div>
-                        <select id = "selectKeyMel" class="form-select" aria-label="Default select example">
-                            <option hidden selected>Key</option>
-                            <option value="C" >C</option>
-                            <option value="C#" >C#</option>
-                            <option value="D" >D</option>
-                            <option value="D#" >D#</option>
-                            <option value="E" >E</option>
-                            <option value="F" >F</option>
-                            <option value="F#" >F#</option>
-                            <option value="G" >G</option>
-                            <option value="G#" >G#</option>
-                            <option value="A" >A</option>
-                            <option value="A#" >A#</option>
-                            <option value="B" >B</option>
+                    <div id="bpm-bord" style="margin-top: 20px; border-radius: 5px; padding: 10px;">
+                        <div style="display: inline-flex; right: 50%;">
+                            <span style="margin-bottom: 3px;">BPM:</span>
+                            <span for="bpmSlide" id="bpmValuespan" class="init-text-color" style="margin-bottom: 5px;"></span>
+                        </div>
+                        <input style="width: 100%;" name="bpmSlide" type="range" id="bpmValue" class="sliderhor"  value= "120" min="30" max="200" step="1" ></input>
+                        
+                    </div>
+    
+                    <!-- pad 1 suono -->
+                    <div style="margin-top: 10px;">
+                        <span>Rhythm Pads Sounds</span>
+                        <select class="form-select" id="soundP1" aria-label="Default select example">
+                            <option hidden selected>Pad 1</option>
+                            <option disabled>KICK</option>
+                            <option value="kicklofi">Lo-Fi Kick</option>
+                            <option value="analogtechnokick">Analog Techno Kick</option>
+                            <option value="latinkick">Latin Kick</option>
+                            <option value="pureanalogkick">Pure Analog Kick</option>
+                            <option disabled>SNARE</option>
+                            <option value="snarelofi">Lo-Fi Snare</option>
+                            <option value="analogtechnosnare">Analog Techno Snare</option>
+                            <option value="eternsnare">Blob Snare</option>
+                            <option value="eternsnare2">Mlom Snare</option>
+                            <option value="lazersnare">Klok Snare</option>
+                            <option value="rimshot">Rim Shot</option>
+                            <option disabled>HI-HAT</option>
+                            <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                            <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                            <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                            <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                            <option disabled>PERCUSSIONS</option>
+                            <option value="afrocowbell">CowBell</option>
+                            <option value="afrodjembe">Djembe</option>
+                            <option value="afrodjembe2">Djembe2</option>
+                            <option value="afrodjembe3">Djembe3</option>
+                            <option value="afrorattle">Rattle</option>
+                            <option value="conga">Conga</option>
+                            <option value="conga2">Conga2</option>
+                            <option value="conga3">Conga3</option>
+                            <option value="conga4">Conga4</option>
+                            <option value="conga5">Conga5</option>
+                            <option value="shaker">Shaker</option>
+                            <option value="pluic">Pluic</option>
+                            <option value="indiancymbal">Indian Cymbal</option>
+                            <option value="indiancymbal2">Indian Cymbal2</option>
+                            <option value="indiandumbek">Dumbek</option>
+                            <option value="indiantabla">Tabla</option>
+                            <option value="indiantar">Tar</option>
+                            <option value="maracas">Maracas</option>
+                            <option value="timbale">Timbale</option>
                         </select>
                     </div>
     
                     <div style="margin-top: 10px;">
-                        <select id = "selectScaleMel" class="form-select" aria-label="Default select example">
-                            <option hidden selected>Scale</option>
-                            <option value="ionic" >Ionian</option>
-                            <option value="doric" >Dorian</option>
-                            <option value="frigian" >Phrygian</option>
-                            <option value="lydian" >Lydian</option>
-                            <option value="mixolydian" >Mixolydian</option>
-                            <option value="eolian" >Aeolian</option>
-                            <option value="locrian" >Locrian</option>
-                            <option value="petmag" >Major Pentatonic</option>
-                            <option value="petmin" >Minor Pentatonic</option>
-                            <option value="blues" >Blues</option>
-                            <option value="esa" >Whole Tone</option>
-                            <option value="dim" >Diminished</option>
-                            <option value="semid" >Half-Diminished</option>
-                            <option value="arm" >Harmonic Minor</option>
+                        <select class="form-select" id="soundP2" aria-label="Default select example">
+                            <option hidden selected>Pad 2</option>
+                            <option disabled>KICK</option>
+                            <option value="kicklofi">Lo-Fi Kick</option>
+                            <option value="analogtechnokick">Analog Techno Kick</option>
+                            <option value="latinkick">Latin Kick</option>
+                            <option value="pureanalogkick">Pure Analog Kick</option>
+                            <option disabled>SNARE</option>
+                            <option value="snarelofi">Lo-Fi Snare</option>
+                            <option value="analogtechnosnare">Analog Techno Snare</option>
+                            <option value="eternsnare">Blob Snare</option>
+                            <option value="eternsnare2">Mlom Snare</option>
+                            <option value="lazersnare">Klok Snare</option>
+                            <option value="rimshot">Rim Shot</option>
+                            <option disabled>HI-HAT</option>
+                            <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                            <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                            <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                            <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                            <option disabled>PERCUSSIONS</option>
+                            <option value="afrocowbell">CowBell</option>
+                            <option value="afrodjembe">Djembe</option>
+                            <option value="afrodjembe2">Djembe2</option>
+                            <option value="afrodjembe3">Djembe3</option>
+                            <option value="afrorattle">Rattle</option>
+                            <option value="conga">Conga</option>
+                            <option value="conga2">Conga2</option>
+                            <option value="conga3">Conga3</option>
+                            <option value="conga4">Conga4</option>
+                            <option value="conga5">Conga5</option>
+                            <option value="shaker">Shaker</option>
+                            <option value="pluic">Pluic</option>
+                            <option value="indiancymbal">Indian Cymbal</option>
+                            <option value="indiancymbal2">Indian Cymbal2</option>
+                            <option value="indiandumbek">Dumbek</option>
+                            <option value="indiantabla">Tabla</option>
+                            <option value="indiantar">Tar</option>
+                            <option value="maracas">Maracas</option>
+                            <option value="timbale">Timbale</option>
+                        </select>
+                    </div>
+    
+                    <!-- pad 3 suono -->
+    
+                    <div style="margin-top: 10px;">
+                        <select class="form-select" id="soundP3" aria-label="Default select example">
+                            <option hidden selected>Pad 3</option>
+                            <option disabled>KICK</option>
+                            <option value="kicklofi">Lo-Fi Kick</option>
+                            <option value="analogtechnokick">Analog Techno Kick</option>
+                            <option value="latinkick">Latin Kick</option>
+                            <option value="pureanalogkick">Pure Analog Kick</option>
+                            <option disabled>SNARE</option>
+                            <option value="snarelofi">Lo-Fi Snare</option>
+                            <option value="analogtechnosnare">Analog Techno Snare</option>
+                            <option value="eternsnare">Blob Snare</option>
+                            <option value="eternsnare2">Mlom Snare</option>
+                            <option value="lazersnare">Klok Snare</option>
+                            <option value="rimshot">Rim Shot</option>
+                            <option disabled>HI-HAT</option>
+                            <option value="hihatlofi">Lo-Fi Hi-Hat</option>
+                            <option value="analogtechnohh">Analog Techno Hi-Hat</option>
+                            <option value="analogtechnoopenhh">Analog Techno Open Hi-Hat</option>
+                            <option value="electrodubhh">Electro Dub Hi-Hat</option>
+                            <option disabled>PERCUSSIONS</option>
+                            <option value="afrocowbell">CowBell</option>
+                            <option value="afrodjembe">Djembe</option>
+                            <option value="afrodjembe2">Djembe2</option>
+                            <option value="afrodjembe3">Djembe3</option>
+                            <option value="afrorattle">Rattle</option>
+                            <option value="conga">Conga</option>
+                            <option value="conga2">Conga2</option>
+                            <option value="conga3">Conga3</option>
+                            <option value="conga4">Conga4</option>
+                            <option value="conga5">Conga5</option>
+                            <option value="shaker">Shaker</option>
+                            <option value="pluic">Pluic</option>
+                            <option value="indiancymbal">Indian Cymbal</option>
+                            <option value="indiancymbal2">Indian Cymbal2</option>
+                            <option value="indiandumbek">Dumbek</option>
+                            <option value="indiantabla">Tabla</option>
+                            <option value="indiantar">Tar</option>
+                            <option value="maracas">Maracas</option>
+                            <option value="timbale">Timbale</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-top: 10px;">
+                        <span>Harmony</span>
+                        <div>
+                            <select id = "selectKeyMel" class="form-select" aria-label="Default select example">
+                                <option hidden selected>Key</option>
+                                <option value="C" >C</option>
+                                <option value="C#" >C#</option>
+                                <option value="D" >D</option>
+                                <option value="D#" >D#</option>
+                                <option value="E" >E</option>
+                                <option value="F" >F</option>
+                                <option value="F#" >F#</option>
+                                <option value="G" >G</option>
+                                <option value="G#" >G#</option>
+                                <option value="A" >A</option>
+                                <option value="A#" >A#</option>
+                                <option value="B" >B</option>
+                            </select>
+                        </div>
+        
+                        <div style="margin-top: 10px;">
+                            <select id = "selectScaleMel" class="form-select" aria-label="Default select example">
+                                <option hidden selected>Scale</option>
+                                <option value="ionic" >Ionian</option>
+                                <option value="doric" >Dorian</option>
+                                <option value="frigian" >Phrygian</option>
+                                <option value="lydian" >Lydian</option>
+                                <option value="mixolydian" >Mixolydian</option>
+                                <option value="eolian" >Aeolian</option>
+                                <option value="locrian" >Locrian</option>
+                                <option value="petmag" >Major Pentatonic</option>
+                                <option value="petmin" >Minor Pentatonic</option>
+                                <option value="blues" >Blues</option>
+                                <option value="esa" >Whole Tone</option>
+                                <option value="dim" >Diminished</option>
+                                <option value="semid" >Half-Diminished</option>
+                                <option value="arm" >Harmonic Minor</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 10px;">
+                        <span>Melody Wave Type</span>
+                        <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
+                            <option hidden selected>Wave Type</option>
+                            <option value="sine" >Sine</option>
+                            <option value="sine3" >Sine3</option>
+                            <option value="sine8" >Sine8</option>
+                            <option value="square" >Square</option>
+                            <option value="sawtooth" >Saw</option>
+                            <option value="triangle" >Triangle</option>
+                        </select>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <span>Harmony Wave Type</span>
+                        <select id = "selectWaveHarm" class="form-select" aria-label="Default select example">
+                            <option hidden selected>Wave Type</option>
+                            <option value="sine" >Sine</option>
+                            <option value="sine3" >Sine3</option>
+                            <option value="sine8" >Sine8</option>
+                            <option value="square" >Square</option>
+                            <option value="sawtooth" >Saw</option>
+                            <option value="triangle" >Triangle</option>
                         </select>
                     </div>
                 </div>
                 
-                <div style="margin-top: 10px;">
-                    <a style="color: rgb(255, 29, 112);">Melody Wave Type</a>
-                    <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
-                        <option hidden selected>Wave Type</option>
-                        <option value="sine" >Sine</option>
-                        <option value="sine3" >Sine3</option>
-                        <option value="sine8" >Sine8</option>
-                        <option value="square" >Square</option>
-                        <option value="sawtooth" >Saw</option>
-                        <option value="triangle" >Triangle</option>
-                    </select>
-                </div>
-                <div style="margin-top: 10px;">
-                    <a style="color: rgb(255, 29, 112);">Harmony Wave Type</a>
-                    <select id = "selectWaveHarm" class="form-select" aria-label="Default select example">
-                        <option hidden selected>Wave Type</option>
-                        <option value="sine" >Sine</option>
-                        <option value="sine3" >Sine3</option>
-                        <option value="sine8" >Sine8</option>
-                        <option value="square" >Square</option>
-                        <option value="sawtooth" >Saw</option>
-                        <option value="triangle" >Triangle</option>
-                    </select>
-                </div>
             </div>
-            
-        </div>
-
-
-        <!-- colonna dei pad  -->
-
-        <div id="column2">
-
-            <!-- Pad ritmici -->
-
-            <div id = "rhythm">
-                
-                <div class="padAndControls">
-
-
-
-                    <!-- pad 1 numero neuroni-->
-
-                    <div id= "init1" class="">
-                        <div style="margin-bottom: 10px;">
-                            <label for="numNeurons1" class="init-text-color"> Notes Number </label>
-                            <input class=" numNeuInput" type="number" id="NeuronsPad1" name="numNeurons1" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
-                            <span class="validity"></span>
-                        </div>
-
-                        <!-- pad 1 forma/metrica-->
-
-                        <div style="margin-top: 10px;">
-                            <select id="selectShape1" class="form-select" aria-label="Default select example">
-                                <option hidden selected>Metric</option>
-                                <option value="rect" >4/4 - Square</option>
-                                <option value="tri">3/4 - Triangle</option>
-                                <option value="pent">5/4 - Pentagone</option>
-                            </select>
-                        </div>
-
-                        
-
-                        <div style="margin-top: 10px; position:relative; bottom:100%;">
-                            <button id="initNeuronsPad1" class="neon btn ">Init Rhythmic Pad 1</button>
-                        </div>
-                        <div id="errorMessage1" style="color: red;">
-
-                        </div>
-                    </div>
-
-                    <!-- pad 1 post inizializzazione -->
-
-                    <div id="afterInit1" class="disabledNeurons">
-                        <div id="vol-bar">
-                            <div id = "rhythm-pad1" class="rect rhythm-pad">
-                                <svg id= "clickPad1" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
-                                    <circle id="circleClick" r ="5" fill="white"></circle>
-                                </svg>
-                            </div>
-                            <input id="VolRhy1" name = "volPad1" type="range" class="slider" min="0" max="9" value="5.84" step="0.5" orient="vertical">
-                        </div>
-                        <div class="audio-controls">
-                            <button id = "mute1" class = "neon vol-button btn">M</button>
-                            <button id = "solo1" class = "neon vol-button btn">S</button>
-                            <button id="panButt1" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy1" style="font-size: small; letter-spacing: 0px;">
-                                Pan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="padAndControls">
-
-
-
-
-                    <!-- pad 2 numero neuroni-->
-
-                    <div id= "init2" class="">
-                        <div style="margin-bottom: 10px;">
-                            <label for="numNeurons2" class="init-text-color">Notes Number </label>
-                            <input class="numNeuInput" type="number" id="NeuronsPad2" name="numNeurons2" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
-                            <span class="validity"></span>
-                        </div>
-
-                        <!-- pad 2 forma/metrica-->
-
-                        <div style="margin-top: 10px;">
-                            <select id = "selectShape2" class="form-select" aria-label="Default select example">
-                                <option hidden selected>Metric</option>
-                                <option value="rect" >4/4 - Square</option>
-                                <option value="tri">3/4 - Triangle</option>
-                                <option value="pent">5/4 - Pentagone</option>
-                            </select>
-                        </div>
-
-                        <!-- pad 2 suono -->
-
-                        
-
-                        <div style="margin-top: 10px; position:relative; bottom:100%;">
-                            <button id="initNeuronsPad2" class=" neon btn btn-outline-danger">Init Rhythmic Pad 2</button>
-                        </div>
-                        <div id="errorMessage2" style="color: red;">
-
-                        </div>
-                    </div>
-
-                    <!-- pad 2 post inizializzazione -->
-
-                    <div id="afterInit2" class="disabledNeurons">
-                        <div id="vol-bar">
-                            <div id = "rhythm-pad2" class="rect rhythm-pad">
-                                <svg id= "clickPad2" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
-                                    <circle id="circleClick" r ="5" fill="white"></circle>
-                                </svg>
-                            </div>
-                            <input id="VolRhy2" name = "volPad2" type="range" class="slider" min="0" max="9" value="5.84" step="0.5" orient="vertical">
-                        </div>
-                        <div class="audio-controls">
-                            <button id = "mute2" class = "neon vol-button btn">M</button>
-                            <button id = "solo2" class = "neon vol-button btn">S</button>
-                            <button id="PanButt2" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy2" style="font-size: small; letter-spacing: 0px;">
-                                Pan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
-                
-                <div class="padAndControls">
-                    <div id= "init3" class="">
-
-                        <!-- pad 3 numero neuroni -->
-
-                        <div style="margin-bottom: 10px;">
-                            <label for="numNeurons3" class="init-text-color">Notes Number </label>
-                            <input class="numNeuInput" type="number" id="NeuronsPad3" name="numNeurons3" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
-                            <span class="validity"></span>
-                        </div>
-
-                        <!-- pad 3 forma/metrica -->
-
-                        <div style="margin-top: 10px;">
-                            <select id = "selectShape3" class="form-select" aria-label="Default select example">
-                                <option hidden selected>Metric</option>
-                                <option value="rect" >4/4 - Square</option>
-                                <option value="tri">3/4 - Triangle</option>
-                                <option value="pent">5/4 - Pentagone</option>
-                            </select>
-                        </div>
-
-                        
-                        <div style="margin-top: 10px; position:relative; bottom:100%;">
-                            <button id="initNeuronsPad3" class="neon btn btn-outline-danger">Init Rhythmic Pad 3</button>
-                        </div>
-                        <div id="errorMessage3" style="color: red;">
-
-                        </div>
-                    </div>
-
-
-                    <!-- pad 3 post inizializzazione -->
-
-                    <div id="afterInit3" class="disabledNeurons">
-                        <div id="vol-bar">
-                            <div id = "rhythm-pad3" class="rhythm-pad">
-                                <svg id= "clickPad3" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
-                                    <circle id="circleClick" r ="5" fill="white"></circle>
-                                </svg>
-                            </div>
-                            <input id="VolRhy3" name = "volPad3" type="range" class="slider" min="0" max="9" value="5.84" step="0.5" orient="vertical">
-                        </div>
-                        <div class="audio-controls">
-                            <button id = "mute3" class = "neon vol-button btn">M</button>
-                            <button id = "solo3" class = "neon vol-button btn">S</button>
-                            <button id="PanButt3" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy3" style="font-size: small; letter-spacing: 0px;">
-                                Pan
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Blob -->
-                <span id="rules" style="width: 50px; height: 50px;position: relative; top: 70px; left: 122px; z-index: 999; cursor: pointer;" 
-                data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html = "true" data-bs-content="<div>Hi! My name is Bloppity Blob :)</div><div>Click on me for instructions!</div>">
-                </span>
-
-                <div class="blob">
-                    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-                        <defs>
-                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color: #300f9b;"></stop>
-                            <stop offset="100%" style="stop-color: #ff1d70;"></stop>
-                        </linearGradient>
-                        </defs>
-                        <path  fill="url(#gradient)">
-                            <animate attributeName="d"
-                            dur="10000ms" 
-                            repeatCount="indefinite"
-                            values="M341.5,287Q324,324,287,354.5Q250,385,212.5,355Q175,325,162,287.5Q149,250,119.5,170Q90,90,170,60Q250,30,301.5,88.5Q353,147,356,198.5Q359,250,341.5,287Z;
-                            M391,290.5Q331,331,290.5,342Q250,353,186,365.5Q122,378,86.5,314Q51,250,66,165.5Q81,81,165.5,76Q250,71,296,114.5Q342,158,396.5,204Q451,250,391,290.5Z;
-                            M385.5,299Q348,348,299,359.5Q250,371,188,372.5Q126,374,104,312Q82,250,124.5,208.5Q167,167,208.5,122.5Q250,78,326.5,87.5Q403,97,413,173.5Q423,250,385.5,299Z;
-                            M403.5,325.5Q401,401,325.5,384Q250,367,165,393.5Q80,420,92.5,335Q105,250,121.5,194Q138,138,194,103.5Q250,69,306,103.5Q362,138,384,194Q406,250,403.5,325.5Z;
-                            M409,331Q412,412,331,406.5Q250,401,192,383.5Q134,366,68.5,308Q3,250,54,177.5Q105,105,177.5,116.5Q250,128,298,141Q346,154,376,202Q406,250,409,331Z;
-                            M341.5,287Q324,324,287,354.5Q250,385,212.5,355Q175,325,162,287.5Q149,250,119.5,170Q90,90,170,60Q250,30,301.5,88.5Q353,147,356,198.5Q359,250,341.5,287Z"
-                            >
-                                
-                            </animate>
-                        </path>
-                    </svg>
-                    <svg style="position: fixed; top:35px; left:36px" width="20" height="20">
-                        <circle r="2" fill="black">
-                            <animate attributeName="cx" values="2;8;3;5;4;2" dur="8s" repeatCount="indefinite" />
-                            <animate attributeName="cy" values="2;3;2;8;5;2" dur="10s" repeatCount="indefinite" />
-                        </circle>
-                    </svg>
-                    <svg style="position: fixed; top:35px; left:56px" width="20" height="20">
-                        <circle r="2" fill="black">
-                            <animate attributeName="cx" values="2;7;3;5;8;2" dur="10s" repeatCount="indefinite" />
-                            <animate attributeName="cy" values="2;5;6;2;4;2" dur="8s" repeatCount="indefinite" />
-                        </circle>
-                    </svg>
-                    <svg viewBox="0 0 500 500" style="position: fixed; top:45px; left:32px" width="100" height="100">
-                        <path stroke="Black" stroke-width="5" fill="none">
-                            <animate attributeName="d"
-                            dur="5000ms" 
-                            repeatCount="indefinite"
-                            values="M12,14 C19,73 79,70 151,13;
-                            M12,14 C19,73 153,69 151,13;
-                            M12,14 C56,51 152,63 151,13;
-                            M12,14 C23,81 210,109 151,13;
-                            M12,14 C18,92 142,100 151,13;
-                            M12,14 C19,73 79,70 151,13"
-                            >
-                                
-                            </animate>
-                        </path>
-                    </svg>
-                </div>
-                    
-            </div>
-
-
-            <!-- Pad melodico -->
-
-            <div id="melody">
-                <div class = "padAndControlsMel">
-        
-                    <div id="initMelandSound" style="display: flex;">
-
-                        <div id = afterInit-mel class = "disabledNeurons">
-                            <div id="vol-bar-mel" >
-                                <div id = "melodic-pad">
     
-                                </div>
-                                <input id = "VolMel" name = "volPadMel" type="range" class="slider" min="0" max="9" value="5.84" step="0.5" orient="vertical">
-                            </div>
-                            <div id="audio-controls-mel">
-                                <button id = "mute-mel" class = "neon vol-button btn">M</button>
-                                <button id = "solo-mel" class = "neon vol-button btn">S</button>
-                                <button id="PanMButt" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanMelodic" style="font-size: small; letter-spacing: 0px;">
-                                    Pan
-                                </button>
-                            </div>
-                        </div>
-
-                        <div id="init-mel" class="">
-                            <div style="margin-bottom: 10px;">
-                                <label for="numNeuronsMel" class="init-text-color">Notes Number </label>
-                                <input class="numNeuInput" type="number" id="NeuronsPadMel" name="numNeuronsMel" min="4" max="32" step="1" style="width: 50px; border-color: #ff1d70;" required>
-                                <span class="validity"></span>
-                            </div>
-
-                            <div style="margin-top: 10px;">
-                                <select id = "selectMetricMel" class="form-select" aria-label="Default select example">
-                                    <option hidden selected value = "0">Metric</option>
-                                    <option value="4" >4/4</option>
-                                    <option value="3">3/4</option>
-                                    <option value="5">5/4</option>
-                                </select>
-                            </div>
-
-
-                            <!-- <div style="margin-top: 10px;">
-                                <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
-                                    <option hidden selected>Wave Type</option>
-                                    <option value="sine" >Sine</option>
-                                    <option value="square" >Square</option>
-                                    <option value="sawtooth" >Saw</option>
-                                    <option value="triangle" >Triangle</option>
-                                </select>
-                            </div> -->
-
-                            
-                            <button id="initMelodicPad" class="neon btn btn-outline-danger">Init Melodic Pad</button>
-                            <div id = "errorMessagem" style="color: red;"></div>
-                            
-                        </div>
-
-                        <div id="initSound">
-                            <div class="init-text-color" style="height: 27.2px; margin-bottom: 5px;">Envelope (ADSR)</div>
-                            <input id = "atkslider" type="range" class="sliderhor" min="0.05" max="2" value="0.5" step="0.05" >
-                            <span for="atkslider" class="init-text-color" style="margin-bottom: 5px;">A</span>
-                            <input id = "decayslider" type="range" class="sliderhor" min="0" max="2" value="0.5" step="0.05" >
-                            <span for="decayslider" class="init-text-color" style="margin-bottom: 5px;">D</span>
-                            <input id = "susslider" type="range" class="sliderhor" min="0" max="1" value="0.5" step="0.05" >
-                            <span for="susslider" class="init-text-color" style="margin-bottom: 5px;">S</span>
-                            <input id = "relslider" type="range" class="sliderhor" min="0.05" max="5" value="0.5" step="0.05" >
-                            <span for="relslider" class="init-text-color" style="margin-bottom: 5px;">R</span>
-                            <div style="margin-top: 10px; height: 27.2px; color:#ff1d70">Effects Properties</div>
-                            <div>
-                                <button id="EffMButt" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#EffectsMelodic" style="font-size: small; letter-spacing: 0px; margin: 5px 5px 5px 0px;">
-                                    Effects
-                                </button>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div id = "harmony">
-                    <div class="padAndControlsHarm">
+    
+            <!-- colonna dei pad  -->
+    
+            <div id="column2">
+    
+                <!-- Pad ritmici -->
+    
+                <div id = "rhythm">
+                    
+                    <div class="padAndControls">
+    
+    
     
                         <!-- pad 1 numero neuroni-->
-                        <div id= "Harmonicinit" class="">
+    
+                        <div id= "init1" class="">
                             <div style="margin-bottom: 10px;">
-                                <label for="numNeuronsHarm" class="init-text-color"> Chords Number </label>
-                                <input class=" numNeuInputHarm" type="number" id="NeuronsPadHarm" name="numNeuronsHarm" min="4" max="12" step="1" style="width: 50px; border-color: #ff1d70;" required>
+                                <label for="numNeurons1" class="init-text-color"> Notes Number </label>
+                                <input class=" numNeuInput" type="number" id="NeuronsPad1" name="numNeurons1" min="4" max="32" step="1" style="width: 50px;" required>
                                 <span class="validity"></span>
                             </div>
     
-                            <div style="margin-top: 10px; position:relative; bottom:100%;">
-                                <button id="initNeuronsPadHarm" class="neon btn ">Init Harmonic Pad</button>
+                            <!-- pad 1 forma/metrica-->
+    
+                            <div style="margin-top: 10px;">
+                                <select id="selectShape1" class="form-select" aria-label="Default select example">
+                                    <option hidden selected>Metric</option>
+                                    <option value="rect" >4/4 - Square</option>
+                                    <option value="tri">3/4 - Triangle</option>
+                                    <option value="pent">5/4 - Pentagone</option>
+                                </select>
                             </div>
-                            <div id="errorMessageh" style="color: red;">
-                                
+    
+                            
+    
+                            <div style="margin-top: 10px; position:relative; bottom:100%;">
+                                <button id="initNeuronsPad1" class="neon btn ">Init Rhythmic Pad 1</button>
+                            </div>
+                            <div id="errorMessage1" style="color: red;">
+    
                             </div>
                         </div>
     
                         <!-- pad 1 post inizializzazione -->
     
-                        <div id="afterInitHarm" class="disabledNeurons">
+                        <div id="afterInit1" class="disabledNeurons">
                             <div id="vol-bar">
-                                <div id = "harmonic-pad1" class="">
+                                <div id = "rhythm-pad1" class="rect rhythm-pad">
+                                    <svg id= "clickPad1" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
+                                        <circle id="circleClick" r ="5" fill="white"></circle>
+                                    </svg>
                                 </div>
-                                <input id = "VolHarm" name = "volPadHarm" type="range" class="slider" min="0" max="9" value="5.84" step="0.5" orient="vertical">
+                                <input id="VolRhy1" name = "volPad1" type="range" class="slider" min="0" max="9" value="5.84" step="0.5">
                             </div>
                             <div class="audio-controls">
-                                <button id = "mute-harm" class = "neon vol-button btn">M</button>
-                                <button id = "solo-harm" class = "neon vol-button btn">S</button>
-                                <button id="PanHButt" type="button" class="neon btn" data-bs-toggle="modal" data-bs-target="#PanHarmonic" style="font-size: small; letter-spacing: 0px;">
+                                <button id = "mute1" class = "neon vol-button btn">M</button>
+                                <button id = "solo1" class = "neon vol-button btn">S</button>
+                                <button id="panButt1" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy1" style="font-size: small; letter-spacing: 0px;">
                                     Pan
                                 </button>
                             </div>
                         </div>
                     </div>
+    
+                    <div class="padAndControls">
+    
+    
+    
+    
+                        <!-- pad 2 numero neuroni-->
+    
+                        <div id= "init2" class="">
+                            <div style="margin-bottom: 10px;">
+                                <label for="numNeurons2" class="init-text-color">Notes Number </label>
+                                <input class="numNeuInput" type="number" id="NeuronsPad2" name="numNeurons2" min="4" max="32" step="1" style="width: 50px;" required>
+                                <span class="validity"></span>
+                            </div>
+    
+                            <!-- pad 2 forma/metrica-->
+    
+                            <div style="margin-top: 10px;">
+                                <select id = "selectShape2" class="form-select" aria-label="Default select example">
+                                    <option hidden selected>Metric</option>
+                                    <option value="rect" >4/4 - Square</option>
+                                    <option value="tri">3/4 - Triangle</option>
+                                    <option value="pent">5/4 - Pentagone</option>
+                                </select>
+                            </div>
+    
+                            <!-- pad 2 suono -->
+    
+                            
+    
+                            <div style="margin-top: 10px; position:relative; bottom:100%;">
+                                <button id="initNeuronsPad2" class=" neon btn btn-outline-danger">Init Rhythmic Pad 2</button>
+                            </div>
+                            <div id="errorMessage2" style="color: red;">
+    
+                            </div>
+                        </div>
+    
+                        <!-- pad 2 post inizializzazione -->
+    
+                        <div id="afterInit2" class="disabledNeurons">
+                            <div id="vol-bar">
+                                <div id = "rhythm-pad2" class="rect rhythm-pad">
+                                    <svg id= "clickPad2" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
+                                        <circle id="circleClick" r ="5" fill="white"></circle>
+                                    </svg>
+                                </div>
+                                <input id="VolRhy2" name = "volPad2" type="range" class="slider" min="0" max="9" value="5.84" step="0.5">
+                            </div>
+                            <div class="audio-controls">
+                                <button id = "mute2" class = "neon vol-button btn">M</button>
+                                <button id = "solo2" class = "neon vol-button btn">S</button>
+                                <button id="PanButt2" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy2" style="font-size: small; letter-spacing: 0px;">
+                                    Pan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    
+                    <div class="padAndControls">
+                        <div id= "init3" class="">
+    
+                            <!-- pad 3 numero neuroni -->
+    
+                            <div style="margin-bottom: 10px;">
+                                <label for="numNeurons3" class="init-text-color">Notes Number </label>
+                                <input class="numNeuInput" type="number" id="NeuronsPad3" name="numNeurons3" min="4" max="32" step="1" style="width: 50px;" required>
+                                <span class="validity"></span>
+                            </div>
+    
+                            <!-- pad 3 forma/metrica -->
+    
+                            <div style="margin-top: 10px;">
+                                <select id = "selectShape3" class="form-select" aria-label="Default select example">
+                                    <option hidden selected>Metric</option>
+                                    <option value="rect" >4/4 - Square</option>
+                                    <option value="tri">3/4 - Triangle</option>
+                                    <option value="pent">5/4 - Pentagone</option>
+                                </select>
+                            </div>
+    
+                            
+                            <div style="margin-top: 10px; position:relative; bottom:100%;">
+                                <button id="initNeuronsPad3" class="neon btn btn-outline-danger">Init Rhythmic Pad 3</button>
+                            </div>
+                            <div id="errorMessage3" style="color: red;">
+    
+                            </div>
+                        </div>
+    
+    
+                        <!-- pad 3 post inizializzazione -->
+    
+                        <div id="afterInit3" class="disabledNeurons">
+                            <div id="vol-bar">
+                                <div id = "rhythm-pad3" class="rhythm-pad">
+                                    <svg id= "clickPad3" height="210px" width="210px" class="" style="position: absolute; top:-5px; left:-5px; display:none">
+                                        <circle id="circleClick" r ="5" fill="white"></circle>
+                                    </svg>
+                                </div>
+                                <input id="VolRhy3" name = "volPad3" type="range" class="slider" min="0" max="9" value="5.84" step="0.5">
+                            </div>
+                            <div class="audio-controls">
+                                <button id = "mute3" class = "neon vol-button btn">M</button>
+                                <button id = "solo3" class = "neon vol-button btn">S</button>
+                                <button id="PanButt3" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanRhy3" style="font-size: small; letter-spacing: 0px;">
+                                    Pan
+                                </button>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <!-- Blob -->
+                    <span id="rules" style="width: 50px; height: 50px;position: relative; top: 70px; left: 122px; z-index: 999; cursor: pointer;" 
+                    data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-html = "true" data-bs-content="<div>Hi! My name is Bloppity Blob :)</div><div>Click on me for instructions!</div>">
+                    </span>
+    
+                    <div class="blob">
+                        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                            <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop id = "stop1" class="" offset="0%"></stop>
+                                <stop id = "stop2" class="" offset="100%"></stop>
+                            </linearGradient>
+                            </defs>
+                            <path  fill="url(#gradient)">
+                                <animate attributeName="d"
+                                dur="10000ms" 
+                                repeatCount="indefinite"
+                                values="M341.5,287Q324,324,287,354.5Q250,385,212.5,355Q175,325,162,287.5Q149,250,119.5,170Q90,90,170,60Q250,30,301.5,88.5Q353,147,356,198.5Q359,250,341.5,287Z;
+                                M391,290.5Q331,331,290.5,342Q250,353,186,365.5Q122,378,86.5,314Q51,250,66,165.5Q81,81,165.5,76Q250,71,296,114.5Q342,158,396.5,204Q451,250,391,290.5Z;
+                                M385.5,299Q348,348,299,359.5Q250,371,188,372.5Q126,374,104,312Q82,250,124.5,208.5Q167,167,208.5,122.5Q250,78,326.5,87.5Q403,97,413,173.5Q423,250,385.5,299Z;
+                                M403.5,325.5Q401,401,325.5,384Q250,367,165,393.5Q80,420,92.5,335Q105,250,121.5,194Q138,138,194,103.5Q250,69,306,103.5Q362,138,384,194Q406,250,403.5,325.5Z;
+                                M409,331Q412,412,331,406.5Q250,401,192,383.5Q134,366,68.5,308Q3,250,54,177.5Q105,105,177.5,116.5Q250,128,298,141Q346,154,376,202Q406,250,409,331Z;
+                                M341.5,287Q324,324,287,354.5Q250,385,212.5,355Q175,325,162,287.5Q149,250,119.5,170Q90,90,170,60Q250,30,301.5,88.5Q353,147,356,198.5Q359,250,341.5,287Z"
+                                >
+                                    
+                                </animate>
+                            </path>
+                        </svg>
+                        <svg style="position: fixed; top:35px; left:36px" width="20" height="20">
+                            <circle r="2" fill="black">
+                                <animate attributeName="cx" values="2;8;3;5;4;2" dur="8s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="2;3;2;8;5;2" dur="10s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                        <svg style="position: fixed; top:35px; left:56px" width="20" height="20">
+                            <circle r="2" fill="black">
+                                <animate attributeName="cx" values="2;7;3;5;8;2" dur="10s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="2;5;6;2;4;2" dur="8s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                        <svg viewBox="0 0 500 500" style="position: fixed; top:45px; left:32px" width="100" height="100">
+                            <path stroke="Black" stroke-width="5" fill="none">
+                                <animate attributeName="d"
+                                dur="5000ms" 
+                                repeatCount="indefinite"
+                                values="M12,14 C19,73 79,70 151,13;
+                                M12,14 C19,73 153,69 151,13;
+                                M12,14 C56,51 152,63 151,13;
+                                M12,14 C23,81 210,109 151,13;
+                                M12,14 C18,92 142,100 151,13;
+                                M12,14 C19,73 79,70 151,13"
+                                >
+                                    
+                                </animate>
+                            </path>
+                        </svg>
+                    </div>
+                        
+                </div>
+    
+    
+                <!-- Pad melodico -->
+    
+                <div id="melody">
+                    <div class = "padAndControlsMel">
+            
+                        <div id="initMelandSound" style="display: flex;">
+    
+                            <div id = afterInit-mel class = "disabledNeurons">
+                                <div id="vol-bar-mel" >
+                                    <div id = "melodic-pad">
+        
+                                    </div>
+                                    <input id = "VolMel" name = "volPadMel" type="range" class="slider" min="0" max="9" value="5.84" step="0.5">
+                                </div>
+                                <div id="audio-controls-mel">
+                                    <button id = "mute-mel" class = "neon vol-button btn">M</button>
+                                    <button id = "solo-mel" class = "neon vol-button btn">S</button>
+                                    <button id="PanMButt" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#PanMelodic" style="font-size: small; letter-spacing: 0px;">
+                                        Pan
+                                    </button>
+                                </div>
+                            </div>
+    
+                            <div id="init-mel" class="">
+                                <div style="margin-bottom: 10px;">
+                                    <label for="numNeuronsMel" class="init-text-color">Notes Number </label>
+                                    <input class="numNeuInput" type="number" id="NeuronsPadMel" name="numNeuronsMel" min="4" max="32" step="1" style="width: 50px;" required>
+                                    <span class="validity"></span>
+                                </div>
+    
+                                <div style="margin-top: 10px;">
+                                    <select id = "selectMetricMel" class="form-select" aria-label="Default select example">
+                                        <option hidden selected value = "0">Metric</option>
+                                        <option value="4" >4/4</option>
+                                        <option value="3">3/4</option>
+                                        <option value="5">5/4</option>
+                                    </select>
+                                </div>
+    
+    
+                                <!-- <div style="margin-top: 10px;">
+                                    <select id = "selectWaveMel" class="form-select" aria-label="Default select example">
+                                        <option hidden selected>Wave Type</option>
+                                        <option value="sine" >Sine</option>
+                                        <option value="square" >Square</option>
+                                        <option value="sawtooth" >Saw</option>
+                                        <option value="triangle" >Triangle</option>
+                                    </select>
+                                </div> -->
+    
+                                
+                                <button id="initMelodicPad" class="neon btn btn-outline-danger">Init Melodic Pad</button>
+                                <div id = "errorMessagem" style="color: red;"></div>
+                                
+                            </div>
+    
+                            <div id="initSound">
+                                <label class="init-text-color" style="height: 27.2px; margin-bottom: 5px;">Envelope (ADSR)</label>
+                                <input id = "atkslider" type="range" class="sliderhor" min="0.05" max="2" value="0.5" step="0.05" >
+                                <span for="atkslider" class="init-text-color" style="margin-bottom: 5px;">A</span>
+                                <input id = "decayslider" type="range" class="sliderhor" min="0" max="2" value="0.5" step="0.05" >
+                                <span for="decayslider" class="init-text-color" style="margin-bottom: 5px;">D</span>
+                                <input id = "susslider" type="range" class="sliderhor" min="0" max="1" value="0.5" step="0.05" >
+                                <span for="susslider" class="init-text-color" style="margin-bottom: 5px;">S</span>
+                                <input id = "relslider" type="range" class="sliderhor" min="0.05" max="5" value="0.5" step="0.05" >
+                                <span for="relslider" class="init-text-color" style="margin-bottom: 5px;">R</span>
+                                <label style="margin-top: 10px; height: 27.2px;">Effects Properties</label>
+                                <div>
+                                    <button id="EffMButt" type="button" class="btn neon" data-bs-toggle="modal" data-bs-target="#EffectsMelodic" style="font-size: small; letter-spacing: 0px; margin: 5px 5px 5px 0px;">
+                                        Effects
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div id = "harmony">
+                        <div class="padAndControlsHarm">
+        
+                            <!-- pad 1 numero neuroni-->
+                            <div id= "Harmonicinit" class="">
+                                <div style="margin-bottom: 10px;">
+                                    <label for="numNeuronsHarm" class="init-text-color"> Chords Number </label>
+                                    <input class=" numNeuInputHarm" type="number" id="NeuronsPadHarm" name="numNeuronsHarm" min="4" max="12" step="1" style="width: 50px;" required>
+                                    <span class="validity"></span>
+                                </div>
+        
+                                <div style="margin-top: 10px; position:relative; bottom:100%;">
+                                    <button id="initNeuronsPadHarm" class="neon btn ">Init Harmonic Pad</button>
+                                </div>
+                                <div id="errorMessageh" style="color: red;">
+                                    
+                                </div>
+                            </div>
+        
+                            <!-- pad 1 post inizializzazione -->
+        
+                            <div id="afterInitHarm" class="disabledNeurons">
+                                <div id="vol-bar">
+                                    <div id = "harmonic-pad1" class="">
+                                    </div>
+                                    <input id = "VolHarm" name = "volPadHarm" type="range" class="slider" min="0" max="9" value="5.84" step="0.5"> <!-- orient="vertical" -->
+                                </div>
+                                <div class="audio-controls">
+                                    <button id = "mute-harm" class = "neon vol-button btn">M</button>
+                                    <button id = "solo-harm" class = "neon vol-button btn">S</button>
+                                    <button id="PanHButt" type="button" class="neon btn" data-bs-toggle="modal" data-bs-target="#PanHarmonic" style="font-size: small; letter-spacing: 0px;">
+                                        Pan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+    
+                <div id="theme-select">
+                    <span>Select Theme</span>
+                    <select id="themes" class="form-select">
+                        <option value="1">Blob</option>
+                        <option value="2">Inferno</option>
+                        <option value="3">Heaven</option>
+                    </select>
                 </div>
                 
+    
+                
+                
             </div>
-
-            
-            
         </div>
+        
     </body>
 
 </html>

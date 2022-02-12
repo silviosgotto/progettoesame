@@ -4,11 +4,12 @@ import RhythmSound from './RhythmSound.js';
 import MelodicSound from './MelodicSound.js';
 import HarmonicNeurons from './HarmonicNeurons.js';
 import HarmonicSound from './HarmonicSound.js';
-import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js';
-import * as Tone from 'tone';
-import { Popover } from 'bootstrap';
-import { Context, dbToGain, Phaser, Solo, TransportTime } from 'tone';
-import * as bootstrap from 'bootstrap';
+import { SVG, extend as SVGextend, Element as SVGElement } from '../node_modules/@svgdotjs/svg.js';
+import * as Tone from '../node_modules/tone';
+//import { Popover } from '../node_modules/bootstrap';
+//import { Context, dbToGain, Phaser, Solo, TransportTime } from 'tone';
+import * as bootstrap from '../node_modules/bootstrap';
+//import { variationPlacements } from '@popperjs/core';
 
 
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -16,10 +17,6 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 })
 
-popoverList[0].show();
-setTimeout(function(){
-    popoverList[0].hide();
-}, 3000)
 
 const rulesModal = new bootstrap.Modal(document.getElementById("rulesModal"));
 const spanBlob = document.getElementById("rules");
@@ -1047,7 +1044,368 @@ PlayButt.onclick = async () => {
 }
 
 
+//themes 
+const border = document.querySelectorAll(".padAndControls, .padAndControlsMel, .padAndControlsHarm");
+const bpmbord = document.getElementById("bpm-bord");
+const labAll = document.querySelectorAll("label");
+const spanAll = document.querySelectorAll("span");
+const buttAll = document.getElementsByClassName("btn");
+const typeNumall = document.querySelectorAll("input[type=number]");
+const selectall = document.querySelectorAll("select");
+const blobc1 = document.getElementById("stop1");
+const blobc2 = document.getElementById("stop2");
+const body = document.getElementById("body");
+const themes = document.getElementById("themes");
+
+themes.onchange = function(){
+    if(themes.value == "1"){
+        blobc1.classList.add("blob-color1");
+        blobc2.classList.add("blob-color2");
+        blobc1.classList.remove("inferno-color1");
+        blobc2.classList.remove("inferno-color2");
+        blobc1.classList.remove("heaven-color1");
+        blobc2.classList.remove("heaven-color2");
+        body.classList.add("theme-blob");
+        body.classList.remove("theme-inferno");
+        body.classList.remove("theme-heaven");
+        for(i = 0; i<selectall.length; i++){
+            selectall[i].classList.add("blob-select");
+            selectall[i].classList.remove("inferno-select");
+            selectall[i].classList.remove("heaven-select");
+        }
+        for(i = 0; i<buttAll.length; i++){
+            buttAll[i].classList.add("neon");
+            buttAll[i].classList.remove("neon-inferno");
+            buttAll[i].classList.remove("neon-heaven");
+        }
+        for(i = 0; i<typeNumall.length; i++){
+            typeNumall[i].classList.add("blob-num");
+            typeNumall[i].classList.remove("inferno-num");
+            typeNumall[i].classList.remove("heaven-num");
+        }
+        for(i = 0; i<spanAll.length; i++){
+            spanAll[i].classList.add("blob-span");
+            spanAll[i].classList.remove("inferno-span");
+            spanAll[i].classList.remove("heaven-span");
+        }
+        for(i = 0; i<labAll.length; i++){
+            labAll[i].classList.add("blob-label");
+            labAll[i].classList.remove("inferno-label");
+            labAll[i].classList.remove("heaven-label");
+        }
+        for(i = 0; i<border.length; i++){
+            border[i].classList.add("blob-border");
+            border[i].classList.remove("inferno-border");
+            border[i].classList.remove("heaven-border");
+        }
+        bpmbord.classList.add("blob-border");
+        bpmbord.classList.remove("inferno-border");
+        bpmbord.classList.remove("heaven-border");
+        setCookie(themes.value);
+    }
+    else if(themes.value == "2"){
+        blobc1.classList.add("inferno-color1");
+        blobc2.classList.add("inferno-color2");
+        blobc1.classList.remove("blob-color1");
+        blobc2.classList.remove("blob-color2");
+        blobc1.classList.remove("heaven-color1");
+        blobc2.classList.remove("heaven-color2");
+        body.classList.add("theme-inferno");
+        body.classList.remove("theme-blob");
+        body.classList.remove("theme-heaven");
+        for(i = 0; i<selectall.length; i++){
+            selectall[i].classList.add("inferno-select");
+            selectall[i].classList.remove("blob-select");
+            selectall[i].classList.remove("heaven-select");
+        }
+        for(i = 0; i<buttAll.length; i++){
+            buttAll[i].classList.add("neon-inferno");
+            buttAll[i].classList.remove("neon");
+            buttAll[i].classList.remove("neon-heaven");
+        }
+        for(i = 0; i<typeNumall.length; i++){
+            typeNumall[i].classList.add("inferno-num");
+            typeNumall[i].classList.remove("blob-num");
+            typeNumall[i].classList.remove("heaven-num");
+        }
+        for(i = 0; i<spanAll.length; i++){
+            spanAll[i].classList.add("inferno-span");
+            spanAll[i].classList.remove("blob-span");
+            spanAll[i].classList.remove("heaven-span");
+        }
+        for(i = 0; i<labAll.length; i++){
+            labAll[i].classList.add("inferno-label");
+            labAll[i].classList.remove("blob-label");
+            labAll[i].classList.remove("heaven-label");
+        }
+        for(i = 0; i<border.length; i++){
+            border[i].classList.add("inferno-border");
+            border[i].classList.remove("blob-border");
+            border[i].classList.remove("heaven-border");
+        }
+        bpmbord.classList.add("inferno-border");
+        bpmbord.classList.remove("blob-border");
+        bpmbord.classList.remove("heaven-border");
+        setCookie(themes.value);
+    }
+    else{
+        blobc1.classList.add("heaven-color1");
+        blobc2.classList.add("heaven-color2");
+        blobc1.classList.remove("inferno-color1");
+        blobc2.classList.remove("inferno-color2");
+        blobc1.classList.remove("blob-color1");
+        blobc2.classList.remove("blob-color2");
+        body.classList.add("theme-heaven");
+        body.classList.remove("theme-inferno");
+        body.classList.remove("theme-blob");
+        for(i = 0; i<selectall.length; i++){
+            selectall[i].classList.add("heaven-select");
+            selectall[i].classList.remove("inferno-select");
+            selectall[i].classList.remove("blob-select");
+        }
+        for(i = 0; i<buttAll.length; i++){
+            buttAll[i].classList.add("neon-heaven");
+            buttAll[i].classList.remove("neon-inferno");
+            buttAll[i].classList.remove("neon");
+        }
+        for(i = 0; i<typeNumall.length; i++){
+            typeNumall[i].classList.add("heaven-num");
+            typeNumall[i].classList.remove("inferno-num");
+            typeNumall[i].classList.remove("blob-num");
+        }
+        for(i = 0; i<spanAll.length; i++){
+            spanAll[i].classList.add("heaven-span");
+            spanAll[i].classList.remove("inferno-span");
+            spanAll[i].classList.remove("blob-span");
+        }
+        for(i = 0; i<labAll.length; i++){
+            labAll[i].classList.add("heaven-label");
+            labAll[i].classList.remove("inferno-label");
+            labAll[i].classList.remove("blob-label");
+        }
+        for(i = 0; i<border.length; i++){
+            border[i].classList.add("heaven-border");
+            border[i].classList.remove("inferno-border");
+            border[i].classList.remove("blob-border");
+        }
+        bpmbord.classList.add("heaven-border");
+        bpmbord.classList.remove("inferno-border");
+        bpmbord.classList.remove("blob-border");
+        setCookie(themes.value);
+    }
+}
 
 
+//cookie
 
-//effects bitcrusher, chorus, delay
+function setCookie(cvalue) {
+    document.cookie = cvalue;
+}
+  
+function getCookie() {
+let decodedCookie = decodeURIComponent(document.cookie);
+return decodedCookie;
+}
+  
+function checkCookie() {
+    let value = getCookie();
+    if (value != "") {
+        if(themes.value == "1"){
+            blobc1.classList.add("blob-color1");
+            blobc2.classList.add("blob-color2");
+            blobc1.classList.remove("inferno-color1");
+            blobc2.classList.remove("inferno-color2");
+            blobc1.classList.remove("heaven-color1");
+            blobc2.classList.remove("heaven-color2");
+            body.classList.add("theme-blob");
+            body.classList.remove("theme-inferno");
+            body.classList.remove("theme-heaven");
+            for(i = 0; i<selectall.length; i++){
+                selectall[i].classList.add("blob-select");
+                selectall[i].classList.remove("inferno-select");
+                selectall[i].classList.remove("heaven-select");
+            }
+            for(i = 0; i<buttAll.length; i++){
+                buttAll[i].classList.add("neon");
+                buttAll[i].classList.remove("neon-inferno");
+                buttAll[i].classList.remove("neon-heaven");
+            }
+            for(i = 0; i<typeNumall.length; i++){
+                typeNumall[i].classList.add("blob-num");
+                typeNumall[i].classList.remove("inferno-num");
+                typeNumall[i].classList.remove("heaven-num");
+            }
+            for(i = 0; i<spanAll.length; i++){
+                spanAll[i].classList.add("blob-span");
+                spanAll[i].classList.remove("inferno-span");
+                spanAll[i].classList.remove("heaven-span");
+            }
+            for(i = 0; i<labAll.length; i++){
+                labAll[i].classList.add("blob-label");
+                labAll[i].classList.remove("inferno-label");
+                labAll[i].classList.remove("heaven-label");
+            }
+            for(i = 0; i<border.length; i++){
+                border[i].classList.add("blob-border");
+                border[i].classList.remove("inferno-border");
+                border[i].classList.remove("heaven-border");
+            }
+            bpmbord.classList.add("blob-border");
+            bpmbord.classList.remove("inferno-border");
+            bpmbord.classList.remove("heaven-border");
+        }
+        else if(themes.value == "2"){
+            blobc1.classList.add("inferno-color1");
+            blobc2.classList.add("inferno-color2");
+            blobc1.classList.remove("blob-color1");
+            blobc2.classList.remove("blob-color2");
+            blobc1.classList.remove("heaven-color1");
+            blobc2.classList.remove("heaven-color2");
+            body.classList.add("theme-inferno");
+            body.classList.remove("theme-blob");
+            body.classList.remove("theme-heaven");
+            for(i = 0; i<selectall.length; i++){
+                selectall[i].classList.add("inferno-select");
+                selectall[i].classList.remove("blob-select");
+                selectall[i].classList.remove("heaven-select");
+            }
+            for(i = 0; i<buttAll.length; i++){
+                buttAll[i].classList.add("neon-inferno");
+                buttAll[i].classList.remove("neon");
+                buttAll[i].classList.remove("neon-heaven");
+            }
+            for(i = 0; i<typeNumall.length; i++){
+                typeNumall[i].classList.add("inferno-num");
+                typeNumall[i].classList.remove("blob-num");
+                typeNumall[i].classList.remove("heaven-num");
+            }
+            for(i = 0; i<spanAll.length; i++){
+                spanAll[i].classList.add("inferno-span");
+                spanAll[i].classList.remove("blob-span");
+                spanAll[i].classList.remove("heaven-span");
+            }
+            for(i = 0; i<labAll.length; i++){
+                labAll[i].classList.add("inferno-label");
+                labAll[i].classList.remove("blob-label");
+                labAll[i].classList.remove("heaven-label");
+            }
+            for(i = 0; i<border.length; i++){
+                border[i].classList.add("inferno-border");
+                border[i].classList.remove("blob-border");
+                border[i].classList.remove("heaven-border");
+            }
+            bpmbord.classList.add("inferno-border");
+            bpmbord.classList.remove("blob-border");
+            bpmbord.classList.remove("heaven-border");
+        }
+        else{
+            blobc1.classList.add("heaven-color1");
+            blobc2.classList.add("heaven-color2");
+            blobc1.classList.remove("inferno-color1");
+            blobc2.classList.remove("inferno-color2");
+            blobc1.classList.remove("blob-color1");
+            blobc2.classList.remove("blob-color2");
+            body.classList.add("theme-heaven");
+            body.classList.remove("theme-inferno");
+            body.classList.remove("theme-blob");
+            for(i = 0; i<selectall.length; i++){
+                selectall[i].classList.add("heaven-select");
+                selectall[i].classList.remove("inferno-select");
+                selectall[i].classList.remove("blob-select");
+            }
+            for(i = 0; i<buttAll.length; i++){
+                buttAll[i].classList.add("neon-heaven");
+                buttAll[i].classList.remove("neon-inferno");
+                buttAll[i].classList.remove("neon");
+            }
+            for(i = 0; i<typeNumall.length; i++){
+                typeNumall[i].classList.add("heaven-num");
+                typeNumall[i].classList.remove("inferno-num");
+                typeNumall[i].classList.remove("blob-num");
+            }
+            for(i = 0; i<spanAll.length; i++){
+                spanAll[i].classList.add("heaven-span");
+                spanAll[i].classList.remove("inferno-span");
+                spanAll[i].classList.remove("blob-span");
+            }
+            for(i = 0; i<labAll.length; i++){
+                labAll[i].classList.add("heaven-label");
+                labAll[i].classList.remove("inferno-label");
+                labAll[i].classList.remove("blob-label");
+            }
+            for(i = 0; i<border.length; i++){
+                border[i].classList.add("heaven-border");
+                border[i].classList.remove("inferno-border");
+                border[i].classList.remove("blob-border");
+            }
+            bpmbord.classList.add("heaven-border");
+            bpmbord.classList.remove("inferno-border");
+            bpmbord.classList.remove("blob-border");
+        }
+    } else {
+        value = "1";
+        themes.value = "1";
+        blobc1.classList.add("blob-color1");
+        blobc2.classList.add("blob-color2");
+        blobc1.classList.remove("inferno-color1");
+        blobc2.classList.remove("inferno-color2");
+        blobc1.classList.remove("heaven-color1");
+        blobc2.classList.remove("heaven-color2");
+        body.classList.add("theme-blob");
+        body.classList.remove("theme-inferno");
+        body.classList.remove("theme-heaven");
+        for(i = 0; i<selectall.length; i++){
+            selectall[i].classList.add("blob-select");
+            selectall[i].classList.remove("inferno-select");
+            selectall[i].classList.remove("heaven-select");
+        }
+        for(i = 0; i<buttAll.length; i++){
+            buttAll[i].classList.add("neon");
+            buttAll[i].classList.remove("neon-inferno");
+            buttAll[i].classList.remove("neon-heaven");
+        }
+        for(i = 0; i<typeNumall.length; i++){
+            typeNumall[i].classList.add("blob-num");
+            typeNumall[i].classList.remove("inferno-num");
+            typeNumall[i].classList.remove("heaven-num");
+        }
+        for(i = 0; i<spanAll.length; i++){
+            spanAll[i].classList.add("blob-span");
+            spanAll[i].classList.remove("inferno-span");
+            spanAll[i].classList.remove("heaven-span");
+        }
+        for(i = 0; i<labAll.length; i++){
+            labAll[i].classList.add("blob-label");
+            labAll[i].classList.remove("inferno-label");
+            labAll[i].classList.remove("heaven-label");
+        }
+        for(i = 0; i<border.length; i++){
+            border[i].classList.add("blob-border");
+            border[i].classList.remove("inferno-border");
+            border[i].classList.remove("heaven-border");
+        }
+        bpmbord.classList.add("blob-border");
+        bpmbord.classList.remove("inferno-border");
+        bpmbord.classList.remove("heaven-border");
+        setCookie(themes.value);
+    }
+}
+      
+
+body.onload = function(){
+    checkCookie();
+    let load = document.getElementById("load-page");
+    let main = document.getElementsByClassName("main-page");
+
+    setTimeout(function(){
+        load.classList.add("hide");
+        main[0].classList.add("birona");
+    },1000);
+
+    setTimeout(function(){
+        popoverList[0].show();
+        setTimeout(function(){
+            popoverList[0].hide();
+        }, 3000)
+    }, 5000)
+}
