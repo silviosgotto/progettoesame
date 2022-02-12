@@ -74,18 +74,18 @@ body{
 }
 
 .theme-inferno{
-  background: linear-gradient(217deg, #e9a003, #ff990075, 20%, #740000, #000000 ),
-              linear-gradient(270deg, #e9a003, #ff990075, 35%, #740000, #000000),
-              linear-gradient(300deg, #e9a003, #ff990075, 60%, #740000, #000000 );
+  background: linear-gradient(217deg, #712732, #50110c, 20%, #0c0202, #9b4135 ),
+              linear-gradient(270deg, #712732, #50110c, 35%, #0c0202, #9b4135),
+              linear-gradient(300deg, #712732, #50110c, 60%, #0c0202, #9b4135 );
   background-size: auto;
   background-repeat: no-repeat;
 }
 
 .theme-heaven{
   opacity: 1;
-  background: linear-gradient(217deg, #38ff48, rgba(0, 226, 132, 0.459), 20%, #00e9af, #5154ff ),
-              linear-gradient(270deg, #38ff48, rgba(0, 226, 132, 0.459), 35%, #00e9af, #5154ff),
-              linear-gradient(300deg, #38ff48, rgba(0, 226, 132, 0.459), 60%, #00e9af, #5154ff );
+  background: linear-gradient(217deg, #23a87d, #49d9c0, 20%,#5f76da, #b8a0fc ),
+              linear-gradient(270deg, #23a87d, #49d9c0, 35%, #23a87d, #b8a0fc),
+              linear-gradient(300deg, #5f76da, #49d9c0, 60%, #5f76da, #b8a0fc );
   background-size: auto;
   background-repeat: no-repeat;
 }
@@ -99,19 +99,19 @@ body{
 }
 
 .inferno-color1{
-  stop-color: #ffbb00;
+  stop-color: rgb(231, 235, 5);
 }
 
 .inferno-color2{
-  stop-color: #f81100;
+  stop-color: rgb(112, 9, 9);
 }
 
 .heaven-color1{
-  stop-color: #00eeff;
+  stop-color: #71f0bb;
 }
 
 .heaven-color2{
-  stop-color: #c0fced;
+  stop-color: #eca253;
 }
 
 
@@ -215,6 +215,7 @@ body{
   position: relative;
   margin: 5px;
   border: solid 3px ;
+  border-radius: 10px;
   width: 248px;
   height: 256px;
 }
@@ -280,8 +281,8 @@ body{
   color:#ffa024;
 }
 .heaven-num{
-  border-color: #1d00c4;
-  color:#1d00c4;
+  border-color: #b0faff;
+  color:#b0faff; 
 }
 
 .blob-span{
@@ -293,7 +294,7 @@ body{
 }
 
 .heaven-span{
-  color: #1d00c4;
+  color: #b0faff;
 }
 
 .blob-label{
@@ -305,7 +306,7 @@ body{
 }
 
 .heaven-label{
-  color: #1d00c4;
+  color: #b0faff;
 }
 
 
@@ -357,8 +358,8 @@ body{
 }
 
 .heaven-select{
-  background-color: #00ffd5;
-  color: #1d00c4;
+  background-color: #5e79d9cb;
+  color: #b0faff;
   border-color: #00ff9d;
 }
 
@@ -368,7 +369,7 @@ body{
 }
 
 .heaven-select:disabled{
-  background-color: #010047;
+  background-color: #8a64f1;
 }
 
 /* play learning disabled */
@@ -512,7 +513,7 @@ body{
   height: 18px;
   background: #f99f3f;
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid rgb(140, 215, 238);
   border-radius: 50%;
 }
 
@@ -562,6 +563,7 @@ body{
 
 .padAndControlsMel{
   border: solid 3px;
+  border-radius: 10px;
   height: 256px;
   width: 506px;
   position: relative;
@@ -571,6 +573,7 @@ body{
   position: relative;
   margin-left: 10px;
   border: solid 3px;
+  border-radius: 10px;
   width: 248px;
   height: 256px;
 }
@@ -610,7 +613,6 @@ body{
   position: relative;
   margin: 10px 0px 0px 0px;
 }
-
 #Harmonicinit{
   margin: 10px;
 }
@@ -654,15 +656,15 @@ body{
   font-family: 'Raleway', sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color:#ff0000;
+  color:#e50230;
   background-color: transparent;
-  border-color: #ff0000;
+  border-color: #e50230;
   transition: 0.6s;
 }
 
 .neon-inferno:hover{
-  background: #ff0000;
-  border-color: #ff0000;
+  background: #e50230;
+  border-color: #e50230;
   color: black;
   box-shadow: 0px 0px 10px  #ff3a3a, 0px 0px 7px  #ff4242, 0px 0px 20px  #ff6464 ;             
 }
@@ -676,17 +678,17 @@ body{
   font-family: 'Raleway', sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color:#00ff88;
+  color:#71f09b;
   background-color: transparent;
-  border-color: #00ff88;
+  border-color: #71f09b;
   transition: 0.6s;
 }
 
 .neon-heaven:hover{
-  background: #00ff88;
-  border-color: #00ff88;
-  color: black;
-  box-shadow: 0px 0px 10px  #30ff9e, 0px 0px 7px  #46ffa9, 0px 0px 20px  #6dffbb ;             
+  background: #71f09b;
+  border-color: #71f09b;
+  color: rgb(13, 54, 100);
+  box-shadow: 0px 0px 10px  #71f09b, 0px 0px 7px  #71f09b, 0px 0px 20px  #71f09b ;             
 }
 
 .neon-heaven:disabled{
@@ -729,11 +731,11 @@ body{
 }
 
 .inferno-border{
-  border: solid 3px #00000069;
+  border: solid 3px #f99f3f;
 }
 
 .heaven-border{
-  border: solid 3px #1d00c4;
+  border: solid 3px #51effa;
 }
 
 input[type=number] { 
