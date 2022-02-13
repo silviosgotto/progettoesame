@@ -181,6 +181,10 @@ function birimute(butt){
 
 //Panner Rhythm
 
+var panThemedx;
+var panThemesx;
+
+
 //Panner1
 const PanRhy1 = new Tone.Panner(0);
 const PanSlideRhy1 = document.getElementById("PanSlideRhy1");
@@ -191,15 +195,21 @@ PanSlideRhy1.oninput = function(){
     })
     if(PanSlideRhy1.value > 0){
         document.getElementById("panButt1").classList.add("din-pandx");
+        document.getElementById("panButt1").classList.add(panThemedx);
         document.getElementById("panButt1").classList.remove("din-pansx");
+        document.getElementById("panButt1").classList.remove(panThemesx);
     }
     else if(PanSlideRhy1.value < 0){
         document.getElementById("panButt1").classList.add("din-pansx");
+        document.getElementById("panButt1").classList.add(panThemesx);
         document.getElementById("panButt1").classList.remove("din-pandx");
+        document.getElementById("panButt1").classList.remove(panThemedx);
     }
     else{
         document.getElementById("panButt1").classList.remove("din-pandx");
+        document.getElementById("panButt1").classList.remove(panThemedx);
         document.getElementById("panButt1").classList.remove("din-pansx");
+        document.getElementById("panButt1").classList.remove(panThemesx);
     }
 }
 const ResetButtonRhy1 = document.getElementById("ResRhy1");
@@ -210,7 +220,9 @@ ResetButtonRhy1.onclick = function(){
     });
     ResetButtonRhy1.blur();
     document.getElementById("panButt1").classList.remove("din-pandx");
+    document.getElementById("panButt1").classList.remove(panThemedx);
     document.getElementById("panButt1").classList.remove("din-pansx");
+    document.getElementById("panButt1").classList.remove(panThemesx);
 }
 
 //Panner2
@@ -223,16 +235,22 @@ PanSlideRhy2.oninput = function(){
     })
     if(PanSlideRhy2.value > 0){ 
         document.getElementById("PanButt2").classList.add("din-pandx");
+        document.getElementById("PanButt2").classList.add(panThemedx);
         document.getElementById("PanButt2").classList.remove("din-pansx");
+        document.getElementById("PanButt2").classList.remove(panThemesx);
 
     }
     else if(PanSlideRhy2.value < 0){
         document.getElementById("PanButt2").classList.add("din-pansx");
+        document.getElementById("PanButt2").classList.add(panThemesx);
         document.getElementById("PanButt2").classList.remove("din-pandx");
+        document.getElementById("PanButt2").classList.remove(panThemedx);
     }
     else{
         document.getElementById("PanButt2").classList.remove("din-pandx");
+        document.getElementById("PanButt2").classList.remove(panThemedx);
         document.getElementById("PanButt2").classList.remove("din-pansx");
+        document.getElementById("PanButt2").classList.remove(panThemesx);
     }
 }
 const ResetButtonRhy2 = document.getElementById("ResRhy2");
@@ -243,7 +261,9 @@ ResetButtonRhy2.onclick = function(){
     });
     ResetButtonRhy2.blur();
     document.getElementById("PanButt2").classList.remove("din-pandx");
+    document.getElementById("PanButt2").classList.remove(panThemedx);
     document.getElementById("PanButt2").classList.remove("din-pansx");
+    document.getElementById("PanButt2").classList.remove(panThemesx);
 }
 
 //Panner3
@@ -256,15 +276,21 @@ PanSlideRhy3.oninput = function(){
     })
     if(PanSlideRhy3.value > 0){
         document.getElementById("PanButt3").classList.add("din-pandx");
+        document.getElementById("PanButt3").classList.add(panThemedx);
         document.getElementById("PanButt3").classList.remove("din-pansx");
+        document.getElementById("PanButt3").classList.remove(panThemesx);
     }
     else if(PanSlideRhy3.value < 0){
         document.getElementById("PanButt3").classList.add("din-pansx");
+        document.getElementById("PanButt3").classList.add(panThemesx);
         document.getElementById("PanButt3").classList.remove("din-pandx");
+        document.getElementById("PanButt3").classList.remove(panThemedx);
     }
     else{
         document.getElementById("PanButt3").classList.remove("din-pandx");
+        document.getElementById("PanButt3").classList.remove(panThemedx);
         document.getElementById("PanButt3").classList.remove("din-pansx");
+        document.getElementById("PanButt3").classList.remove(panThemesx);
     }
 }
 const ResetButtonRhy3 = document.getElementById("ResRhy3");
@@ -275,7 +301,9 @@ ResetButtonRhy3.onclick = function(){
     });
     ResetButtonRhy3.blur();
     document.getElementById("PanButt3").classList.remove("din-pandx");
+    document.getElementById("PanButt3").classList.remove(panThemedx);
     document.getElementById("PanButt3").classList.remove("din-pansx");
+    document.getElementById("PanButt3").classList.remove(panThemesx);
 }
 
 //Panner Melodico
@@ -288,16 +316,22 @@ PanSlideMel.oninput = function(){
     })
     if(PanSlideMel.value > 0){
         document.getElementById("PanMButt").classList.add("din-pandx");
+        document.getElementById("PanMButt").classList.add(panThemedx);
         document.getElementById("PanMButt").classList.remove("din-pansx");
+        document.getElementById("PanMButt").classList.remove(panThemesx);
 
     }
     else if(PanSlideMel.value < 0){
         document.getElementById("PanMButt").classList.add("din-pansx");
+        document.getElementById("PanMButt").classList.add(panThemesx);
         document.getElementById("PanMButt").classList.remove("din-pandx");
+        document.getElementById("PanMButt").classList.remove(panThemedx);
     }
     else{
         document.getElementById("PanMButt").classList.remove("din-pandx");
+        document.getElementById("PanMButt").classList.remove(panThemedx);
         document.getElementById("PanMButt").classList.remove("din-pansx");
+        document.getElementById("PanMButt").classList.remove(panThemesx);
     }
 }
 const ResetButtonMel = document.getElementById("ResMel");
@@ -308,7 +342,9 @@ ResetButtonMel.onclick = function(){
     });
     ResetButtonMel.blur();
     document.getElementById("PanMButt").classList.remove("din-pandx");
+    document.getElementById("PanMButt").classList.remove(panThemedx);
     document.getElementById("PanMButt").classList.remove("din-pansx");
+    document.getElementById("PanMButt").classList.remove(panThemesx);
 }
 
 //Panner Armonico
@@ -321,16 +357,22 @@ PanSlideHarm.oninput = function(){
     })
     if(PanSlideHarm.value > 0){
         document.getElementById("PanHButt").classList.add("din-pandx");
+        document.getElementById("PanHButt").classList.add(panThemedx);
         document.getElementById("PanHButt").classList.remove("din-pansx");
+        document.getElementById("PanHButt").classList.remove(panThemesx);
 
     }
     else if(PanSlideHarm.value < 0){
         document.getElementById("PanHButt").classList.add("din-pansx");
+        document.getElementById("PanHButt").classList.add(panThemesx);
         document.getElementById("PanHButt").classList.remove("din-pandx");
+        document.getElementById("PanHButt").classList.remove(panThemedx);
     }
     else{
         document.getElementById("PanHButt").classList.remove("din-pandx");
+        document.getElementById("PanHButt").classList.remove(panThemedx);
         document.getElementById("PanHButt").classList.remove("din-pansx");
+        document.getElementById("PanHButt").classList.remove(panThemesx);
     }
 }
 const ResetButtonHarm = document.getElementById("ResHarm");
@@ -341,7 +383,9 @@ ResetButtonHarm.onclick = function(){
     });
     ResetButtonHarm.blur();
     document.getElementById("PanHButt").classList.remove("din-pandx");
+    document.getElementById("PanHButt").classList.remove(panThemedx);
     document.getElementById("PanHButt").classList.remove("din-pansx");
+    document.getElementById("PanHButt").classList.remove(panThemesx);
 }
 
 //FeedBack Delay
@@ -1045,6 +1089,7 @@ PlayButt.onclick = async () => {
 
 
 //themes 
+const panAll = document.querySelectorAll("#PanButt2,#panButt1,#PanButt3,#PanMButt,#PanHButt");
 const border = document.querySelectorAll(".padAndControls, .padAndControlsMel, .padAndControlsHarm");
 const bpmbord = document.getElementById("bpm-bord");
 const labAll = document.querySelectorAll("label");
@@ -1057,8 +1102,11 @@ const blobc2 = document.getElementById("stop2");
 const body = document.getElementById("body");
 const themes = document.getElementById("themes");
 
+
 themes.onchange = function(){
     if(themes.value == "1"){
+        panThemedx = "blob-pandx";
+        panThemesx = "blob-pansx";
         blobc1.classList.add("blob-color1");
         blobc2.classList.add("blob-color2");
         blobc1.classList.remove("inferno-color1");
@@ -1068,6 +1116,19 @@ themes.onchange = function(){
         body.classList.add("theme-blob");
         body.classList.remove("theme-inferno");
         body.classList.remove("theme-heaven");
+        for(i=0; i<panAll.length; i++){
+            if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
+                panAll[i].classList.add("blob-pandx")
+                panAll[i].classList.remove("inferno-pandx")
+                panAll[i].classList.remove("heaven-pandx")
+            }
+            else if (panAll[i].classList.contains("inferno-pansx") || panAll[i].classList.contains("heaven-pansx")){
+                panAll[i].classList.add("blob-pansx")
+                panAll[i].classList.remove("inferno-pansx")
+                panAll[i].classList.remove("heaven-pansx")
+            }
+
+        }
         for(i = 0; i<selectall.length; i++){
             selectall[i].classList.add("blob-select");
             selectall[i].classList.remove("inferno-select");
@@ -1104,6 +1165,22 @@ themes.onchange = function(){
         setCookie(themes.value);
     }
     else if(themes.value == "2"){
+        panThemedx = "inferno-pandx";
+        panThemesx = "inferno-pansx";
+
+        for(i=0; i<panAll.length; i++){
+            if(panAll[i].classList.contains("blob-pandx") || panAll[i].classList.contains("heaven-pandx")){
+                panAll[i].classList.add("inferno-pandx")
+                panAll[i].classList.remove("blob-pandx")
+                panAll[i].classList.remove("heaven-pandx")
+            }
+            else if (panAll[i].classList.contains("blob-pansx") || panAll[i].classList.contains("heaven-pansx")){
+                panAll[i].classList.add("inferno-pansx")
+                panAll[i].classList.remove("blob-pansx")
+                panAll[i].classList.remove("heaven-pansx")
+            }
+
+        }
         blobc1.classList.add("inferno-color1");
         blobc2.classList.add("inferno-color2");
         blobc1.classList.remove("blob-color1");
@@ -1149,6 +1226,8 @@ themes.onchange = function(){
         setCookie(themes.value);
     }
     else{
+        panThemedx = "heaven-pandx";
+        panThemesx = "heaven-pansx";
         blobc1.classList.add("heaven-color1");
         blobc2.classList.add("heaven-color2");
         blobc1.classList.remove("inferno-color1");
@@ -1158,6 +1237,19 @@ themes.onchange = function(){
         body.classList.add("theme-heaven");
         body.classList.remove("theme-inferno");
         body.classList.remove("theme-blob");
+        for(i=0; i<panAll.length; i++){
+            if(panAll[i].classList.contains("blob-pandx") || panAll[i].classList.contains("inferno-pandx")){
+                panAll[i].classList.add("heaven-pandx")
+                panAll[i].classList.remove("blob-pandx")
+                panAll[i].classList.remove("inferno-pandx")
+            }
+            else if (panAll[i].classList.contains("blob-pansx") || panAll[i].classList.contains("inferno-pansx")){
+                panAll[i].classList.add("heaven-pansx")
+                panAll[i].classList.remove("blob-pansx")
+                panAll[i].classList.remove("inferno-pansx")
+            }
+
+        }
         for(i = 0; i<selectall.length; i++){
             selectall[i].classList.add("heaven-select");
             selectall[i].classList.remove("inferno-select");
@@ -1211,6 +1303,8 @@ function checkCookie() {
     let value = getCookie();
     if (value != "") {
         if(themes.value == "1"){
+            panThemedx = "blob-pandx";
+            panThemesx = "blob-pansx";
             blobc1.classList.add("blob-color1");
             blobc2.classList.add("blob-color2");
             blobc1.classList.remove("inferno-color1");
@@ -1220,6 +1314,19 @@ function checkCookie() {
             body.classList.add("theme-blob");
             body.classList.remove("theme-inferno");
             body.classList.remove("theme-heaven");
+            for(i=0; i<panAll.length; i++){
+                if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
+                    panAll[i].classList.add("blob-pandx")
+                    panAll[i].classList.remove("inferno-pandx")
+                    panAll[i].classList.remove("heaven-pandx")
+                }
+                else if (panAll[i].classList.contains("inferno-pansx") || panAll[i].classList.contains("heaven-pansx")){
+                    panAll[i].classList.add("blob-pansx")
+                    panAll[i].classList.remove("inferno-pansx")
+                    panAll[i].classList.remove("heaven-pansx")
+                }
+    
+            }
             for(i = 0; i<selectall.length; i++){
                 selectall[i].classList.add("blob-select");
                 selectall[i].classList.remove("inferno-select");
@@ -1254,7 +1361,10 @@ function checkCookie() {
             bpmbord.classList.remove("inferno-border");
             bpmbord.classList.remove("heaven-border");
         }
+
         else if(themes.value == "2"){
+            panThemedx = "inferno-pandx";
+            panThemesx = "inferno-pansx";
             blobc1.classList.add("inferno-color1");
             blobc2.classList.add("inferno-color2");
             blobc1.classList.remove("blob-color1");
@@ -1264,6 +1374,19 @@ function checkCookie() {
             body.classList.add("theme-inferno");
             body.classList.remove("theme-blob");
             body.classList.remove("theme-heaven");
+            for(i=0; i<panAll.length; i++){
+                if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
+                    panAll[i].classList.add("inferno-pandx")
+                    panAll[i].classList.remove("blob-pandx")
+                    panAll[i].classList.remove("heaven-pandx")
+                }
+                else if (panAll[i].classList.contains("blob-pansx") || panAll[i].classList.contains("heaven-pansx")){
+                    panAll[i].classList.add("inferno-pansx")
+                    panAll[i].classList.remove("blob-pansx")
+                    panAll[i].classList.remove("heaven-pansx")
+                }
+    
+            }
             for(i = 0; i<selectall.length; i++){
                 selectall[i].classList.add("inferno-select");
                 selectall[i].classList.remove("blob-select");
@@ -1299,6 +1422,8 @@ function checkCookie() {
             bpmbord.classList.remove("heaven-border");
         }
         else{
+            panThemedx = "heaven-pandx";
+            panThemesx = "heaven-pansx";
             blobc1.classList.add("heaven-color1");
             blobc2.classList.add("heaven-color2");
             blobc1.classList.remove("inferno-color1");
@@ -1308,6 +1433,19 @@ function checkCookie() {
             body.classList.add("theme-heaven");
             body.classList.remove("theme-inferno");
             body.classList.remove("theme-blob");
+            for(i=0; i<panAll.length; i++){
+                if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("blob-pandx")){
+                    panAll[i].classList.add("heaven-pandx")
+                    panAll[i].classList.remove("blob-pandx")
+                    panAll[i].classList.remove("inferno-pandx")
+                }
+                else if (panAll[i].classList.contains("blob-pansx") || panAll[i].classList.contains("inferno-pansx")){
+                    panAll[i].classList.add("heaven-pansx")
+                    panAll[i].classList.remove("blob-pansx")
+                    panAll[i].classList.remove("inferno-pansx")
+                }
+    
+            }
             for(i = 0; i<selectall.length; i++){
                 selectall[i].classList.add("heaven-select");
                 selectall[i].classList.remove("inferno-select");
@@ -1345,6 +1483,8 @@ function checkCookie() {
     } else {
         value = "1";
         themes.value = "1";
+        panThemedx = "blob-pandx";
+        panThemesx = "blob-pansx";
         blobc1.classList.add("blob-color1");
         blobc2.classList.add("blob-color2");
         blobc1.classList.remove("inferno-color1");
@@ -1354,6 +1494,19 @@ function checkCookie() {
         body.classList.add("theme-blob");
         body.classList.remove("theme-inferno");
         body.classList.remove("theme-heaven");
+        for(i=0; i<panAll.length; i++){
+            if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
+                panAll[i].classList.add("blob-pandx")
+                panAll[i].classList.remove("inferno-pandx")
+                panAll[i].classList.remove("heaven-pandx")
+            }
+            else if (panAll[i].classList.contains("inferno-pansx") || panAll[i].classList.contains("heaven-pansx")){
+                panAll[i].classList.add("blob-pansx")
+                panAll[i].classList.remove("inferno-pansx")
+                panAll[i].classList.remove("heaven-pansx")
+            }
+
+        }
         for(i = 0; i<selectall.length; i++){
             selectall[i].classList.add("blob-select");
             selectall[i].classList.remove("inferno-select");

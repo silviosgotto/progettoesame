@@ -512,7 +512,7 @@ body{
   height: 18px;
   background: #f99f3f;
   cursor: pointer;
-  border: 2px solid rgb(140, 215, 238);
+  border: 2px solid white;
   border-radius: 50%;
 }
 
@@ -522,7 +522,7 @@ body{
   height: 18px;
   background: #f99f3f;
   cursor: pointer;
-  border: 2px solid rgb(140, 215, 238);
+  border: 2px solid white;
   border-radius: 50%;
 }
 
@@ -725,15 +725,47 @@ body{
 }
 
 .din-pandx{
-  background: linear-gradient(0.25turn, transparent, #ff1d70 100%) no-repeat;
+ 
   color:#f99f3f
 }
 
 .din-pansx{
-  background: linear-gradient(0.75turn, transparent,#ff1d70  100%) no-repeat;
-  color: #f99f3f;
-  /* #8f0034 */
+  
+  color:#f99f3f
 }
+
+.blob-pandx{
+  background: linear-gradient(0.25turn, transparent, #ff1d70 100%) no-repeat;
+}
+
+.blob-pansx{
+  background: linear-gradient(0.75turn, transparent,#ff1d70  100%) no-repeat;
+}
+
+
+.inferno-pandx{
+  background: linear-gradient(0.25turn, transparent, #e50230 100%) no-repeat;
+  
+}
+
+.inferno-pansx{
+  background: linear-gradient(0.75turn, transparent,#e50230  100%) no-repeat;
+  
+  
+}
+
+.heaven-pandx{
+  background: linear-gradient(0.25turn, transparent, #51effa 100%) no-repeat;
+  
+}
+
+.heaven-pansx{
+  background: linear-gradient(0.75turn, transparent,#51effa  100%) no-repeat;
+  
+  
+}
+
+
 
 .blob-border{
   border: solid 3px #ff1d7067;
