@@ -48,12 +48,12 @@ module.exports = class MelodicSound {
                 loopEnd = loopEnd + (this.metrica - (loopEnd % this.metrica))
             }
         }
-        console.log(loopEnd);
+        //console.log(loopEnd);
         return loopEnd
     }
 
     createPart(){
-        console.log(this.arrDur)
+        //console.log(this.arrDur)
         var bpm = 60/this.bpm;
         this.part.loopStart=0;
         this.part.loopEnd = this.rightLoop()*bpm;
@@ -68,7 +68,7 @@ module.exports = class MelodicSound {
         } */
         //arrDiff = arrDiff.map(x => x * 60/Tone.Transport.bpm.value);
         //console.log(arrDiff);
-        console.log("loopend mel: ", this.part.loopEnd);
+        //console.log("loopend mel: ", this.part.loopEnd);
         for (var j = 0; j<this.arrDur.length; j++){
             this.arrDur[j] = this.arrDur[j]*bpm;
             this.part.add({time: this.arrDur[j], note: this.baseNote*Math.pow(2, (this.arrPos[j] - 1)/12)});

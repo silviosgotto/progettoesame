@@ -504,11 +504,20 @@ body{
   background: #f99f3f;
   border: 6px solid;
   border-color: transparent;
-  border-radius: 8px;
-  
+  border-radius: 8px; 
 }
 
 .Effectsliderhor::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #f99f3f;
+  cursor: pointer;
+  border: 2px solid rgb(140, 215, 238);
+  border-radius: 50%;
+}
+
+.Effectsliderhor::-webkit-slider-thumb {
+  -webkit-appearance: none;
   width: 18px;
   height: 18px;
   background: #f99f3f;

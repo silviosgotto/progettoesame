@@ -167,7 +167,7 @@ module.exports = class HarmonicSound{
                 }
             }
             this.melnotes.push(notesInTime);
-            console.log(notesInTime);
+            //console.log(notesInTime);
         }
 
 

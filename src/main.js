@@ -829,7 +829,7 @@ initmPadButt.onclick = function(){
     const nm = document.getElementById("NeuronsPadMel").value;
     const lm = 200;
     metricMelodic = parseFloat(document.getElementById("selectMetricMel").value);
-    console.log(metricMelodic);
+    //console.log(metricMelodic);
     const wavem = document.getElementById("selectWaveMel").value;
     modeMelodic = document.getElementById("selectScaleMel").value;
     BaseNote = FreqencyDictionary[document.getElementById("selectKeyMel").value];
@@ -897,34 +897,34 @@ function startLearning(){
         var id1 = window.requestAnimationFrame(startRhythm.bind(window, RhythmPart1, nrPad1, soundRhythm1, metricRhythm1, id1));
     }
     else{
-        console.log("RhythmPad1 not initialized")
+        //console.log("RhythmPad1 not initialized")
     }
 
     if(nrPad2.getN() != 0){
         var id2 = window.requestAnimationFrame(startRhythm.bind(window, RhythmPart2, nrPad2, soundRhythm2, metricRhythm2, id2));
     }
     else{
-        console.log("RhythmPad2 not initialized")
+        //console.log("RhythmPad2 not initialized")
     }
     
     if(nrPad3.getN() != 0){
         var id3 = window.requestAnimationFrame(startRhythm.bind(window, RhythmPart3, nrPad3, soundRhythm3, metricRhythm3, id3));
     }
     else{
-        console.log("RhythmPad3 not initialized")
+        //console.log("RhythmPad3 not initialized")
     }
     if(nmPad.getN()!= 0){
         var id4 = window.requestAnimationFrame(startMelodic.bind(window, MelodicPart, nmPad, BaseNote, metricMelodic, id4));
     }
     else{
-        console.log("MelodicPad not initialized")
+        //console.log("MelodicPad not initialized")
     }
     if(nhPad.getN()!=0){
-        console.log(metricMelodic);
+        //console.log(metricMelodic);
         var id5 = window.requestAnimationFrame(startHarmonic.bind(window, HarmonicPart, nhPad, metricMelodic, BaseNote, id5));
     }
     else{
-        console.log("Harmonic Pad not inizialized");
+        //console.log("Harmonic Pad not inizialized");
     }
     
 }
