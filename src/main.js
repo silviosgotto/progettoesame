@@ -4,11 +4,13 @@ import RhythmSound from './RhythmSound.js';
 import MelodicSound from './MelodicSound.js';
 import HarmonicNeurons from './HarmonicNeurons.js';
 import HarmonicSound from './HarmonicSound.js';
-import { SVG, extend as SVGextend, Element as SVGElement } from '../node_modules/@svgdotjs/svg.js';
-import * as Tone from '../node_modules/tone';
+import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js';
+//import * as Tone from '../node_modules/tone';
+import * as Tone from 'tone';
 //import { Popover } from '../node_modules/bootstrap';
 //import { Context, dbToGain, Phaser, Solo, TransportTime } from 'tone';
-import * as bootstrap from '../node_modules/bootstrap';
+//import * as bootstrap from '../node_modules/bootstrap';
+import * as bootstrap from 'bootstrap/dist/js/bootstrap';
 //import { variationPlacements } from '@popperjs/core';
 
 
