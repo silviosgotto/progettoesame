@@ -758,7 +758,7 @@ relValue.onchange = () => {
 
 var sound1 = false;
 
-initrPad1Butt = document.getElementById('initNeuronsPad1');
+const initrPad1Butt = document.getElementById('initNeuronsPad1');
 initrPad1Butt.onclick = function(){
     const n1 = document.getElementById("NeuronsPad1").value;
     const h1 = 200;
@@ -794,7 +794,7 @@ document.getElementById("soundP1").onchange = function(){
 
 var sound2 = false;
 
-initrPad2Butt = document.getElementById('initNeuronsPad2');
+const initrPad2Butt = document.getElementById('initNeuronsPad2');
 initrPad2Butt.onclick = function(){
     const n2 = document.getElementById("NeuronsPad2").value;
     const h2 = 200;
@@ -832,7 +832,7 @@ document.getElementById("soundP2").onchange = function(){
 
 var sound3 = false;
 
-initrPad3Butt = document.getElementById('initNeuronsPad3');
+const initrPad3Butt = document.getElementById('initNeuronsPad3');
 initrPad3Butt.onclick = function(){
     const n3 = document.getElementById("NeuronsPad3").value;
     const h3 = 200;
@@ -868,7 +868,7 @@ document.getElementById("soundP3").onchange = function(){
 }
 
 var actMel = false;
-initmPadButt = document.getElementById("initMelodicPad");
+const initmPadButt = document.getElementById("initMelodicPad");
 initmPadButt.onclick = function(){
     const nm = document.getElementById("NeuronsPadMel").value;
     const lm = 200;
@@ -900,7 +900,7 @@ initmPadButt.onclick = function(){
     }
 }
 
-inithPadButt = document.getElementById("initNeuronsPadHarm");
+const inithPadButt = document.getElementById("initNeuronsPadHarm");
 inithPadButt.onclick = function(){
     const nh = document.getElementById("NeuronsPadHarm").value;
     const lh = 200;
