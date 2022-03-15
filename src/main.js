@@ -113,9 +113,9 @@ var player3;
 
 //prova neuroni ritmo
 
-var nrPad1 = new RhythmNeurons(0, 0, 0, "", "", bpm, 0, 0);
-var nrPad2 = new RhythmNeurons(0, 0, 0, "", "", bpm, 0, 0);
-var nrPad3 = new RhythmNeurons(0, 0, 0, "", "", bpm, 0, 0);
+var nrPad1 = new RhythmNeurons("1", 0, 0, "", "", bpm, 0, 0);
+var nrPad2 = new RhythmNeurons("2", 0, 0, "", "", bpm, 0, 0);
+var nrPad3 = new RhythmNeurons("3", 0, 0, "", "", bpm, 0, 0);
 var soundRhythm1;
 var soundRhythm2;
 var soundRhythm3;
