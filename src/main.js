@@ -1116,7 +1116,7 @@ themes.onchange = function(){
         body.classList.add("theme-blob");
         body.classList.remove("theme-inferno");
         body.classList.remove("theme-heaven");
-        for(i=0; i<panAll.length; i++){
+        for(var i=0; i<panAll.length; i++){
             if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
                 panAll[i].classList.add("blob-pandx")
                 panAll[i].classList.remove("inferno-pandx")
@@ -1129,32 +1129,32 @@ themes.onchange = function(){
             }
 
         }
-        for(i = 0; i<selectall.length; i++){
+        for(var i = 0; i<selectall.length; i++){
             selectall[i].classList.add("blob-select");
             selectall[i].classList.remove("inferno-select");
             selectall[i].classList.remove("heaven-select");
         }
-        for(i = 0; i<buttAll.length; i++){
+        for(var i = 0; i<buttAll.length; i++){
             buttAll[i].classList.add("neon");
             buttAll[i].classList.remove("neon-inferno");
             buttAll[i].classList.remove("neon-heaven");
         }
-        for(i = 0; i<typeNumall.length; i++){
+        for(var i = 0; i<typeNumall.length; i++){
             typeNumall[i].classList.add("blob-num");
             typeNumall[i].classList.remove("inferno-num");
             typeNumall[i].classList.remove("heaven-num");
         }
-        for(i = 0; i<spanAll.length; i++){
+        for(var i = 0; i<spanAll.length; i++){
             spanAll[i].classList.add("blob-span");
             spanAll[i].classList.remove("inferno-span");
             spanAll[i].classList.remove("heaven-span");
         }
-        for(i = 0; i<labAll.length; i++){
+        for(var i = 0; i<labAll.length; i++){
             labAll[i].classList.add("blob-label");
             labAll[i].classList.remove("inferno-label");
             labAll[i].classList.remove("heaven-label");
         }
-        for(i = 0; i<border.length; i++){
+        for(var i = 0; i<border.length; i++){
             border[i].classList.add("blob-border");
             border[i].classList.remove("inferno-border");
             border[i].classList.remove("heaven-border");
@@ -1168,7 +1168,7 @@ themes.onchange = function(){
         panThemedx = "inferno-pandx";
         panThemesx = "inferno-pansx";
 
-        for(i=0; i<panAll.length; i++){
+        for(var i=0; i<panAll.length; i++){
             if(panAll[i].classList.contains("blob-pandx") || panAll[i].classList.contains("heaven-pandx")){
                 panAll[i].classList.add("inferno-pandx")
                 panAll[i].classList.remove("blob-pandx")
@@ -1190,32 +1190,32 @@ themes.onchange = function(){
         body.classList.add("theme-inferno");
         body.classList.remove("theme-blob");
         body.classList.remove("theme-heaven");
-        for(i = 0; i<selectall.length; i++){
+        for(var i = 0; i<selectall.length; i++){
             selectall[i].classList.add("inferno-select");
             selectall[i].classList.remove("blob-select");
             selectall[i].classList.remove("heaven-select");
         }
-        for(i = 0; i<buttAll.length; i++){
+        for(var i = 0; i<buttAll.length; i++){
             buttAll[i].classList.add("neon-inferno");
             buttAll[i].classList.remove("neon");
             buttAll[i].classList.remove("neon-heaven");
         }
-        for(i = 0; i<typeNumall.length; i++){
+        for(var i = 0; i<typeNumall.length; i++){
             typeNumall[i].classList.add("inferno-num");
             typeNumall[i].classList.remove("blob-num");
             typeNumall[i].classList.remove("heaven-num");
         }
-        for(i = 0; i<spanAll.length; i++){
+        for(var i = 0; i<spanAll.length; i++){
             spanAll[i].classList.add("inferno-span");
             spanAll[i].classList.remove("blob-span");
             spanAll[i].classList.remove("heaven-span");
         }
-        for(i = 0; i<labAll.length; i++){
+        for(var i = 0; i<labAll.length; i++){
             labAll[i].classList.add("inferno-label");
             labAll[i].classList.remove("blob-label");
             labAll[i].classList.remove("heaven-label");
         }
-        for(i = 0; i<border.length; i++){
+        for(var i = 0; i<border.length; i++){
             border[i].classList.add("inferno-border");
             border[i].classList.remove("blob-border");
             border[i].classList.remove("heaven-border");
@@ -1237,7 +1237,7 @@ themes.onchange = function(){
         body.classList.add("theme-heaven");
         body.classList.remove("theme-inferno");
         body.classList.remove("theme-blob");
-        for(i=0; i<panAll.length; i++){
+        for(var i=0; i<panAll.length; i++){
             if(panAll[i].classList.contains("blob-pandx") || panAll[i].classList.contains("inferno-pandx")){
                 panAll[i].classList.add("heaven-pandx")
                 panAll[i].classList.remove("blob-pandx")
@@ -1250,32 +1250,32 @@ themes.onchange = function(){
             }
 
         }
-        for(i = 0; i<selectall.length; i++){
+        for(var i = 0; i<selectall.length; i++){
             selectall[i].classList.add("heaven-select");
             selectall[i].classList.remove("inferno-select");
             selectall[i].classList.remove("blob-select");
         }
-        for(i = 0; i<buttAll.length; i++){
+        for(var i = 0; i<buttAll.length; i++){
             buttAll[i].classList.add("neon-heaven");
             buttAll[i].classList.remove("neon-inferno");
             buttAll[i].classList.remove("neon");
         }
-        for(i = 0; i<typeNumall.length; i++){
+        for(var i = 0; i<typeNumall.length; i++){
             typeNumall[i].classList.add("heaven-num");
             typeNumall[i].classList.remove("inferno-num");
             typeNumall[i].classList.remove("blob-num");
         }
-        for(i = 0; i<spanAll.length; i++){
+        for(var i = 0; i<spanAll.length; i++){
             spanAll[i].classList.add("heaven-span");
             spanAll[i].classList.remove("inferno-span");
             spanAll[i].classList.remove("blob-span");
         }
-        for(i = 0; i<labAll.length; i++){
+        for(var i = 0; i<labAll.length; i++){
             labAll[i].classList.add("heaven-label");
             labAll[i].classList.remove("inferno-label");
             labAll[i].classList.remove("blob-label");
         }
-        for(i = 0; i<border.length; i++){
+        for(var i = 0; i<border.length; i++){
             border[i].classList.add("heaven-border");
             border[i].classList.remove("inferno-border");
             border[i].classList.remove("blob-border");
@@ -1314,7 +1314,7 @@ function checkCookie() {
             body.classList.add("theme-blob");
             body.classList.remove("theme-inferno");
             body.classList.remove("theme-heaven");
-            for(i=0; i<panAll.length; i++){
+            for(var i=0; i<panAll.length; i++){
                 if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
                     panAll[i].classList.add("blob-pandx")
                     panAll[i].classList.remove("inferno-pandx")
@@ -1327,32 +1327,32 @@ function checkCookie() {
                 }
     
             }
-            for(i = 0; i<selectall.length; i++){
+            for(var i = 0; i<selectall.length; i++){
                 selectall[i].classList.add("blob-select");
                 selectall[i].classList.remove("inferno-select");
                 selectall[i].classList.remove("heaven-select");
             }
-            for(i = 0; i<buttAll.length; i++){
+            for(var i = 0; i<buttAll.length; i++){
                 buttAll[i].classList.add("neon");
                 buttAll[i].classList.remove("neon-inferno");
                 buttAll[i].classList.remove("neon-heaven");
             }
-            for(i = 0; i<typeNumall.length; i++){
+            for(var i = 0; i<typeNumall.length; i++){
                 typeNumall[i].classList.add("blob-num");
                 typeNumall[i].classList.remove("inferno-num");
                 typeNumall[i].classList.remove("heaven-num");
             }
-            for(i = 0; i<spanAll.length; i++){
+            for(var i = 0; i<spanAll.length; i++){
                 spanAll[i].classList.add("blob-span");
                 spanAll[i].classList.remove("inferno-span");
                 spanAll[i].classList.remove("heaven-span");
             }
-            for(i = 0; i<labAll.length; i++){
+            for(var i = 0; i<labAll.length; i++){
                 labAll[i].classList.add("blob-label");
                 labAll[i].classList.remove("inferno-label");
                 labAll[i].classList.remove("heaven-label");
             }
-            for(i = 0; i<border.length; i++){
+            for(var i = 0; i<border.length; i++){
                 border[i].classList.add("blob-border");
                 border[i].classList.remove("inferno-border");
                 border[i].classList.remove("heaven-border");
@@ -1374,7 +1374,7 @@ function checkCookie() {
             body.classList.add("theme-inferno");
             body.classList.remove("theme-blob");
             body.classList.remove("theme-heaven");
-            for(i=0; i<panAll.length; i++){
+            for(var i=0; i<panAll.length; i++){
                 if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
                     panAll[i].classList.add("inferno-pandx")
                     panAll[i].classList.remove("blob-pandx")
@@ -1387,32 +1387,32 @@ function checkCookie() {
                 }
     
             }
-            for(i = 0; i<selectall.length; i++){
+            for(var i = 0; i<selectall.length; i++){
                 selectall[i].classList.add("inferno-select");
                 selectall[i].classList.remove("blob-select");
                 selectall[i].classList.remove("heaven-select");
             }
-            for(i = 0; i<buttAll.length; i++){
+            for(var i = 0; i<buttAll.length; i++){
                 buttAll[i].classList.add("neon-inferno");
                 buttAll[i].classList.remove("neon");
                 buttAll[i].classList.remove("neon-heaven");
             }
-            for(i = 0; i<typeNumall.length; i++){
+            for(var i = 0; i<typeNumall.length; i++){
                 typeNumall[i].classList.add("inferno-num");
                 typeNumall[i].classList.remove("blob-num");
                 typeNumall[i].classList.remove("heaven-num");
             }
-            for(i = 0; i<spanAll.length; i++){
+            for(var i = 0; i<spanAll.length; i++){
                 spanAll[i].classList.add("inferno-span");
                 spanAll[i].classList.remove("blob-span");
                 spanAll[i].classList.remove("heaven-span");
             }
-            for(i = 0; i<labAll.length; i++){
+            for(var i = 0; i<labAll.length; i++){
                 labAll[i].classList.add("inferno-label");
                 labAll[i].classList.remove("blob-label");
                 labAll[i].classList.remove("heaven-label");
             }
-            for(i = 0; i<border.length; i++){
+            for(var i = 0; i<border.length; i++){
                 border[i].classList.add("inferno-border");
                 border[i].classList.remove("blob-border");
                 border[i].classList.remove("heaven-border");
@@ -1433,7 +1433,7 @@ function checkCookie() {
             body.classList.add("theme-heaven");
             body.classList.remove("theme-inferno");
             body.classList.remove("theme-blob");
-            for(i=0; i<panAll.length; i++){
+            for(var i=0; i<panAll.length; i++){
                 if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("blob-pandx")){
                     panAll[i].classList.add("heaven-pandx")
                     panAll[i].classList.remove("blob-pandx")
@@ -1446,32 +1446,32 @@ function checkCookie() {
                 }
     
             }
-            for(i = 0; i<selectall.length; i++){
+            for(var i = 0; i<selectall.length; i++){
                 selectall[i].classList.add("heaven-select");
                 selectall[i].classList.remove("inferno-select");
                 selectall[i].classList.remove("blob-select");
             }
-            for(i = 0; i<buttAll.length; i++){
+            for(var i = 0; i<buttAll.length; i++){
                 buttAll[i].classList.add("neon-heaven");
                 buttAll[i].classList.remove("neon-inferno");
                 buttAll[i].classList.remove("neon");
             }
-            for(i = 0; i<typeNumall.length; i++){
+            for(var i = 0; i<typeNumall.length; i++){
                 typeNumall[i].classList.add("heaven-num");
                 typeNumall[i].classList.remove("inferno-num");
                 typeNumall[i].classList.remove("blob-num");
             }
-            for(i = 0; i<spanAll.length; i++){
+            for(var i = 0; i<spanAll.length; i++){
                 spanAll[i].classList.add("heaven-span");
                 spanAll[i].classList.remove("inferno-span");
                 spanAll[i].classList.remove("blob-span");
             }
-            for(i = 0; i<labAll.length; i++){
+            for(var i = 0; i<labAll.length; i++){
                 labAll[i].classList.add("heaven-label");
                 labAll[i].classList.remove("inferno-label");
                 labAll[i].classList.remove("blob-label");
             }
-            for(i = 0; i<border.length; i++){
+            for(var i = 0; i<border.length; i++){
                 border[i].classList.add("heaven-border");
                 border[i].classList.remove("inferno-border");
                 border[i].classList.remove("blob-border");
@@ -1494,7 +1494,7 @@ function checkCookie() {
         body.classList.add("theme-blob");
         body.classList.remove("theme-inferno");
         body.classList.remove("theme-heaven");
-        for(i=0; i<panAll.length; i++){
+        for(var i=0; i<panAll.length; i++){
             if(panAll[i].classList.contains("inferno-pandx") || panAll[i].classList.contains("heaven-pandx")){
                 panAll[i].classList.add("blob-pandx")
                 panAll[i].classList.remove("inferno-pandx")
@@ -1507,32 +1507,32 @@ function checkCookie() {
             }
 
         }
-        for(i = 0; i<selectall.length; i++){
+        for(var i = 0; i<selectall.length; i++){
             selectall[i].classList.add("blob-select");
             selectall[i].classList.remove("inferno-select");
             selectall[i].classList.remove("heaven-select");
         }
-        for(i = 0; i<buttAll.length; i++){
+        for(var i = 0; i<buttAll.length; i++){
             buttAll[i].classList.add("neon");
             buttAll[i].classList.remove("neon-inferno");
             buttAll[i].classList.remove("neon-heaven");
         }
-        for(i = 0; i<typeNumall.length; i++){
+        for(var i = 0; i<typeNumall.length; i++){
             typeNumall[i].classList.add("blob-num");
             typeNumall[i].classList.remove("inferno-num");
             typeNumall[i].classList.remove("heaven-num");
         }
-        for(i = 0; i<spanAll.length; i++){
+        for(var i = 0; i<spanAll.length; i++){
             spanAll[i].classList.add("blob-span");
             spanAll[i].classList.remove("inferno-span");
             spanAll[i].classList.remove("heaven-span");
         }
-        for(i = 0; i<labAll.length; i++){
+        for(var i = 0; i<labAll.length; i++){
             labAll[i].classList.add("blob-label");
             labAll[i].classList.remove("inferno-label");
             labAll[i].classList.remove("heaven-label");
         }
-        for(i = 0; i<border.length; i++){
+        for(var i = 0; i<border.length; i++){
             border[i].classList.add("blob-border");
             border[i].classList.remove("inferno-border");
             border[i].classList.remove("heaven-border");
